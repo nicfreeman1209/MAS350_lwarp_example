@@ -8,10 +8,8 @@
 \contentsline {subsection}{Examples of Measures}{12}{section*.5}%
 \contentsline {section}{\numberline {1.4}The Borel $\sigma $-field and Lebesgue Measure}{13}{section.1.4}%
 \contentsline {section}{\numberline {1.5}An example of a non-measurable set $(\star )$}{15}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Two Useful Theorems About Measure}{17}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Product Measures}{18}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Exercises 1}{19}{section.1.8}%
-\contentsline {chapter}{\numberline {2}Measurable Functions}{20}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Probability and Measure}{21}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Product Measures and Fubini's Theorem ($\Delta $)}{22}{chapter.4}%
-\contentsline {chapter}{\numberline {A}Solutions to exercises}{23}{appendix.A}%
+\contentsline {section}{\numberline {1.6}Exercises 1}{17}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Measurable Functions}{18}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Probability and Measure}{19}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Product Measures and Fubini's Theorem ($\Delta $)}{20}{chapter.4}%
+\contentsline {chapter}{\numberline {A}Solutions to exercises}{21}{appendix.A}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  16 SEP 2020 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  16 SEP 2020 12:02
 entering extended mode
 **./MAS350-converted.tex
 (MAS350-converted.tex
@@ -1271,42 +1271,42 @@ line 737.
 [15]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 790.
- [16] [17] [18]
-Overfull \hbox (5.2417pt too wide) in paragraph at lines 815--816
+ [16]
+Overfull \hbox (5.2417pt too wide) in paragraph at lines 804--805
 []\T1/lmr/m/n/11 Give a care-ful proof by in-duc-tion of the fact that if $\OT1
 /lmr/bx/n/11 B$ \T1/lmr/m/n/11 is a Boolean al-ge-bra and $\OML/lmm/m/it/11 A[]
 ; A[]; [] ; A[] \OMS/lmsy/m/n/11 2
  []
 
-[19]
+[17]
 Chapter 2.
-[20
+[18
 
 ]
 Chapter 3.
-[21
+[19
 
 ]
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 832.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Delta' on input line 843.
+(hyperref)                removing `\Delta' on input line 832.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 832.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 843.
+(Font)              <24.88> on input line 832.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 843.
+(Font)              <20.74> on input line 832.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 843.
-[22
+(Font)              <17.28> on input line 832.
+[20
 
 ]
 Appendix A.
@@ -1314,20 +1314,20 @@ Including 'warpprint' comment.
 \openout3 = `comment_print.cut'.
 
  Straight input of comment_print.cut.
-(comment_print.cut [23
+(comment_print.cut [21
 
 ])
 No file MAS350-converted.ind.
 \tf@thm=\write9
 \openout9 = `MAS350-converted.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 870.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 870.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 859.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 859.
 (MAS350-converted.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 870.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 870.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 859.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 859.
 Package rerunfilecheck Info: File `MAS350-converted.out' has not changed.
-(rerunfilecheck)             Checksum: DE368D487C590EC43D5B18FD81A6AB86;960.
+(rerunfilecheck)             Checksum: 4D3771234316A8E756C948305296F9B2;817.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1338,10 +1338,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 13324 strings out of 481165
- 224499 string characters out of 2912075
+ 13314 strings out of 481165
+ 223849 string characters out of 2912075
  495386 words of memory out of 3000000
- 28329 multiletter control sequences out of 15000+200000
+ 28323 multiletter control sequences out of 15000+200000
  664550 words of font info for 129 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,13n,41p,861b,552s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1365,9 +1365,9 @@ ublic/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on MAS350-converted.pdf (24 pages, 349904 bytes).
+Output written on MAS350-converted.pdf (22 pages, 346801 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 91 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 345 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

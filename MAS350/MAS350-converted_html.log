@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  16 SEP 2020 11:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  16 SEP 2020 12:03
 entering extended mode
 **./MAS350-converted_html.tex
 (MAS350-converted_html.tex
@@ -1615,13 +1615,16 @@ File: "lwarp_mathjax.txt"  (verbatim)
 
 [18] (MAS350-converted_html.sidetoc) [19] [20]
 
+LaTeX Warning: Reference `ps:measure_basic' on page 21 undefined on input line 
+525.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 525.
+
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 21 undefined on i
 nput line 530.
 
-[21]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 532.
- [22] [23] [24]
+[21] [22] [23] [24]
 
 Package lwarp Warning: This section name:
 (lwarp)                  ``The Borel $\sigma $-field and Lebesgue Measure''
@@ -1642,7 +1645,12 @@ Package lwarp Warning: This section name:
 (lwarp)                This section is found before or on input line 605.
 
 File: "lwarp_mathjax.txt"  (verbatim)
-[25] (MAS350-converted_html.sidetoc) [26] [27] [28]
+[25] (MAS350-converted_html.sidetoc) [26]
+
+LaTeX Warning: Reference `ps:borel_closed' on page 27 undefined on input line 6
+18.
+
+[27] [28]
 
 Package lwarp Warning: This section name:
 (lwarp)                  ``An example of a non-measurable set $(\star )$''
@@ -1674,18 +1682,13 @@ LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
 
 [31] [32]
 File: "lwarp_mathjax.txt"  (verbatim)
- [33] (MAS350-converted_html.sidetoc) [34] [35] [36]
+ [33] (MAS350-converted_html.sidetoc) [34]
 File: "lwarp_mathjax.txt"  (verbatim)
- [37]
-(MAS350-converted_html.sidetoc) [38] [39] [40] [41]
+ [35]
+(MAS350-converted_html.sidetoc) [36]
 File: "lwarp_mathjax.txt"  (verbatim)
- [42]
-(MAS350-converted_html.sidetoc) [43] [44]
-File: "lwarp_mathjax.txt"  (verbatim)
- [45] (MAS350-converted_html.sidetoc)
-[46]
-File: "lwarp_mathjax.txt"  (verbatim)
- [47] (MAS350-converted_html.sidetoc) [48]
+ [37] (MAS350-converted_html.sidetoc)
+[38]
 
 Package lwarp Warning: This section name:
 (lwarp)                  ``Product Measures and Fubini's Theorem ($\Delta $)''
@@ -1703,15 +1706,15 @@ Package lwarp Warning: This section name:
 (lwarp)                    \texorpdfstring
 (lwarp)                      {Name with math}{Unique name, no math}
 (lwarp)                  } 
-(lwarp)                This section is found before or on input line 1016.
+(lwarp)                This section is found before or on input line 832.
 
 File: "lwarp_mathjax.txt"  (verbatim)
-[49] (MAS350-converted_html.sidetoc) [50]
+[39] (MAS350-converted_html.sidetoc) [40]
 File: "lwarp_mathjax.txt"  (verbatim)
- [51] (MAS350-converted_html.sidetoc)
-Excluding 'warpprint' comment. [52]
+ [41] (MAS350-converted_html.sidetoc)
+Excluding 'warpprint' comment. [42]
 No file MAS350-converted_html.ind.
-[53]
+[43]
 \tf@thm=\write10
 \openout10 = `MAS350-converted_html.thm'.
 
@@ -1728,13 +1731,13 @@ LaTeX Warning: There were undefined references.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 14423 strings out of 481165
- 260210 string characters out of 2912075
+ 14349 strings out of 481165
+ 257220 string characters out of 2912075
  601966 words of memory out of 3000000
- 29374 multiletter control sequences out of 15000+200000
- 583561 words of font info for 68 fonts, out of 3000000 for 9000
+ 29304 multiletter control sequences out of 15000+200000
+ 582925 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,51p,896b,1081s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,7n,51p,896b,870s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files
 /MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
 /dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
@@ -1755,9 +1758,9 @@ pe1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmt
 t8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAS350-converted_html.pdf (53 pages, 523604 bytes).
+Output written on MAS350-converted_html.pdf (43 pages, 486792 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
+ 232 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
