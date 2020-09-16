@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Nic Freeman" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="MAS350 Probability with Measure, Sheffield University, Sept 2020." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAS350 — Sigma Fields</title>
+<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+     subequations: "0",
+     section: "",
+     loader: {
+         load: ['[tex]/tagFormat'],
+     },
+     startup: {
+         ready() {
+             //       These would be replaced by import commands if you wanted to make
+             //       a proper extension.
+             const Configuration = MathJax._.input.tex.Configuration.Configuration;
+             const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+             const Macro = MathJax._.input.tex.Symbol.Macro;
+             const TexError = MathJax._.input.tex.TexError.default;
+             const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+             const expandable = MathJax._.util.Options.expandable;
+
+
+             //       Insert the replacement string into the TeX string, and check
+             //       that there haven't been too many maxro substitutions (prevents
+             //       infinite loops).
+             const useArgument = (parser, text) => {
+                  parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                  parser.i = 0;
+                  if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                      throw new TexError('MaxMacroSub1',
+                      'MathJax maximum macro substitution count exceeded; ' +
+                      'is there a recursive macro call?');
+                  }
+             }
+
+
+             //       Create the command map for \ifstar, \ifnextchar, \seteqnumber
+             new CommandMap('ifstar-ifnextchar-setequnumber', {
+                  ifstar: 'IfstarFunction',
+                  ifnextchar: 'IfnextcharFunction',
+                  seteqnumber: 'SeteqnumberFunction'
+             }, {
+                  //      This function implements an ifstar macro.
+                  IfstarFunction(parser, name) {
+                      const resultstar = parser.GetArgument(name);
+                      const resultnostar = parser.GetArgument(name);
+                      const star = parser.GetStar();                        // true if there is a *
+                      useArgument(parser, star ? resultstar : resultnostar);
+                  },
+
+
+                  //      This function implements an ifnextchar macro.
+                  IfnextcharFunction(parser, name) {
+                      let whichchar = parser.GetArgument(name);
+                      if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                          // $ syntax highlighting
+                          whichchar = String.fromCodePoint(parseInt(whichchar));
+                      }
+                      const resultnextchar = parser.GetArgument(name);
+                      const resultnotnextchar = parser.GetArgument(name);
+                      const gotchar = (parser.GetNext() === whichchar);
+                      useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                  },
+
+
+                  //      This function modifies the equation numbers.
+                  SeteqnumberFunction(parser, name) {
+                          //   Get the macro parameters
+                          const star = parser.GetStar();                       // true if there is a *
+                          const optBrackets = parser.GetBrackets(name);        // contents of optional brackets
+                          const newsubequations = parser.GetArgument(name);       // the subequations argument
+                          const neweqsection = parser.GetArgument(name);       // the eq section argument
+                          const neweqnumber = parser.GetArgument(name);        // the eq number argument
+                          MathJax.config.subequations=newsubequations ;        // a string with boolean meaning
+                          MathJax.config.section=neweqsection ;                // a string with numeric meaning
+                          parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                  }
+             });
+
+
+             //       Create the ifstar-ifnextchar-setequnumber package
+             Configuration.create('ifstar-ifnextchar-setequnumber', {
+                  handler: {macro: ['ifstar-ifnextchar-setequnumber']}
+             });
+
+
+             MathJax.startup.defaultReady();
+
+
+             // For forward references:
+             MathJax.startup.input[0].preFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          MathJax.config.subequations = math.inputData.recompile.subequations;
+                          MathJax.config.section = math.inputData.recompile.section;
+                  }
+             });
+             MathJax.startup.input[0].postFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          math.inputData.recompile.subequations = MathJax.config.subequations;
+                          math.inputData.recompile.section = MathJax.config.section;
+                  }
+             });
+         }       // ready
+     },           // startup
+
+
+     tex: {
+         packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
+         tags: "ams",
+                  tagFormat: {
+                          number: function (n) {
+                               if(MathJax.config.subequations==0)
+                                      return(MathJax.config.section + n);
+                               else
+                                      return(MathJax.config.section + String.fromCharCode(96+n));
+                          },
+                  },
+     }
+}
+</script>
+
+
+<script
+         id="MathJax-script"
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+
+</head>
+<body>
+
+
+
+<a id="MAS350-converted-autopage-11"></a>
+<nav class="topnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+
+
+<div class="bodyandsidetoc" >
+<div class="sidetoccontainer" >
+
+
+
+<nav class="sidetoc" >
+
+
+
+<div class="sidetoctitle" >
+
+<p>
+<span class="sidetocthetitle" >Probability with Measure</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+
+<div class="sidetoccontents" >
+
+<p>
+<a href="MAS350-converted.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Introduction.html#autosec-5" class="tocchapter" >
+<span class="sectionnumber" >0</span>&#x2003;Introduction</a>
+</p>
+
+
+
+<p>
+<a href="Introduction.html#autosec-6" class="tocsection" >
+<span class="sectionnumber" >0.1</span>&#x2003;Preliminaries</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-8" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Measure Spaces and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-9" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;What is Measure?</a>
+</p>
+
+
+
+<p>
+<a href="Sigma-Fields.html#autosec-12" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;Sigma Fields</a>
+</p>
+
+
+
+<p>
+<a href="Measure.html#autosec-19" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;Measure</a>
+</p>
+
+
+
+<p>
+<a href="The-Borel-sigma-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
+<span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
+</p>
+
+
+
+<p>
+<a href="An-example-non-measurable-set-star.html#autosec-30" class="tocsection" >
+<span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
+</p>
+
+
+
+<p>
+<a href="Two-Useful-Theorems-About-Measure.html#autosec-34" class="tocsection" >
+<span class="sectionnumber" >1.6</span>&#x2003;Two Useful Theorems About Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures.html#autosec-38" class="tocsection" >
+<span class="sectionnumber" >1.7</span>&#x2003;Product Measures</a>
+</p>
+
+
+
+<p>
+<a href="Exercises-1.html#autosec-43" class="tocsection" >
+<span class="sectionnumber" >1.8</span>&#x2003;Exercises 1</a>
+</p>
+
+
+
+<p>
+<a href="Measurable-Functions.html#autosec-46" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Measurable Functions</a>
+</p>
+
+
+
+<p>
+<a href="Probability-Measure.html#autosec-48" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Probability and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures-Fubini-Theorem-Delta.html#autosec-50" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem (\(\Delta \))</a>
+</p>
+
+
+
+<p>
+<a href="Solutions-exercises.html#autosec-52" class="tocchapter" >
+<span class="sectionnumber" >A</span>&#x2003;Solutions to exercises</a>
+</p>
+
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+
+<div class="bodycontainer" >
+
+
+
+<section class="textbody" >
+
+<h1>Probability with Measure</h1>
+
+<!--MathJax customizations:-->
+
+
+
+<div class="hidden" >
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\nN }{n \in \mathbb {N}}\)
+
+\(\newcommand {\Br }{{\cal B}(\R )}\)
+
+\(\newcommand {\F }{{\cal F}}\)
+
+\(\newcommand {\ds }{\displaystyle }\)
+
+\(\newcommand {\st }{\stackrel {d}{=}}\)
+
+\(\newcommand {\uc }{\stackrel {uc}{\rightarrow }}\)
+
+\(\newcommand {\la }{\langle }\)
+
+\(\newcommand {\ra }{\rangle }\)
+
+\(\newcommand {\li }{\liminf _{n \rightarrow \infty }}\)
+
+\(\newcommand {\ls }{\limsup _{n \rightarrow \infty }}\)
+
+\(\newcommand {\limn }{\lim _{n \rightarrow \infty }}\)
+
+\(\def \to {\rightarrow }\)
+
+\(\def \iff {\Leftrightarrow }\)
+
+\(\def \sw {\subseteq }\)
+
+\(\def \mc {\mathcal }\)
+
+\(\def \mb {\mathbb }\)
+
+\(\def \sc {\setminus }\)
+
+\(\def \v {\textbf }\)
+
+\(\def \E {\mb {E}}\)
+
+\(\def \P {\mb {P}}\)
+
+\(\def \R {\mb {R}}\)
+
+\(\def \C {\mb {C}}\)
+
+\(\def \N {\mb {N}}\)
+
+\(\def \Q {\mb {Q}}\)
+
+\(\def \Z {\mb {Z}}\)
+
+\(\def \B {\mb {B}}\)
+
+\(\def \~{\sim }\)
+
+\(\def \-{\,;\,}\)
+
+\(\def \qed {$\blacksquare $}\)
+
+\(\def \1{\unicode {x1D7D9}}\)
+
+\(\def \cadlag {c\‘{a}dl\‘{a}g}\)
+
+\(\def \p {\partial }\)
+
+\(\def \l {\left }\)
+
+\(\def \r {\right }\)
+
+\(\def \Om {\Omega }\)
+
+\(\def \om {\omega }\)
+
+</div>
+
+<p>
+<h4 id="autosec-12"><span class="sectionnumber" >1.2&#x2003;</span>Sigma Fields</h4>
+<a id="MAS350-converted-autopage-12"></a>
+<a id="MAS350-converted-autofile-3"></a> So far we have only discussed length but now we want to be more ambitious. Let \(S\) be an arbitrary set. We want to define mappings from subsets of \(S\) to
+\([0, \infty ]\) which we will continue to denote by \(m\). These will be called measures and they will share some of the properties that we’ve just been looking at for measures of length. Now on what type of
+subset of \(S\) can \(m\) be defined? The power set of \(S\) is \({\cal P}(S)\) and we have just argued that this could be too large for our purposes as it may contain sets that can’t be measured.
+
+<p>
+Suppose that \(A\) and \(B\) are subsets of \(S\) that we can measure. Then we should surely be able to measure the complement \(A^{c}\), the union \(A \cup B\) and the whole set \(S\). Note that we can
+then also measure \(A \cap B = (A^{c} \cup B^{c})^{c}\). This leads to a definition
+</p>
+<div class="theorembodydefn" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-3"></a>
+
+<li>
+
+<p>
+<span class="theoremheaderplain" >Definition 1.2.1</span> <a id="autoid-4" ></a >Let \(S\) be a set. A Boolean algebra \(\mathbf B\) is a set of subsets of \(S\) that has the following properties
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+B(i) \(S \in {\mathbf B}\),
+</p>
+
+
+</li>
+<li>
+<p>
+B(ii) If \(A,B \in {\mathbf B}\) then \(A \cup B \in {\mathbf B}\),
+</p>
+
+
+</li>
+<li>
+<p>
+B(iii) If \(A \in {\mathbf B}\) then \(A^{c} \in {\mathbf B}\).
+</p>
+</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Note that \(\mathbf {B}\) is a set, and each element of \(\mathbf {B}\) is a subset of \(S\). In other words, \(\mathbf {B}\) is a subset of the power set \(\mc {P}(S)\). In this course we will frequently work
+with sets, whose elements are sets. It’s important to get used to working with these objects; don’t forget the difference between \(\{\{1\},\{2\}\}\) and \(\{1,2\}\).
+</p>
+
+<p>
+Boolean algebras are named after the British mathematician George Boole (1815-1864) who introduced them in his book The Laws of Thought published in 1854. They are well studied mathematical objects that are
+extremely useful in logic and digital electronics. It turns out that they are inadequate for our own purposes – we need a little more sophistication.
+</p>
+
+<p>
+If we use induction on B(ii) then we can show that, if \(A_{1}, A_{2}, \ldots A_{n} \in {\mathbf B}\) then \(A_{1} \cup A_{2} \cup \cdots \cup A_{n} \in {\mathbf B}\). This is left for you to prove,
+in Problem <a href="Exercises-1.html#ps:boolean_union"><b>1.1</b></a>. But we need to be able to do analysis and this requires us to be able to handle infinite unions. The next definition gives us what we
+need:
+</p>
+<div class="theorembodydefn" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-5"></a>
+
+<li>
+
+<p>
+<span class="theoremheaderplain" >Definition 1.2.2</span> <a id="autoid-6" ></a >Let \(S\) be a set. A \(\sigma \)-field \(\Sigma \) is a set of subsets of \(S\) that has the following properties
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+S(i) \(S \in \Sigma \),
+</p>
+
+
+</li>
+<li>
+<p>
+S(ii) If \((A_{n})\) is a sequence of sets with \(A_{n} \in \Sigma \) for all \(\nN \) then \(\bigcup _{n=1}^{\infty }A_{n} \in \Sigma \),
+</p>
+
+
+</li>
+<li>
+<p>
+S(iii) If \(A \in \Sigma \) then \(A^{c} \in \Sigma \).
+</p>
+</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+</div>
+
+<p>
+The terms \(\sigma \)-field and \(\sigma \)-algebra have the same meaning (this is an unfortunate accident of history!). Often you will find that ‘\(\sigma \)-field’ is used in advanced texts and ‘\(\sigma
+\)-algebra’ is used within lecture courses. I prefer \(\sigma \)-field, you may use either.
+</p>
+
+<p>
+Lastly, a piece of terminology.
+</p>
+<div class="theorembodydefn" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-7"></a>
+
+<li>
+
+<p>
+<span class="theoremheaderplain" >Definition 1.2.3</span> <a id="autoid-8" ></a >Given a \(\sigma \)-field \(\Sigma \) on \(S\), we say that a set \(A \subset S\) is measurable if \(A \in \Sigma \)
+</p>
+
+
+</li>
+
+</ul>
+
+</div>
+<h5 id="autosec-16">Facts about \(\sigma \)-fields</h5>
+<a id="MAS350-converted-autopage-16"></a>
+
+
+
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+• By S(i) and S(iii), \(\emptyset = S^{c} \in \Sigma \).
+</p>
+</li>
+<li>
+<p>
+• We have seen in S(ii) that infinite unions of sets in \(\Sigma \) are themselves in \(\Sigma \). The same is true of finite unions. To see this let \(A_{1}, \ldots , A_{m} \in \Sigma \) and define the
+sequence \((A_{n}^{\prime })\) by \(A_{n}^{\prime } = \left \{ \begin {array}{c c} &amp; A_{n} ~\mbox {if}~1 \leq n \leq m\\ &amp; \emptyset ~\mbox {if}~n &gt; m \end {array} \right
+.\) Now apply S(ii) to get the result. We can deduce from this that every \(\sigma \)-field is a Boolean algebra.
+</p>
+</li>
+<li>
+<p>
+• \(\Sigma \) is also closed under infinite (or finite) intersections. To see this use de Morgan’s law to write
+</p>
+<p>
+\[ \bigcap _{i=1}^{\infty } A_{i} = \left (\bigcup _{i=1}^{\infty } A_{i}^{c}\right )^{c}.\]
+</p>
+</li>
+<li>
+<p>
+• \(\Sigma \) is closed under set theoretic differences \(A-B\), since (by definition) \(A-B = A \cap B^{c}\).
+</p>
+<p>
+
+
+</p>
+</li>
+</ul>
+<h5 id="autosec-17">Examples of \(\sigma \)-fields</h5>
+<a id="MAS350-converted-autopage-17"></a>
+
+
+
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. \({\cal P}(S)\) is a \(\sigma \)-field. If \(S\) is finite with \(n\) elements then \({\cal P}(S)\) has \(2^{n}\) elements (Problem <a href="Exercises-1.html#ps:size_Pn"><b>1.2</b></a>).
+</p>
+</li>
+<li>
+<p>
+2. For any set \(S\), \(\{\emptyset , S\}\) is a \(\sigma \)-field which is called the trivial \(\sigma \)-field. It is the basic tool for modelling logic circuitry where \(\emptyset \) corresponds to “OFF” and
+\(S\) to “ON”.
+</p>
+</li>
+<li>
+<p>
+3. If \(S\) is any set and \(A \subset S\) then \(\{\emptyset , A, A^{c},S\}\) is a \(\sigma \)-field .
+</p>
+</li>
+<li>
+<p>
+4. The most important \(\sigma \)-field for studying the measure of length is the Borel \(\sigma \)-field of \(\R \) which is denoted \({\cal B}(\R )\). It is named after the French mathematican Emile Borel
+(1871-1956) who was one of the founders of measure theory. It is defined rather indirectly and we postpone this definition until after the next section.
+</p>
+<p>
+
+
+</p>
+</li>
+</ul>
+
+<p>
+A pair \((S, \Sigma )\) where \(S\) is a set and \(\Sigma \) is a \(\sigma \)-field of subsets of \(S\) is called a measurable space There are typically many possible choices of \(\Sigma \) to attach to \(S\). For
+example we can always take \(\Sigma \) to be trivial or the power set. The choice of \(\Sigma \) is determined by what we want to measure.
+</p>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk
+</p>
+
+</footer>
+
+
+
+<nav class="botnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Nic Freeman" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="MAS350 Probability with Measure, Sheffield University, Sept 2020." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAS350 — Introduction</title>
+<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+     subequations: "0",
+     section: "",
+     loader: {
+         load: ['[tex]/tagFormat'],
+     },
+     startup: {
+         ready() {
+             //       These would be replaced by import commands if you wanted to make
+             //       a proper extension.
+             const Configuration = MathJax._.input.tex.Configuration.Configuration;
+             const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+             const Macro = MathJax._.input.tex.Symbol.Macro;
+             const TexError = MathJax._.input.tex.TexError.default;
+             const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+             const expandable = MathJax._.util.Options.expandable;
+
+
+             //       Insert the replacement string into the TeX string, and check
+             //       that there haven't been too many maxro substitutions (prevents
+             //       infinite loops).
+             const useArgument = (parser, text) => {
+                  parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                  parser.i = 0;
+                  if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                      throw new TexError('MaxMacroSub1',
+                      'MathJax maximum macro substitution count exceeded; ' +
+                      'is there a recursive macro call?');
+                  }
+             }
+
+
+             //       Create the command map for \ifstar, \ifnextchar, \seteqnumber
+             new CommandMap('ifstar-ifnextchar-setequnumber', {
+                  ifstar: 'IfstarFunction',
+                  ifnextchar: 'IfnextcharFunction',
+                  seteqnumber: 'SeteqnumberFunction'
+             }, {
+                  //      This function implements an ifstar macro.
+                  IfstarFunction(parser, name) {
+                      const resultstar = parser.GetArgument(name);
+                      const resultnostar = parser.GetArgument(name);
+                      const star = parser.GetStar();                        // true if there is a *
+                      useArgument(parser, star ? resultstar : resultnostar);
+                  },
+
+
+                  //      This function implements an ifnextchar macro.
+                  IfnextcharFunction(parser, name) {
+                      let whichchar = parser.GetArgument(name);
+                      if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                          // $ syntax highlighting
+                          whichchar = String.fromCodePoint(parseInt(whichchar));
+                      }
+                      const resultnextchar = parser.GetArgument(name);
+                      const resultnotnextchar = parser.GetArgument(name);
+                      const gotchar = (parser.GetNext() === whichchar);
+                      useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                  },
+
+
+                  //      This function modifies the equation numbers.
+                  SeteqnumberFunction(parser, name) {
+                          //   Get the macro parameters
+                          const star = parser.GetStar();                       // true if there is a *
+                          const optBrackets = parser.GetBrackets(name);        // contents of optional brackets
+                          const newsubequations = parser.GetArgument(name);       // the subequations argument
+                          const neweqsection = parser.GetArgument(name);       // the eq section argument
+                          const neweqnumber = parser.GetArgument(name);        // the eq number argument
+                          MathJax.config.subequations=newsubequations ;        // a string with boolean meaning
+                          MathJax.config.section=neweqsection ;                // a string with numeric meaning
+                          parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                  }
+             });
+
+
+             //       Create the ifstar-ifnextchar-setequnumber package
+             Configuration.create('ifstar-ifnextchar-setequnumber', {
+                  handler: {macro: ['ifstar-ifnextchar-setequnumber']}
+             });
+
+
+             MathJax.startup.defaultReady();
+
+
+             // For forward references:
+             MathJax.startup.input[0].preFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          MathJax.config.subequations = math.inputData.recompile.subequations;
+                          MathJax.config.section = math.inputData.recompile.section;
+                  }
+             });
+             MathJax.startup.input[0].postFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          math.inputData.recompile.subequations = MathJax.config.subequations;
+                          math.inputData.recompile.section = MathJax.config.section;
+                  }
+             });
+         }       // ready
+     },           // startup
+
+
+     tex: {
+         packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
+         tags: "ams",
+                  tagFormat: {
+                          number: function (n) {
+                               if(MathJax.config.subequations==0)
+                                      return(MathJax.config.section + n);
+                               else
+                                      return(MathJax.config.section + String.fromCharCode(96+n));
+                          },
+                  },
+     }
+}
+</script>
+
+
+<script
+         id="MathJax-script"
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+
+</head>
+<body>
+
+
+
+<a id="MAS350-converted-autopage-4"></a>
+<nav class="topnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+
+
+<div class="bodyandsidetoc" >
+<div class="sidetoccontainer" >
+
+
+
+<nav class="sidetoc" >
+
+
+
+<div class="sidetoctitle" >
+
+<p>
+<span class="sidetocthetitle" >Probability with Measure</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+
+<div class="sidetoccontents" >
+
+<p>
+<a href="MAS350-converted.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Introduction.html#autosec-5" class="tocchapter" >
+<span class="sectionnumber" >0</span>&#x2003;Introduction</a>
+</p>
+
+
+
+<p>
+<a href="Introduction.html#autosec-6" class="tocsection" >
+<span class="sectionnumber" >0.1</span>&#x2003;Preliminaries</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-8" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Measure Spaces and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-9" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;What is Measure?</a>
+</p>
+
+
+
+<p>
+<a href="Sigma-Fields.html#autosec-12" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;Sigma Fields</a>
+</p>
+
+
+
+<p>
+<a href="Measure.html#autosec-19" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;Measure</a>
+</p>
+
+
+
+<p>
+<a href="The-Borel-sigma-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
+<span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
+</p>
+
+
+
+<p>
+<a href="An-example-non-measurable-set-star.html#autosec-30" class="tocsection" >
+<span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
+</p>
+
+
+
+<p>
+<a href="Two-Useful-Theorems-About-Measure.html#autosec-34" class="tocsection" >
+<span class="sectionnumber" >1.6</span>&#x2003;Two Useful Theorems About Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures.html#autosec-38" class="tocsection" >
+<span class="sectionnumber" >1.7</span>&#x2003;Product Measures</a>
+</p>
+
+
+
+<p>
+<a href="Exercises-1.html#autosec-43" class="tocsection" >
+<span class="sectionnumber" >1.8</span>&#x2003;Exercises 1</a>
+</p>
+
+
+
+<p>
+<a href="Measurable-Functions.html#autosec-46" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Measurable Functions</a>
+</p>
+
+
+
+<p>
+<a href="Probability-Measure.html#autosec-48" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Probability and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures-Fubini-Theorem-Delta.html#autosec-50" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem (\(\Delta \))</a>
+</p>
+
+
+
+<p>
+<a href="Solutions-exercises.html#autosec-52" class="tocchapter" >
+<span class="sectionnumber" >A</span>&#x2003;Solutions to exercises</a>
+</p>
+
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+
+<div class="bodycontainer" >
+
+
+
+<section class="textbody" >
+
+<h1>Probability with Measure</h1>
+
+<!--MathJax customizations:-->
+
+
+
+<div class="hidden" >
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\nN }{n \in \mathbb {N}}\)
+
+\(\newcommand {\Br }{{\cal B}(\R )}\)
+
+\(\newcommand {\F }{{\cal F}}\)
+
+\(\newcommand {\ds }{\displaystyle }\)
+
+\(\newcommand {\st }{\stackrel {d}{=}}\)
+
+\(\newcommand {\uc }{\stackrel {uc}{\rightarrow }}\)
+
+\(\newcommand {\la }{\langle }\)
+
+\(\newcommand {\ra }{\rangle }\)
+
+\(\newcommand {\li }{\liminf _{n \rightarrow \infty }}\)
+
+\(\newcommand {\ls }{\limsup _{n \rightarrow \infty }}\)
+
+\(\newcommand {\limn }{\lim _{n \rightarrow \infty }}\)
+
+\(\def \to {\rightarrow }\)
+
+\(\def \iff {\Leftrightarrow }\)
+
+\(\def \sw {\subseteq }\)
+
+\(\def \mc {\mathcal }\)
+
+\(\def \mb {\mathbb }\)
+
+\(\def \sc {\setminus }\)
+
+\(\def \v {\textbf }\)
+
+\(\def \E {\mb {E}}\)
+
+\(\def \P {\mb {P}}\)
+
+\(\def \R {\mb {R}}\)
+
+\(\def \C {\mb {C}}\)
+
+\(\def \N {\mb {N}}\)
+
+\(\def \Q {\mb {Q}}\)
+
+\(\def \Z {\mb {Z}}\)
+
+\(\def \B {\mb {B}}\)
+
+\(\def \~{\sim }\)
+
+\(\def \-{\,;\,}\)
+
+\(\def \qed {$\blacksquare $}\)
+
+\(\def \1{\unicode {x1D7D9}}\)
+
+\(\def \cadlag {c\‘{a}dl\‘{a}g}\)
+
+\(\def \p {\partial }\)
+
+\(\def \l {\left }\)
+
+\(\def \r {\right }\)
+
+\(\def \Om {\Omega }\)
+
+\(\def \om {\omega }\)
+
+</div>
+
+<p>
+<h3 id="autosec-5">Chapter&nbsp;<span class="sectionnumber" >0&#x2003;</span>Introduction</h3>
+<a id="MAS350-converted-autopage-5"></a>
+<a id="MAS350-converted-autofile-1"></a>
+
+<p>
+OMITTED
+</p>
+<h4 id="autosec-6"><span class="sectionnumber" >0.1&#x2003;</span>Preliminaries</h4>
+<a id="MAS350-converted-autopage-6"></a>
+
+
+
+<p>
+This section contains lots of definitions, from earlier courses, that we will use in MAS350. Most of the material here should be familiar to you. There may be one or two minor extensions of ideas you have seen
+before.
+</p>
+
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. Set Theory.
+</p>
+<p>
+Let \(S\) be a set and \(A,B,C, \ldots \) be subsets.
+</p>
+<p>
+\(A^{c}\) is the complement of \(A\) in \(S\) so that
+</p>
+<p>
+\[ A^{c} = \{x \in S; x \notin A\}.\]
+</p>
+<p>
+Union \(A \cup B = \{x \in S; x \in A~\mbox {or}~x \in B\}\).
+</p>
+<p>
+Intersection \(A \cap B = \{x \in S; x \in A~\mbox {and}~x \in B\}\).
+</p>
+<p>
+Set theoretic difference: \(A - B = A \cap B^{c}\).
+</p>
+<p>
+We have finite and infinite unions and intersections so if \(A_{1}, A_{2}, \ldots , A_{n}\) are subsets of \(S\).
+</p>
+<p>
+\[\begin {aligned} \bigcup _{i=1}^{n} A_{i} &amp;= A_{1} \cup A_{2} \cup \ldots \cup A_{n}.\\ \bigcap _{i=1}^{n} A_{i} &amp;= A_{1} \cap A_{2} \cap \ldots \cap A_{n}.                                  \end
+{aligned}\]
+</p>
+<p>
+We will also need infinite unions and intersections. So let \((A_{n})\) be a sequence of subsets in \(S\).
+</p>
+<p>
+Let \(x \in S\). We say that \(x \in \bigcup _{i=1}^{\infty } A_{i}\) if \(x \in A_{i}\) for at least one value of \(i\). We say that \(x \in \bigcap _{i=1}^{\infty } A_{i}\) if \(x \in A_{i}\) for
+all values of \(i\).
+</p>
+<p>
+Note that de Morgan’s laws hold in this context:
+</p>
+<p>
+\[ \left (\bigcap _{i=1}^{\infty } A_{i}\right )^{c} = \bigcup _{i=1}^{\infty } A_{i}^{c}.\]
+</p>
+<p>
+\[ \left (\bigcup _{i=1}^{\infty } A_{i}\right )^{c} = \bigcap _{i=1}^{\infty } A_{i}^{c}.\]
+</p>
+<p>
+The Cartesian product \(S \times T\) of sets \(S\) and \(T\) is
+</p>
+<p>
+\[ S \times T = \{(s,t); s \in s, t \in T\}.\]
+</p>
+</li>
+<li>
+<p>
+2. Sets of Numbers
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+• Natural numbers \(\N = \{1, 2,3, \ldots \}\).
+</p>
+
+
+</li>
+<li>
+<p>
+• Non-negative integers \(\Z _{+} = \N \cup \{0\} = \{0,1, 2,3, \ldots \}\).
+</p>
+
+
+</li>
+<li>
+<p>
+• Integers \(\Z \).
+</p>
+
+
+</li>
+<li>
+<p>
+• Rational numbers \(\mathbb {Q}\).
+</p>
+
+
+</li>
+<li>
+<p>
+• Real numbers \(\R \).
+</p>
+
+
+</li>
+<li>
+<p>
+• Complex numbers \(\C \).
+</p>
+</li>
+</ul>
+<p>
+A set \(X\) is countable if there exists an injection between \(X\) and \(\N \). A set is uncountable if it fails to be countable. \(\N , \Z _{+}, \Z \) and \(\Q \) are countable. \(\R \) and \(\C \) are
+uncountable. All finite sets are countable.
+</p>
+</li>
+<li>
+<p>
+3. Images and Preimages.
+</p>
+<p>
+Suppose that \(S_{1}\) and \(S_{2}\) are two sets and that \(f:S_{1} \rightarrow S_{2}\) is a mapping (or function). Suppose that \(A \subseteq S_{1}\). The image of \(A\) under \(f\) is the set \(f(A)
+\subseteq S_{2}\) defined by
+</p>
+<p>
+\[ f(A) = \{y \in S_{2}; y = f(x)~\mbox {for some}~x \in S_{1}\}.\]
+</p>
+<p>
+If \(B \subseteq S_{2}\) the inverse image of \(B\) under \(f\) is the set \(f^{-1}(B) \subseteq S_{1}\) defined by
+</p>
+<p>
+\[ f^{-1}(B) = \{x \in S_{1} ; f(x) \in B\}.\]
+</p>
+<p>
+Note that \(f^{-1}(B)\) makes sense irrespective of whether the mapping \(f\) is invertible.
+</p>
+<p>
+Key properties are, with \(A, A_{1}, A_{2} \subseteq S_{1}\) and \(B, B_{1}, B_{2} \subseteq S_{2}\) :
+</p>
+<p>
+\[\begin {aligned} f^{-1}(B_{1} \cup B_{2}) &amp;= f^{-1}(B_{1}) \cup f^{-1}(B_{2}),\\ f^{-1}(B_{1} \cap B_{2}) &amp;= f^{-1}(B_{1}) \cap f^{-1}(B_{2}),\\ f^{-1}(A^{c}) &amp;=
+f^{-1}(A)^{c},\\ f(A_{1} \cup A_{2}) &amp;= f(A_{1}) \cup f(A_{2}),\\ f(A_{1} \cap A_{2}) &amp;\subseteq f(A_{1}) \cap f(A_{2}),\\ f(f^{-1}(B)) &amp;\subseteq B~~\\ (f\circ
+g)^{-1}(A) &amp;= g^{-1}(f^{-1}(A)) \\ A &amp;\subseteq f^{-1}(f(A)),\\ A \subseteq B \quad \Rightarrow \quad f^{-1}(A) &amp;\subseteq f^{-1}(B).\\ \end {aligned}\]
+</p>
+</li>
+<li>
+<p>
+4. Extended Real Numbers
+</p>
+<p>
+We will often find it convenient to work with \(\infty \) and \(-\infty \). These are <i>not</i> real numbers, but we find it convenient to treat them a bit like real numbers. To do so we specify the extra
+arithmetic rules, for all \(x\in \R \),
+</p>
+<p>
+\[ \infty + x = x + \infty = \infty ,\]
+</p>
+<p>
+\[ x - \infty = -\infty + x = -\infty ,\]
+</p>
+<p>
+\[ \infty .      x = x.\infty = \infty ~\mbox {for}~x &gt; 0,\]
+</p>
+<p>
+\[ \infty .      x = x.\infty = -\infty ~\mbox {for}~x &lt; 0,\]
+</p>
+<p>
+\[ \infty .0 = 0.\infty = 0.\]
+</p>
+<p>
+Note that \(\infty - \infty \), \(\infty .\infty \) and \(\frac {\infty }{\infty }\) are undefined. We also specify that, for all \(x\in \R \),
+</p>
+<p>
+\[-\infty &lt; x &lt; \infty .\]
+</p>
+<p>
+We write \(\R ^{*} = \{-\infty \} \cup \R \cup \{\infty \}\), which is known as the <i>extended</i> real numbers.
+</p>
+</li>
+<li>
+<p>
+5. Analysis.
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+• sup and inf. If \(A\) is a bounded set of real numbers, we write \(\sup (A)\) and \(\inf (A)\) for the real numbers that are their least upper bounds and greatest lower bounds (respectively.) If \(A\) fails to be
+bounded above, we write \(\sup (A) = \infty \) and if \(A\) fails to be bounded below we write \(\inf (A) = - \infty \). Note that \(\inf (A) = -\sup (-A)\) where \(-A = \{-x; x \in A\}\). If \(f:
+S \rightarrow \R \) is a mapping, we write \(\sup _{x \in S}f(x)= \sup \{f(x); x \in S\}\). A very useful inequality is
+</p>
+<p>
+\[ \sup _{x \in S}|f(x) + g(x)| \leq \sup _{x \in S}|f(x)| + \sup _{x \in S}|g(x)|.\]
+</p>
+</li>
+<li>
+<p>
+• Sequences and Limits. Let \((a_{n}) = (a_{1}, a_{2}, a_{3}, \ldots )\) be a sequence of real numbers. It converges to the real number \(a\) if given any \(\epsilon &gt; 0\) there exists a natural
+number \(N\) so that whenever \(n &gt; N\) we have \(|a - a_{n}| &lt; \epsilon \). We then write \(a = \lim _{n \rightarrow \infty }a_{n}\).
+</p>
+<p>
+A sequence \((a_{n})\) which is monotonic increasing (i.e. \(a_{n} \leq a_{n+1}\) for all \(\nN \)) and bounded above (i.e. there exists \(K &gt; 0\) so that \(a_{n} \leq K\) for all \(\nN \)) converges to
+\(\sup _{\nN }a_{n}\).
+</p>
+<p>
+A sequence \((a_{n})\) which is monotonic decreasing (i.e. \(a_{n+1} \leq a_{n}\) for all \(\nN \)) and bounded below (i.e. there exists \(L &gt; 0\) so that \(a_{n} \geq L\) for all \(\nN \)) converges to
+\(\inf _{\nN }a_{n}\).
+</p>
+<p>
+A subsequence of a sequence \((a_{n})\) is itself a sequence of the form \((a_{n_{k}})\) where \(n_{k_{1}} &lt; n_{k_{2}}\) when \(k_{1} &lt; k_{2}\).
+</p>
+</li>
+<li>
+<p>
+• Series. If the sequence \((s_{n})\) converges to a limit \(s\) where \(s_{n} = a_{1} + a_{2} + \cdots + a_{n}\) we write \(s = \sum _{n=1}^{\infty }a_{n}\) and call it the sum of the series. If each
+\(a_{n} \geq 0\) then the sequence \((s_{n})\) is either convergent to a limit or properly divergent to infinity. In the latter case we write \(s = \infty \) and interpret this in the sense of extended real
+numbers.
+</p>
+</li>
+<li>
+<p>
+• Continuity. A function \(f:\R \rightarrow \R \) is continuous at \(a \in \R \) if given any \(\epsilon &gt; 0\) there exists \(\delta &gt; 0\) so that \(|x - a| &lt; \delta \Rightarrow |f(x)
+-f(a)| &lt; \epsilon \). Equivalently \(f\) is continuous at \(a\) if given any sequence \((a_{n})\) that converges to \(a\), the sequence \((f(a_{n}))\) converges to \(f(a)\).
+</p>
+<p>
+\(f\) is a continuous function if it is continuous at every \(a \in \R \).
+</p>
+<p>
+
+
+</p>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk
+</p>
+
+</footer>
+
+
+
+<nav class="botnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+\let\LWR@enumitem@orignewlist\newlist
+
+\renewcommand*{\newlist}[3]{%
+\LWR@enumitem@orignewlist{#1}{#2}{#3}%
+\AtBeginEnvironment{#1}{\@nameuse{LWR@#2start}}%
+\AtEndEnvironment{#1}{\@nameuse{LWR@#2end}}%
+}
+
+\def\DrawEnumitemLabel{}
+

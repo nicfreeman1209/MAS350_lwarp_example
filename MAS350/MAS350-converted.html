@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Nic Freeman" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="MAS350 Probability with Measure, Sheffield University, Sept 2020." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAS350</title>
+<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+
+
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+     subequations: "0",
+     section: "",
+     loader: {
+         load: ['[tex]/tagFormat'],
+     },
+     startup: {
+         ready() {
+             //       These would be replaced by import commands if you wanted to make
+             //       a proper extension.
+             const Configuration = MathJax._.input.tex.Configuration.Configuration;
+             const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+             const Macro = MathJax._.input.tex.Symbol.Macro;
+             const TexError = MathJax._.input.tex.TexError.default;
+             const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+             const expandable = MathJax._.util.Options.expandable;
+
+
+             //       Insert the replacement string into the TeX string, and check
+             //       that there haven't been too many maxro substitutions (prevents
+             //       infinite loops).
+             const useArgument = (parser, text) => {
+                  parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                  parser.i = 0;
+                  if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                      throw new TexError('MaxMacroSub1',
+                      'MathJax maximum macro substitution count exceeded; ' +
+                      'is there a recursive macro call?');
+                  }
+             }
+
+
+             //       Create the command map for \ifstar, \ifnextchar, \seteqnumber
+             new CommandMap('ifstar-ifnextchar-setequnumber', {
+                  ifstar: 'IfstarFunction',
+                  ifnextchar: 'IfnextcharFunction',
+                  seteqnumber: 'SeteqnumberFunction'
+             }, {
+                  //      This function implements an ifstar macro.
+                  IfstarFunction(parser, name) {
+                      const resultstar = parser.GetArgument(name);
+                      const resultnostar = parser.GetArgument(name);
+                      const star = parser.GetStar();                        // true if there is a *
+                      useArgument(parser, star ? resultstar : resultnostar);
+                  },
+
+
+                  //      This function implements an ifnextchar macro.
+                  IfnextcharFunction(parser, name) {
+                      let whichchar = parser.GetArgument(name);
+                      if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                          // $ syntax highlighting
+                          whichchar = String.fromCodePoint(parseInt(whichchar));
+                      }
+                      const resultnextchar = parser.GetArgument(name);
+                      const resultnotnextchar = parser.GetArgument(name);
+                      const gotchar = (parser.GetNext() === whichchar);
+                      useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                  },
+
+
+                  //      This function modifies the equation numbers.
+                  SeteqnumberFunction(parser, name) {
+                          //   Get the macro parameters
+                          const star = parser.GetStar();                       // true if there is a *
+                          const optBrackets = parser.GetBrackets(name);        // contents of optional brackets
+                          const newsubequations = parser.GetArgument(name);       // the subequations argument
+                          const neweqsection = parser.GetArgument(name);       // the eq section argument
+                          const neweqnumber = parser.GetArgument(name);        // the eq number argument
+                          MathJax.config.subequations=newsubequations ;        // a string with boolean meaning
+                          MathJax.config.section=neweqsection ;                // a string with numeric meaning
+                          parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                  }
+             });
+
+
+             //       Create the ifstar-ifnextchar-setequnumber package
+             Configuration.create('ifstar-ifnextchar-setequnumber', {
+                  handler: {macro: ['ifstar-ifnextchar-setequnumber']}
+             });
+
+
+             MathJax.startup.defaultReady();
+
+
+             // For forward references:
+             MathJax.startup.input[0].preFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          MathJax.config.subequations = math.inputData.recompile.subequations;
+                          MathJax.config.section = math.inputData.recompile.section;
+                  }
+             });
+             MathJax.startup.input[0].postFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          math.inputData.recompile.subequations = MathJax.config.subequations;
+                          math.inputData.recompile.section = MathJax.config.section;
+                  }
+             });
+         }       // ready
+     },           // startup
+
+
+     tex: {
+         packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
+         tags: "ams",
+                  tagFormat: {
+                          number: function (n) {
+                               if(MathJax.config.subequations==0)
+                                      return(MathJax.config.section + n);
+                               else
+                                      return(MathJax.config.section + String.fromCharCode(96+n));
+                          },
+                  },
+     }
+}
+</script>
+
+
+<script
+         id="MathJax-script"
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+</head>
+<body>
+<header>
+
+
+<p>
+MAS350
+</p>
+</header>
+
+<div class="bodywithoutsidetoc" >
+
+
+<div class="bodycontainer" >
+
+
+<section class="textbody" >
+
+<a id="MAS350-converted-autofile-0"></a>
+
+<!--MathJax customizations:-->
+
+
+<div class="hidden" >
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\nN }{n \in \mathbb {N}}\)
+
+\(\newcommand {\Br }{{\cal B}(\R )}\)
+
+\(\newcommand {\F }{{\cal F}}\)
+
+\(\newcommand {\ds }{\displaystyle }\)
+
+\(\newcommand {\st }{\stackrel {d}{=}}\)
+
+\(\newcommand {\uc }{\stackrel {uc}{\rightarrow }}\)
+
+\(\newcommand {\la }{\langle }\)
+
+\(\newcommand {\ra }{\rangle }\)
+
+\(\newcommand {\li }{\liminf _{n \rightarrow \infty }}\)
+
+\(\newcommand {\ls }{\limsup _{n \rightarrow \infty }}\)
+
+\(\newcommand {\limn }{\lim _{n \rightarrow \infty }}\)
+
+\(\def \to {\rightarrow }\)
+
+\(\def \iff {\Leftrightarrow }\)
+
+\(\def \sw {\subseteq }\)
+
+\(\def \mc {\mathcal }\)
+
+\(\def \mb {\mathbb }\)
+
+\(\def \sc {\setminus }\)
+
+\(\def \v {\textbf }\)
+
+\(\def \E {\mb {E}}\)
+
+\(\def \P {\mb {P}}\)
+
+\(\def \R {\mb {R}}\)
+
+\(\def \C {\mb {C}}\)
+
+\(\def \N {\mb {N}}\)
+
+\(\def \Q {\mb {Q}}\)
+
+\(\def \Z {\mb {Z}}\)
+
+\(\def \B {\mb {B}}\)
+
+\(\def \~{\sim }\)
+
+\(\def \-{\,;\,}\)
+
+\(\def \qed {$\blacksquare $}\)
+
+\(\def \1{\unicode {x1D7D9}}\)
+
+\(\def \cadlag {c\‘{a}dl\‘{a}g}\)
+
+\(\def \p {\partial }\)
+
+\(\def \l {\left }\)
+
+\(\def \r {\right }\)
+
+\(\def \Om {\Omega }\)
+
+\(\def \om {\omega }\)
+
+</div>
+
+<a id="MAS350-converted-autopage-1"></a>
+<div class="titlepage" >
+
+<h1>Probability with Measure</h1>
+
+
+<div class="author" >
+
+
+<div class="oneauthor" >
+
+<p>
+Dr Nic Freeman
+</p>
+</div>
+
+</div>
+
+
+<div class="titledate" >
+
+<p>
+September 16, 2020
+</p>
+</div>
+
+</div>
+<h3 id="autosec-3">Contents</h3>
+<a id="MAS350-converted-autopage-3"></a>
+
+
+
+
+<nav class="toc" >
+
+<p>
+<a href="Introduction.html#autosec-5" class="tocchapter" >
+<span class="sectionnumber" >0</span>&#x2003;Introduction</a>
+</p>
+
+
+
+<p>
+<a href="Introduction.html#autosec-6" class="tocsection" >
+<span class="sectionnumber" >0.1</span>&#x2003;Preliminaries</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-8" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Measure Spaces and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-9" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;What is Measure?</a>
+</p>
+
+
+
+<p>
+<a href="Sigma-Fields.html#autosec-12" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;Sigma Fields</a>
+</p>
+
+
+
+<p>
+<a href="Measure.html#autosec-19" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;Measure</a>
+</p>
+
+
+
+<p>
+<a href="The-Borel-sigma-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
+<span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
+</p>
+
+
+
+<p>
+<a href="An-example-non-measurable-set-star.html#autosec-30" class="tocsection" >
+<span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
+</p>
+
+
+
+<p>
+<a href="Two-Useful-Theorems-About-Measure.html#autosec-34" class="tocsection" >
+<span class="sectionnumber" >1.6</span>&#x2003;Two Useful Theorems About Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures.html#autosec-38" class="tocsection" >
+<span class="sectionnumber" >1.7</span>&#x2003;Product Measures</a>
+</p>
+
+
+
+<p>
+<a href="Exercises-1.html#autosec-43" class="tocsection" >
+<span class="sectionnumber" >1.8</span>&#x2003;Exercises 1</a>
+</p>
+
+
+
+<p>
+<a href="Measurable-Functions.html#autosec-46" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Measurable Functions</a>
+</p>
+
+
+
+<p>
+<a href="Probability-Measure.html#autosec-48" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Probability and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures-Fubini-Theorem-Delta.html#autosec-50" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem (\(\Delta \))</a>
+</p>
+
+
+
+<p>
+<a href="Solutions-exercises.html#autosec-52" class="tocchapter" >
+<span class="sectionnumber" >A</span>&#x2003;Solutions to exercises</a>
+</p>
+</nav>
+
+</section>
+
+</div>
+
+</div>
+
+</body>
+</html>

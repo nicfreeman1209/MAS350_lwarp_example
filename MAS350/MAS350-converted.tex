@@ -1,0 +1,870 @@
+\documentclass[a4paper]{report}
+
+\usepackage{iftex}
+
+% --- LOAD FONT SELECTION AND ENCODING BEFORE LOADING LWARP ---
+
+\ifPDFTeX
+\usepackage{lmodern}            % pdflatex or dvi latex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\else
+\usepackage{fontspec}           % XeLaTeX or LuaLaTeX
+\fi
+
+% --- LWARP IS LOADED NEXT ---
+\usepackage[
+%   HomeHTMLFilename=index,     % Filename of the homepage.
+%   HTMLFilename={node-},       % Filename prefix of other pages.
+%   IndexLanguage=english,      % Language for xindy index, glossary.
+%   latexmk,                    % Use latexmk to compile.
+%   OSWindows,                  % Force Windows. (Usually automatic.)
+   mathjax,                    % Use MathJax to display math.
+]{lwarp}
+% \boolfalse{FileSectionNames}  % If false, numbers the files.
+
+% --- LOAD PDFLATEX MATH FONTS HERE ---
+
+% --- OTHER PACKAGES ARE LOADED AFTER LWARP ---
+\usepackage{makeidx} \makeindex
+
+\usepackage{xcolor}            
+\usepackage{amsfonts,amssymb,amsopn,amsmath,mathrsfs,bbm}
+\usepackage{graphicx}
+\usepackage{ntheorem}
+\usepackage{verbatim}
+\usepackage{framed}
+
+%\usepackage[notref,notcite]{showkeys}
+
+\definecolor{darkgray}{gray}{0.2}
+\definecolor{lightgrey}{rgb}{0.8,0.8,0.8}
+\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
+
+\usepackage{enumitem}
+\newlist{pslist}{enumerate}{3}
+\setlist[pslist,1]{label={\color{blue}\textbf{\thechapter.\arabic*}}}
+\setlist[pslist,2]{label=\textnormal{(\alph*)}}
+\setlist[pslist,3]{label=\textnormal{(\roman*)}}
+
+\usepackage{xr-hyper}
+\usepackage{hyperref,cleveref}  % LOAD THESE LAST! (ISH!)
+\usepackage{atbegshi,picture}
+\usepackage{hyperxmp}
+\hypersetup{
+    pdfauthor={\copyright Nic Freeman, University of Sheffield \the\year.  All rights reserved.},
+}
+
+\newcounter{thm_counter}[chapter]
+\setcounter{thm_counter}{1}
+
+% normal thm envirs
+\newtheorem{lemma}[thm_counter]{Lemma}
+\newtheorem{prop}[thm_counter]{Proposition}
+\newtheorem{theorem}[thm_counter]{Theorem}
+\newtheorem{thm}[thm_counter]{Theorem}
+\newtheorem{cor}[thm_counter]{Corollary}
+\newtheorem*{theorem-nonum}[thm_counter]{Theorem}
+\newtheorem{remark}[thm_counter]{Remark}
+
+\theorembodyfont{\upshape}
+\newtheorem{defn}[thm_counter]{Definition}
+\newtheorem{exercise}[thm_counter]{Exercise}
+\newtheorem{rema}[thm_counter]{Remark}
+\newtheorem{assumption}[thm_counter]{Assumption}
+\newtheorem{example}[thm_counter]{Example}
+
+\theorembodyfont{\selectfont\color{blue}}
+\theorempreskip{0pt}
+\newtheorem*{solution}{Solution:}
+
+\newenvironment{proof}{\vspace{0.5ex}\noindent{\textsc{Proof:}}\hspace{0.5em}}{\hfill\qed\vspace{1ex}}
+\newenvironment{sproof}{\vspace{0.5ex}\noindent{\textsc{Sketch of Proof:}}\hspace{0.5em}}{\hfill\qed\vspace{1ex}}
+
+\newenvironment{strike}{\color{asparagus}}{\color{black}}
+
+\numberwithin{equation}{chapter} 
+\numberwithin{thm_counter}{section}
+
+%\pdfpagewidth 8.2in %page height
+%\pdfpageheight 11in %page width
+\setlength\topmargin{-0.6in} %margins
+\setlength\oddsidemargin{0in}
+\setlength\evensidemargin{0in}
+\setlength\textheight{9.2in} %text height
+\setlength\textwidth{6.3in} %text width
+
+\DeclareMathOperator{\var}{var} 
+\DeclareMathOperator{\cov}{cov} 
+
+\newcommand{\nN}{n \in \mathbb{N}}
+\newcommand{\Br}{{\cal B}(\R)}
+\newcommand{\F}{{\cal F}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\st}{\stackrel{d}{=}}
+\newcommand{\uc}{\stackrel{uc}{\rightarrow}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\li}{\liminf_{n \rightarrow \infty}}
+\newcommand{\ls}{\limsup_{n \rightarrow \infty}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+
+\CustomizeMathJax{\newcommand{\nN}{n \in \mathbb{N}}}
+\CustomizeMathJax{\newcommand{\Br}{{\cal B}(\R)}}
+\CustomizeMathJax{\newcommand{\F}{{\cal F}}}
+\CustomizeMathJax{\newcommand{\ds}{\displaystyle}}
+\CustomizeMathJax{\newcommand{\st}{\stackrel{d}{=}}}
+\CustomizeMathJax{\newcommand{\uc}{\stackrel{uc}{\rightarrow}}}
+\CustomizeMathJax{\newcommand{\la}{\langle}}
+\CustomizeMathJax{\newcommand{\ra}{\rangle}}
+\CustomizeMathJax{\newcommand{\li}{\liminf_{n \rightarrow \infty}}}
+\CustomizeMathJax{\newcommand{\ls}{\limsup_{n \rightarrow \infty}}}
+\CustomizeMathJax{\newcommand{\limn}{\lim_{n \rightarrow \infty}}}
+
+
+\def\to{\rightarrow} %right arrow with single line
+\def\iff{\Leftrightarrow}
+\def\sw{\subseteq} %subset
+\def\mc{\mathcal} %mathcal, use as $\mc{X}$ 
+\def\mb{\mathbb} %use as \mb{R} or $\mb{X}$
+\def\sc{\setminus} %set complement
+\def\v{\textbf} %for vectors in bold text, use as \v{x}
+\def\E{\mb{E}} %probability notation
+\def\P{\mb{P}}
+\def\R{\mb{R}} %real numbers
+\def\C{\mb{C}} %complex numbers
+\def\N{\mb{N}}
+\def\Q{\mb{Q}}
+\def\Z{\mb{Z}}
+\def\B{\mb{B}}
+\def\~{\sim}
+\def\-{\,;\,} %for writing sets
+\def\qed{$\blacksquare$}
+\def\1{\mathbbm{1}}
+\def\cadlag{c\`{a}dl\`{a}g}
+\def\p{\partial}
+\def\l{\left}
+\def\r{\right}
+\def\Om{\Omega}
+\def\om{\omega}
+
+\CustomizeMathJax{\def\to{\rightarrow}} %right arrow with single line
+\CustomizeMathJax{\def\iff{\Leftrightarrow}}
+\CustomizeMathJax{\def\sw{\subseteq}} %subset
+\CustomizeMathJax{\def\mc{\mathcal}} %mathcal, use as $\mc{X}$ 
+\CustomizeMathJax{\def\mb{\mathbb}} %use as \mb{R} or $\mb{X}$
+\CustomizeMathJax{\def\sc{\setminus}} %set complement
+\CustomizeMathJax{\def\v{\textbf}} %for vectors in bold text, use as \v{x}
+\CustomizeMathJax{\def\E{\mb{E}}} %probability notation
+\CustomizeMathJax{\def\P{\mb{P}}}
+\CustomizeMathJax{\def\R{\mb{R}}} %real numbers
+\CustomizeMathJax{\def\C{\mb{C}}} %complex numbers
+\CustomizeMathJax{\def\N{\mb{N}}}
+\CustomizeMathJax{\def\Q{\mb{Q}}}
+\CustomizeMathJax{\def\Z{\mb{Z}}}
+\CustomizeMathJax{\def\B{\mb{B}}}
+\CustomizeMathJax{\def\~{\sim}}
+\CustomizeMathJax{\def\-{\,;\,}} %for writing sets
+\CustomizeMathJax{\def\qed{$\blacksquare$}}
+\CustomizeMathJax{\def\1{\unicode{x1D7D9}}}
+\CustomizeMathJax{\def\cadlag{c\`{a}dl\`{a}g}}
+\CustomizeMathJax{\def\p{\partial}}
+\CustomizeMathJax{\def\l{\left}}
+\CustomizeMathJax{\def\r{\right}}
+\CustomizeMathJax{\def\Om{\Omega}}
+\CustomizeMathJax{\def\om{\omega}}
+
+\allowdisplaybreaks
+
+\newif\ifsolutions
+\solutionstrue
+
+
+% --- LATEX AND HTML CUSTOMIZATION ---
+\title{Probability with Measure}
+\author{Dr Nic Freeman}
+\setcounter{tocdepth}{1}        % Include subsections in the \TOC.
+\setcounter{secnumdepth}{1}     % Number down to subsections.
+\setcounter{FileDepth}{1}       % Split \HTML\ files at sections
+\booltrue{CombineHigherDepths}  % Combine parts/chapters/sections
+\setcounter{SideTOCDepth}{1}    % Include subsections in the side\TOC
+\HTMLTitle{MAS350}       % Overrides \title for the web page.
+\HTMLAuthor{Nic Freeman}        % Sets the HTML meta author tag.
+\HTMLLanguage{en-US}            % Sets the HTML meta language.
+\HTMLDescription{MAS350 Probability with Measure, Sheffield University, Sept 2020.}% Sets the HTML meta description.
+\HTMLFirstPageTop{MAS350}
+\HTMLPageTop{}
+\HTMLPageBottom{Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk}
+\CSSFilename{lwarp_sagebrush.css}
+
+\begin{document}
+\maketitle
+
+\AtBeginShipout{\AtBeginShipoutUpperLeft{%
+  \put(\dimexpr\paperwidth-0.2cm\relax,-0.5cm){\makebox[0pt][r]{\color{lightgrey}\textit{\copyright Nic Freeman, University of Sheffield \the\year.}}}%
+}}
+
+\fontsize{11pt}{15.0pt}
+\selectfont
+
+\newpage \thispagestyle{empty} 
+
+\tableofcontents
+
+\setcounter{chapter}{-1}
+
+\chapter{Introduction}
+OMITTED
+
+\newpage
+\section{Preliminaries}
+
+This section contains lots of definitions, from earlier courses, that we will use in MAS350. Most of the material here should be familiar to you. There may be one or two minor extensions of ideas you have seen before.
+
+\begin{enumerate}
+
+\item{\it Set Theory.}
+
+Let $S$ be a set and $A,B,C, \ldots$ be subsets.
+
+$A^{c}$ is the complement of $A$ in $S$ so that
+$$ A^{c} = \{x \in S; x \notin A\}.$$
+
+Union $A \cup B = \{x \in  S; x \in A~\mbox{or}~x \in B\}$.
+
+Intersection $A \cap B = \{x \in  S; x \in A~\mbox{and}~x \in B\}$.
+
+Set theoretic difference: $A - B = A \cap B^{c}$.
+
+We have finite and infinite unions and intersections so if $A_{1}, A_{2}, \ldots, A_{n}$ are subsets of $S$.
+$$\begin{aligned}
+\bigcup_{i=1}^{n} A_{i} &= A_{1} \cup A_{2} \cup \ldots \cup A_{n}.\\
+\bigcap_{i=1}^{n} A_{i} &= A_{1} \cap A_{2} \cap \ldots \cap A_{n}.
+\end{aligned}$$
+
+We will also need {\it infinite} unions and intersections. So let $(A_{n})$ be a sequence of subsets in $S$.
+
+Let $x \in S$. We say that $x \in \bigcup_{i=1}^{\infty} A_{i}$ if $x \in A_{i}$ for at least one value of $i$.
+We say that $x \in \bigcap_{i=1}^{\infty} A_{i}$ if $x \in A_{i}$ for all values of $i$.
+
+Note that {\it de Morgan's laws} hold in this context:
+
+$$ \left(\bigcap_{i=1}^{\infty} A_{i}\right)^{c} = \bigcup_{i=1}^{\infty} A_{i}^{c}.$$
+$$ \left(\bigcup_{i=1}^{\infty} A_{i}\right)^{c} = \bigcap_{i=1}^{\infty} A_{i}^{c}.$$
+
+The {\it Cartesian product} $S \times T$ of sets $S$ and $T$ is
+$$ S \times T = \{(s,t); s \in s, t \in T\}.$$
+
+
+\item{\it Sets of Numbers}
+
+\begin{itemize}
+
+\item Natural numbers $\N = \{1, 2,3, \ldots \}$.
+\item Non-negative integers $\Z_{+} = \N \cup\{0\} = \{0,1, 2,3, \ldots \}$.
+\item Integers $\Z$.
+\item Rational numbers $\mathbb{Q}$.
+\item Real numbers $\R$.
+\item Complex numbers $\C$.
+\end{itemize}
+
+A set $X$ is {\it countable} if there exists an injection between $X$ and $\N$. A set is {\it uncountable} if it fails to be countable. $\N, \Z_{+}, \Z$ and $\Q$ are countable. $\R$ and $\C$ are uncountable.
+All finite sets are countable.
+
+\item {\it Images and Preimages.}
+
+Suppose that $S_{1}$ and $S_{2}$ are two sets and that $f:S_{1} \rightarrow S_{2}$ is a mapping (or function). Suppose that $A \subseteq S_{1}$. The {\it image} of $A$ under $f$ is the set $f(A) \subseteq S_{2}$ defined by
+$$ f(A) = \{y \in S_{2}; y = f(x)~\mbox{for some}~x \in S_{1}\}.$$
+
+If $B \subseteq S_{2}$ the {\it inverse image} of $B$ under $f$ is the set $f^{-1}(B) \subseteq S_{1}$ defined by
+$$ f^{-1}(B) = \{x \in S_{1} ; f(x) \in B\}.$$
+Note that $f^{-1}(B)$ makes sense irrespective of whether the mapping $f$ is invertible.
+
+Key properties are, with $A, A_{1}, A_{2} \subseteq S_{1}$ and $B, B_{1}, B_{2} \subseteq S_{2}$ :
+$$\begin{aligned}
+ f^{-1}(B_{1} \cup B_{2}) &= f^{-1}(B_{1}) \cup f^{-1}(B_{2}),\\
+ f^{-1}(B_{1} \cap B_{2}) &= f^{-1}(B_{1}) \cap f^{-1}(B_{2}),\\
+ f^{-1}(A^{c}) &= f^{-1}(A)^{c},\\
+ f(A_{1} \cup A_{2}) &= f(A_{1}) \cup f(A_{2}),\\
+ f(A_{1} \cap A_{2}) &\subseteq f(A_{1}) \cap f(A_{2}),\\
+ f(f^{-1}(B)) &\subseteq B~~\\
+ (f\circ g)^{-1}(A) &= g^{-1}(f^{-1}(A)) \\ 
+ A &\subseteq f^{-1}(f(A)),\\
+ A \subseteq B \quad \Rightarrow \quad f^{-1}(A) &\subseteq f^{-1}(B).\\
+\end{aligned}$$
+
+
+
+\item {\it Extended Real Numbers}
+
+We will often find it convenient to work with $\infty$ and $-\infty$. These are \textit{not} real numbers, but we find it convenient to treat them a bit like real numbers. To do so we specify the extra arithmetic rules, for all $x\in\R$, 
+$$ \infty + x = x + \infty = \infty,$$
+$$ x - \infty = -\infty + x = -\infty,$$
+$$ \infty. x = x.\infty = \infty~\mbox{for}~x > 0,$$
+$$ \infty. x = x.\infty = -\infty~\mbox{for}~x < 0,$$
+$$ \infty.0 = 0.\infty = 0.$$
+Note that $\infty - \infty$, $\infty.\infty$ and $\frac{\infty}{\infty}$ are undefined. 
+We also specify that, for all $x\in\R$, 
+$$-\infty < x < \infty.$$
+
+We write $\R^{*} = \{-\infty\} \cup \R \cup \{\infty\}$, which is known as the \textit{extended} real numbers.
+
+
+\item {\it Analysis.}
+
+\begin{itemize}
+
+\item sup and inf. If $A$ is a bounded set of real numbers, we write $\sup(A)$ and $\inf(A)$ for the real numbers that are their least upper bounds and greatest lower bounds (respectively.) If $A$ fails to be bounded above, we write $\sup(A) = \infty$ and if $A$ fails to be bounded below we write $\inf(A) = - \infty$. Note that $\inf(A) = -\sup(-A)$ where $-A = \{-x; x \in A\}$. If $f: S \rightarrow \R$ is a mapping, we write $\sup_{x \in S}f(x)= \sup\{f(x); x \in S\}$. A very useful inequality is
+    $$ \sup_{x \in S}|f(x) + g(x)| \leq \sup_{x \in S}|f(x)| + \sup_{x \in S}|g(x)|.$$
+
+\item Sequences and Limits. Let $(a_{n}) = (a_{1}, a_{2}, a_{3}, \ldots)$ be a sequence of real numbers. It {\it converges} to the real number $a$ if given any $\epsilon > 0$ there exists a natural number $N$  so that whenever $n > N$ we have $|a - a_{n}| < \epsilon$.  We then write $a = \lim_{n \rightarrow \infty}a_{n}$.
+
+A sequence $(a_{n})$ which is {\it monotonic increasing} (i.e. $a_{n} \leq a_{n+1}$ for all $\nN$) and {\it bounded above} (i.e. there exists $K > 0$ so that $a_{n} \leq K$ for all $\nN$) converges to $\sup_{\nN}a_{n}$.
+
+A sequence $(a_{n})$ which is {\it monotonic decreasing} (i.e. $a_{n+1} \leq a_{n}$ for all $\nN$) and {\it bounded below} (i.e. there exists $L > 0$ so that $a_{n} \geq L$ for all $\nN$) converges to $\inf_{\nN}a_{n}$.
+
+A {\it subsequence} of a sequence $(a_{n})$ is itself a sequence of the form $(a_{n_{k}})$ where $n_{k_{1}} < n_{k_{2}}$ when $k_{1} < k_{2}$.
+
+
+\item Series. If the sequence $(s_{n})$ converges to a limit $s$ where $s_{n} = a_{1} + a_{2} + \cdots + a_{n}$ we write $s = \sum_{n=1}^{\infty}a_{n}$ and call it the {\it sum of the series}. If each $a_{n} \geq 0$ then the sequence $(s_{n})$ is either convergent to a limit or properly divergent to infinity. In the latter case we write $s = \infty$ and interpret this in the sense of extended real numbers.
+
+\item Continuity. A function $f:\R \rightarrow \R$ is {\it continuous} at $a \in \R$ if given any $\epsilon > 0$ there exists $\delta > 0$ so that $|x - a| < \delta \Rightarrow |f(x) -f(a)| < \epsilon$. Equivalently $f$ is continuous at $a$ if given any sequence $(a_{n})$ that converges to $a$, the sequence $(f(a_{n}))$ converges to $f(a)$.
+
+    $f$ is a {\it continuous function} if it is continuous at every $a \in \R$.
+
+\end{itemize}
+
+
+\end{enumerate}
+
+
+
+
+
+\chapter{Measure Spaces and Measure}
+\label{chap:measure_spaces}
+
+\section{What is Measure?}
+
+Measure theory is the abstract mathematical theory that underlies all models of measurement in the real world. This includes measurement of length, area and volume, mass but also chance/probability. Measure theory is on the one hand a branch of pure mathematics, but it also plays a key role in many applied areas such as physics and economics. In particular it provides a foundation for both the modern theory of integration and also the theory of probability. It is one of the milestones of modern analysis and is an invaluable tool for functional analysis.
+
+To motivate the key definitions, suppose that we want to measure the lengths of several line segments. We represent these as closed intervals of the real number line $\R$ so a typical line segment is $[a,b]$ where $b > a$. We all agree that its length is $b-a$. We write this as
+$$ m([a,b]) = b-a$$ and interpret this as telling us that the measure $m$ of length of the line segment $[a,b]$ is the number $b-a$. We might also agree that if $[a_{1}, b_{1}]$ and $[a_{2}, b_{2}]$ are two non-overlapping line segments and we want to measure their combined length then we want to apply $m$ to the set-theoretic union $[a_{1}, b_{1}] \cup [a_{2}, b_{2}]$ and
+\begin{eqnarray} \label{firstunion}
+m([a_{1}, b_{1}] \cup [a_{2}, b_{2}]) & = (b_{2} - a_{2}) + (b_{1} - a_{1}) = m([a_{1}, b_{1}]) + m([a_{2}, b_{2}]).\nonumber \\
+~~&~~&~~
+\end{eqnarray}
+
+An isolated point $c$ has zero length and so
+$$ m(\{c\}) = 0.$$
+and if we consider the whole real line in its entirety then it has infinite length, i.e.
+$$ m(\R) = \infty.$$
+
+We have learned so far that if we try to abstract the notion of a measure of length, then we should regard it as a mapping $m$ defined on subsets of the real line and taking values in the extended non-negative real numbers $[0, \infty]$.
+
+ 
+
+{\it Question} Does it make sense to consider $m$ on {\bf all} subsets of $\R$?
+
+ 
+
+\begin{example}
+[The Cantor Set.] Start with the interval $[0,1]$ and remove the middle third to create the set $C_{1} = [0, 1/3) \cup (2/3, 1]$. Now remove the middle third of each remaining piece to get $C_{2} = [0, 1/9) \cup (2/9, 1/3) \cup (2/3, 7/9) \cup (8/9, 1]$. Iterate this process so for $n > 2, C_{n}$ is obtained from $C_{n-1}$ by removing the middle third of each set within that union. The {\it Cantor set} is $C = \bigcap_{n=1}^{\infty}C_{n}$. It turns out that $C$ is uncountable. Does $m(C)$ make sense?
+\end{example}
+ 
+
+We'll see later that $m(C)$ does make sense and is a finite number (can you guess what it is?). But it turns out that there are even wilder sets in $\R$ than $C$ which have no length. These are quite difficult to construct (they require the axiom of choice) so we won't try to describe them here.
+
+
+
+Conclusion. The set of all subsets of $\R$ is its power set ${\cal P}(\R)$. We've just learned that the power set is too large to support a good theory of measure of length. So we need to find a smaller class of subsets that we can work with.
+
+
+
+\newpage
+\section{Sigma Fields}
+So far we have only discussed length but now we want to be more ambitious. Let $S$ be an arbitrary set. We want to define mappings from subsets of $S$ to $[0, \infty]$ which we will continue to denote by $m$. These will be called measures and they will share some of the properties that we've just been looking at for measures of length. Now on what type of subset of $S$ can $m$ be defined? The power set of $S$ is ${\cal P}(S)$ and we have just argued that this could be too large for our purposes as it may contain sets that can't be measured.
+
+Suppose that $A$ and $B$ are subsets of $S$ that we can measure. Then we should surely be able to measure the complement $A^{c}$, the union $A \cup B$ and the whole set $S$. Note that we can then also measure $A \cap B = (A^{c} \cup B^{c})^{c}$. This leads to a definition
+
+ 
+
+\begin{defn}
+Let $S$ be a set. A {\it Boolean algebra} ${\mathbf B}$ is a set of subsets of $S$ that has the following properties
+\begin{enumerate}
+\item[B(i)] $S \in {\mathbf B}$,
+\item[B(ii)] If $A,B \in {\mathbf B}$ then $A \cup B \in {\mathbf B}$,
+\item[B(iii)] If $A \in {\mathbf B}$ then $A^{c} \in {\mathbf B}$.
+\end{enumerate}
+\end{defn}
+Note that $\mathbf{B}$ is a set, and each element of $\mathbf{B}$ is a subset of $S$. In other words, $\mathbf{B}$ is a subset of the power set $\mc{P}(S)$.
+In this course we will frequently work with sets, whose elements are sets. It's important to get used to working with these objects; don't forget the difference between $\{\{1\},\{2\}\}$ and $\{1,2\}$.
+
+
+Boolean algebras are named after the British mathematician George Boole (1815-1864) who introduced them in his book {\it The Laws of Thought} published in 1854. They are well studied mathematical objects that are extremely useful in logic and digital electronics. It turns out that they are inadequate for our own purposes -- we need a little more sophistication.
+
+If we use induction on B(ii) then we can show that, if $A_{1}, A_{2}, \ldots A_{n} \in {\mathbf B}$ then $A_{1} \cup A_{2} \cup \cdots \cup  A_{n} \in {\mathbf B}$. This is left for you to prove, in Problem \ref{ps:boolean_union}. But we need to be able to do analysis and this requires us to be able to handle infinite unions. The next definition gives us what we need:
+
+
+\begin{defn} Let $S$ be a set. 
+A $\sigma$-field $\Sigma$ is a set of subsets of $S$ that has the following properties
+\begin{enumerate}
+\item[S(i)] $S \in \Sigma$,
+\item[S(ii)] If $(A_{n})$ is a sequence of sets with $A_{n} \in \Sigma$ for all $\nN$ then $\bigcup_{n=1}^{\infty}A_{n} \in \Sigma$,
+\item[S(iii)] If $A \in \Sigma$ then $A^{c} \in \Sigma$.
+\end{enumerate}
+\end{defn}
+
+The terms $\sigma$-field and $\sigma$-algebra have the same meaning (this is an unfortunate accident of history!). Often you will find that `$\sigma$-field' is used in advanced texts and `$\sigma$-algebra' is used within lecture courses. I prefer $\sigma$-field, you may use either.
+
+
+Lastly, a piece of terminology.
+
+\begin{defn}
+Given a $\sigma$-field $\Sigma$ on $S$, we say that a set $A \subset S$ is {\it measurable} if $A \in \Sigma$
+\end{defn}
+
+
+
+\newpage
+\subsection*{Facts about $\sigma$-fields}
+
+\begin{itemize}
+
+\item By S(i) and S(iii), $\emptyset = S^{c} \in \Sigma$.
+
+\item We have seen in S(ii) that infinite unions of sets in
+$\Sigma$ are themselves in $\Sigma$. The same is true of finite
+unions. To see this let $A_{1}, \ldots, A_{m} \in \Sigma$ and define the sequence $(A_{n}^{\prime})$ by
+$ A_{n}^{\prime}  = \left\{ \begin{array}{c c}  & A_{n} ~\mbox{if}~1 \leq n \leq m\\
+ & \emptyset ~\mbox{if}~n > m \end{array} \right.$
+ Now apply S(ii) to get the result. We can deduce from this that every $\sigma$-field is a Boolean algebra.
+
+
+\item $\Sigma$ is also closed under infinite (or finite) intersections. To see
+this use de Morgan's law to write
+$$ \bigcap_{i=1}^{\infty} A_{i} = \left(\bigcup_{i=1}^{\infty} A_{i}^{c}\right)^{c}.$$
+
+\item $\Sigma$ is closed under set theoretic differences $A-B$,
+since (by definition) $A-B = A \cap B^{c}$.
+
+\end{itemize}
+
+
+
+\subsection*{Examples of $\sigma$-fields}
+
+\begin{enumerate}
+\item  ${\cal P}(S)$ is a $\sigma$-field. If $S$ is
+finite with $n$ elements then ${\cal P}(S)$ has $2^{n}$ elements (Problem \ref{ps:size_Pn}).
+
+\item For any set $S$, $\{\emptyset, S\}$ is a $\sigma$-field which is called the {\it trivial} $\sigma$-field. It is the basic tool for modelling logic circuitry where $\emptyset$ corresponds to ``OFF'' and $S$ to ``ON''.
+
+\item If $S$ is any set and $A \subset S$ then $\{\emptyset, A, A^{c},S\}$ is a $\sigma$-field .
+
+\item The most important $\sigma$-field for studying the measure of length is the {\it Borel $\sigma$-field} of $\R$ which is denoted ${\cal B}(\R)$. It is named after the French mathematican Emile Borel (1871-1956) who was one of the founders of measure theory. It is defined rather indirectly and we postpone this definition until after the next section.
+
+\end{enumerate}
+
+A pair $(S, \Sigma)$ where $S$ is a set and $\Sigma$ is a $\sigma$-field of subsets of $S$ is called a {\it measurable space}
+There are typically many possible choices of $\Sigma$ to attach to $S$. For example we can  always take $\Sigma$ to be trivial or the power set. The choice of $\Sigma$ is determined by what we want to measure. 
+
+
+\newpage
+\section{Measure}
+
+\begin{defn}
+\label{def:measure}
+Let $(S, \Sigma)$ be a measurable space. A measure on $(S, \Sigma)$ is a mapping $m: \Sigma \rightarrow [0, \infty]$ which satisfies
+\begin{itemize}
+\item[M(i)] $m(\emptyset) = 0$,
+
+\item[M(ii)] ({\it $\sigma$-additivity})~If $(A_{n})_{n\in\N}$ is a
+sequence of sets where each $A_{n} \in \Sigma$ and if these sets
+are mutually disjoint, i.e. $A_{n} \cap A_{m} = \emptyset$ if $m
+\neq n$, then
+$$m\left(\bigcup_{n=1}^{\infty}A_{n}\right) =
+\sum_{n=1}^{\infty}m(A_{n}).$$
+\end{itemize}
+\end{defn}
+M(ii) may appear to be rather strong. Our earlier discussion about length led us to $m(A \cup B) = m(A) + m(B)$ and straightforward induction then extends this to {\it finite additivity}: $m(A_{1} \cup A_{2} \cup \cdots \cup A_{n}) = m(A_{1}) + m(A_{2}) + \cdots + m(A_{n})$ but if we were to replace M(ii) by this weaker finite additivity condition, we would not have an adequate tool for use in analysis, and this would make our theory much less powerful.
+
+The key point here is, of course, limits. Limits are how we rigorously justify that approximations work -- consequently we need them, if we are to create a theory that will, ultimately, be useful to experimentalists and modellers.
+
+\subsection{Basic Properties of Measures}
+\label{sec:basic_meas}
+
+\begin{enumerate}
+
+
+\item (Finite additivity) If $A_{1}, A_{2}, \ldots, A_{r} \in \Sigma$ and are mutually disjoint then
+$$ m(A_{1} \cup A_{2} \cup \cdots \cup A_{r}) = m(A_{1}) + m(A_{2}) + \cdots + m(A_{r}).$$
+
+To see this define the sequence $(A_{n}^{\prime})$ by
+$ A_{n}^{\prime} = \left\{ \begin{array}{c c }  & A_{n} ~\mbox{if}~1 \leq n \leq r\\
+ & \emptyset ~\mbox{if}~n > r \end{array} \right.$ Then
+ $$ m\left(\bigcup_{i=1}^{r}A_{i}\right) = m\left(\bigcup_{i=1}^{\infty}A_{i}^{\prime}\right) = \sum_{i=1}^{\infty}m(A_{i}^{\prime}) = \sum_{i=1}^{r}m(A_{i}),$$
+ where we used M(ii) and then M(i) to get the last two expressions.
+
+\item If $A, B \in \Sigma$ with $B\sw A$ and either $m(A) < \infty$, or $m(A) = \infty$ but $m(B) < \infty$, then
+\begin{equation} \label{mdiff}
+m(A-B) = m(A) - m(B).
+\end{equation}
+
+To prove this write the disjoint union $A = (A-B) \cup B$ and then use the result of (1) (with $r=2$).
+
+\item (Monotonicity) If $A, B \in \Sigma$ with $B \subseteq A$ then $m(B) \leq m(A)$.
+
+If $m(A) < \infty$ this follows from (\ref{mdiff}) using the fact that $m(A-B) \geq 0$. If $m(A) = \infty$, the result is immediate.
+
+\item If $A, B \in \Sigma$ are arbitrary (i.e. not necessarily disjoint) then
+\begin{equation} \label{munion}
+m(A \cup B) + m(A \cap B) = m(A) + m(B).
+\end{equation}
+
+The proof of this is Problem \ref{ps:measure_basic} part (a). Note that if $m(A \cap B) < \infty$ we have
+$$m(A \cup B)  = m(A) + m(B) - m(A \cap B).$$
+
+\end{enumerate}
+
+Now some concepts and definitions. First, let us define the setting that we will work in for all of Chapters \ref{chap:measure_spaces}-\ref{chap:lebesbgue_integration}. 
+\begin{defn}
+A triple $(S, \Sigma, m)$ where $S$ is a set, $\Sigma$ is a $\sigma$-field on $S$, and $m:\Sigma\to[0,\infty)$ is a measure is called a {\it measure space}. 
+\end{defn}
+The extended real number $m(S)$ is called the {\it total mass} of $m$. The measure $m$ is said to be {\it finite} if $m(S) < \infty$. 
+
+We will start to think about probability in Chapter \ref{chap:prob_with_meas}. A finite measure is called a {\it probability measure} if $m(S) = 1$. When we have a probability measure, we use a slightly different notation.
+
+\begin{center}
+
+We write $\Omega$ instead of $S$ and call it a {\it sample space.}
+
+We write ${\cal F}$ instead of $\Sigma$. Elements of ${\cal F}$ are called {\it events}.
+
+We use $\P$ instead of $m$.
+
+
+The triple $(\Omega, {\cal F}, \P)$ is called a {\it probability space}.
+
+\end{center}
+
+\newpage
+\subsection{Examples of Measures}
+
+\begin{enumerate}
+
+\item {\bf Counting Measure}
+
+ 
+
+Let $S$ be a finite set and take $\Sigma = {\cal P}(S)$. For each $A \subseteq S$ define
+
+$$ m(A) = \#(A)~\mbox{i.e. the number of elements in}~A.$$
+
+ 
+
+\item  {\bf Dirac Measure}
+
+ 
+
+This measure is named after the famous British physicist Paul Dirac (1902-84). Let $(S, \Sigma)$ be an arbitrary measurable space and fix $x \in S$. The Dirac measure $\delta_{x}$ at $x$ is defined by
+$$ \delta_{x}(A) = \left\{\begin{array}{c c}  & 1 ~\mbox{if}~x \in A\\
+ & 0 ~\mbox{if}~ x \notin A \end{array} \right.$$
+
+ Note that we can write counting measure in terms of Dirac measure, so if $S$ is finite and $A \subseteq S$,
+ $$ \#(A) = \sum_{x \in S}\delta_{x}(A).$$
+
+
+ 
+
+\item  {\bf Discrete Probability Measures}
+
+ 
+
+Let $\Omega$ be a countable set and take ${\cal F} = {\cal P}(\Omega)$. Let $\{p_{\omega}, \omega \in \Omega\}$ be a set of real numbers which satisfies the conditions
+$$ p_{\omega} \geq 0~\mbox{for all}~\omega \in \Omega~\mbox{and}~\sum_{\omega \in \Omega}p_{\omega} = 1.$$
+Now define the discrete probability measure $P$ by
+$$ P(A) = \sum_{\omega \in A}p_{\omega} = \sum_{\omega \in \Omega}p_{\omega}\delta_{\omega}(A),$$
+for each $A \in {\cal F}$.
+
+For example if $\#(\Omega) = n+1$ and $0 < p < 1$ we can obtain the {\it binomial distribution} as a probability measure by taking $p_{r} = {n \choose r}p^{r}(1-p)^{n-r}$ for $r = 0, 1, \ldots, n$.
+
+ 
+
+\item  {\bf Measures via Integration}
+
+ 
+
+Let $(S, \Sigma, m)$ be an arbitrary measure space and $f:S \rightarrow [0, \infty)$ be a function that takes non-negative values. In Chapter 3, we will meet a powerful integration theory that allows us to cook up a new measure $I_{f}$ from $m$ and $f$ (provided that $f$ is suitably well-behaved, which will think about in Chapter 2) by the prescription:
+$$ I_{f}(A) = \int_{A}f(x)m(dx),$$ for all $A \in \Sigma$.
+
+\end{enumerate}
+
+
+\newpage
+\section{The Borel $\sigma$-field and Lebesgue Measure}
+\label{sec:borel_field_leb_meas}
+
+In this section we take $S$ to be the real number line $\R$. We want to describe a measure $\lambda$ that captures the notion of length as we discussed at the beginning of this chapter. So we should have $\lambda((a,b)) = b-a$. The first question is - which $\sigma$-field should we use? We have already argued that the power set ${\cal P}(\R)$ is too big. Our $\sigma$-field should contain open intervals, and also unions, intersections and complements of these.
+
+ 
+
+\begin{defn}
+ The {\it Borel $\sigma$-field} of $\R$ to be denoted ${\cal B}(\R)$ is the smallest $\sigma$-field that contains all open intervals $(a, b)$ where $-\infty \leq a < b \leq \infty$. Sets in ${\cal B}(\R)$ are called {\it Borel sets}.
+\end{defn}
+
+ 
+
+Note that ${\cal B}(\R)$ also contains isolated points $\{a\}$ where $a \in \R$. To see this first observe that $(a, \infty) \in {\cal B}(\R)$ and also $(-\infty, a) \in {\cal B}(\R)$. Now by S(iii),$(-\infty, a] = (a, \infty)^{c} \in {\cal B}(\R)$ and  $[a, \infty) = (-\infty, a)^{c} \in {\cal B}(\R)$. Finally as $\sigma$-fields are closed under intersections, $\{a\} = [a, \infty) \cap (-\infty, a] \in {\cal B}(\R)$. You can show that ${\cal B}(\R)$ also contains all closed intervals (see Problem \ref{ps:borel_closed}).
+
+ 
+
+We make two observations:
+\begin{enumerate} \item ${\cal B}(\R)$ is defined quite indirectly and there is no ``formula'' that can be used to give the most general element in it. However it is very hard to find a subset of $\R$  that isn't in ${\cal B}(\R)$ -- we will give an example of one in Section \ref{sec:non_meas_set}.
+
+\item ${\cal B}(S)$ makes sense on any set $S$ for which there are subsets that can be called ``open'' in a sensible way. In particular this works for metric spaces. The most general type of $S$ for which you can form ${\cal B}(S)$ is a {\it topological space}.
+
+\end{enumerate}
+
+The measure that precisely captures the notion of length is called {\it Lebesgue measure} in honour of the French mathematician Henri Lebesgue (1875-1941), who founded the modern theory of integration. We will denote it by $\lambda$. First we need a definition.
+
+Let $A \in {\cal B}(\R)$ be arbitrary. A {\it covering} of A is a finite or countable collection of open intervals $\{(a_{n}, b_{n}), \nN\}$ so that
+     $$ A \subseteq \bigcup_{n=1}^{\infty}(a_{n}, b_{n}).$$
+
+\begin{defn}
+Let ${\cal C}_{A}$ be the set of all coverings of the set $A\in\mc{B}(\R)$. The Lebesgue measure $\lambda$ on $(\R, {\cal B}(\R))$ is defined by the formula:
+\begin{equation} \label{eq:leb}
+  \lambda(A) = \inf_{{\cal C}_{A}}\sum_{n=1}^{\infty}(b_{n} - a_{n}),
+  \end{equation}
+where the $\inf$ is taken over all possible coverings of $A$.
+\end{defn}
+
+It would take a long time to prove that $\lambda$ really is a measure, and it wouldn't help us understand $\lambda$ any better if we did it, so we'll omit that from the course. For the proof, see the standard text books e.g.~Cohn, Schilling or Tao.
+
+Let's check that the definition (\ref{eq:leb}) agrees with our intuitive ideas about length.
+
+\begin{enumerate}
+
+\item If $A = (a,b)$ then $\lambda((a,b)) = b-a$ as expected, since $(a,b)$ is a covering of itself and any other cover will have greater length.
+
+\item If $A = \{a\}$ then choose any $\epsilon > 0$. Then  $(a - \epsilon/2, a + \epsilon/2)$ is a cover of $a$ and so $\lambda(\{a\}) \leq (a + \epsilon/2) - (a - \epsilon/2) = \epsilon$. But $\epsilon$ is arbitrary and so we conclude that $\lambda(\{a\}) = 0$.
+
+ 
+
+From (1) and (2), and using M(ii), we deduce that for $a < b,$ $$\lambda([a, b)) = \lambda(\{a\} \cup (a, b)) = \lambda(\{a\}) + \lambda((a, b)) = b-a.$$
+
+\item If $A = [0, \infty)$  write $A = \bigcup_{n=1}^{\infty}[n-1, n)$. Then by M(ii), $\lambda([0, \infty)) = \infty$. By a similar argument, $\lambda((-\infty, 0)) = \infty$ and so $\lambda(\R) =  \lambda((-\infty, 0)) + \lambda([0, \infty)) = \infty$.
+
+\item If $A\in\mc{B}(\R)$, and for some $x\in\R$ we define $A_x=\{x+a\-a\in A\}$, then $\lambda(A)=\lambda(A_x)$.
+
+In words, if we take a set $A$ and translate it (by $x$), we do not change its measure. This is easily seen from \eqref{eq:leb}, because any cover of $A$ can be translated by $x$ to be a cover of $A_x$.
+\end{enumerate}
+
+In simple practical examples on Lebesgue measure, it is generally best not to try to use (\ref{eq:leb}), but to just apply the properties (1) to (4) above:
+
+ 
+
+e.g. to find $\lambda((-3, 10) - (-1, 4))$, use (\ref{mdiff}) to obtain
+$$\begin{aligned}
+\lambda((-3, 10) - (-1, 4)) & =  \lambda((-3, 10)) - \lambda((-1, 4)))\\
+& =  (10 - (-3)) - (4 - (-1)) = 13 - 5 = 8. 
+\end{aligned}$$
+ 
+
+If $I$ is a closed interval (or in fact any Borel set) in $\R$ we can similarly define ${\cal B}(I)$, the Borel $\sigma$-field of $I$, to be the smallest $\sigma$-field containing all open intervals in $I$. Then Lebesgue measure on $(I, {\cal B}(I))$ is obtained by restricting the sets $A$ in (\ref{eq:leb}) to be in ${\cal B}(I)$.
+
+Sets of measure zero play an important role in measure theory. Here are some interesting examples of quite ``large'' sets that have Lebesgue measure zero
+
+\begin{enumerate}
+
+\item {\bf Countable Subsets of $\R$ have Lebesgue Measure Zero}
+
+ 
+
+Let $A \subset \R$ be countable.  Write $A = \{a_{1}, a_{2}, \ldots \} = \bigcup_{n=1}^{\infty}\{a_{n}\}$. Since $A$ is an infinite union of point sets, it is in ${\cal B}(\R)$. Then $$\lambda(A) = \lambda\left(\bigcup_{n=1}^{\infty}\{a_{n}\}\right) = \sum_{n=1}^{\infty}\lambda(\{a_{n}\}) = 0.$$ It follows that
+$$ \lambda(\mathbb{N}) = \lambda(\mathbb{Z}) = \lambda(\mathbb{Q}) = 0.$$
+The last of these is particularly intriguing as it tells us that the only contribution to length of sets of real numbers comes from the irrationals.
+
+ 
+
+\item {\bf The Cantor Set has Lebesgue Measure Zero}
+
+ 
+
+Recall the construction of the Cantor set $C = \bigcap_{n=1}^{\infty}C_{n}$ given earlier in this chapter. 
+Recall also that the $C_n$ are decreasing, that is $C_{n+1}\sw C_n$, and hence also $C\sw C_n$ for all $n$.
+
+Since $C_{n}$ is a union of intervals, $C_{n} \in {\cal B}(\R)$ for all $\nN$. Hence $C \in {\cal B}(\R)$.
+We easily see that $\lambda(C_{1}) = 1 - \frac{1}{3}$ and $\lambda(C_{2}) = 1 - \frac{1}{3} - \frac{2}{9}$. Iterating, we deduce that $\lambda(C_{n}) = 1 - \sum_{r=1}^{n}\frac{2^{r-1}}{3^{r}}$ and since $\lambda(C)\leq\lambda(C_n)$ we thus have
+$$\lambda(C)\leq\lambda(C_n)=1 - \ds\sum_{r=1}^{n}\frac{2^{r-1}}{3^{r}}.$$
+Letting $n\to\infty$, and using that limits preserve weak inequalities, we obtain $\lambda(C)\leq 0$. But by definition of a measure we have $\lambda(C)\geq 0$. Hence $\lambda(C)=0$.
+
+
+\end{enumerate}
+
+\newpage
+\section{An example of a non-measurable set $(\star)$}
+\label{sec:non_meas_set}
+
+Note that this section has a $(\star)$, meaning that it is off-syllabus. 
+It is included for interest.
+
+We might wonder, why go to all the trouble of defining the Borel $\sigma$-field? 
+In other words, why can't we measure (the `size' of) every possible subset of $\R$? 
+We will answer these questions by constructing a strange looking set $\mathscr{V}\sw\R$; 
+we will then show that it is not possible to define the Lebesgue measure of $\mathscr{V}$.
+
+As usual, let $\Q$ denote the rational numbers.
+For any $x\in\R$ we define
+\begin{equation}
+\label{eq:Qx_def}
+\Q_x=\{x+q\-q\in\Q\}.
+\end{equation}
+Note that different $x$ values may give the same $\Q_x$. For example, an exercise for you is to prove that $\Q_{\sqrt{2}}=\Q_{1+\sqrt{2}}$. You can think of $\Q_x$ as the set $\Q$ translated by $x$.
+
+It is easily seen that $\Q_x\cap[0,1]$ is non-empty; just pick some rational $q$ that is slightly less than $x$ and note that
+$x+(-q)\in\Q_x\cap[0,1]$. Now, for each set $\Q_x$, we pick precisely one element $r\in\Q_x\cap[0,1]$ (it does not matter which element we pick).
+We write this number $r$ as $r(\Q_x)$.
+Define
+$$\mathscr{V}=\{r(\Q_x)\-x\in\mathbb{R}\},$$
+which is a subset of $[0,1]$.
+For each $q\in\Q$ define
+$$\mathscr{V}_q=\{q+m\-m\in\mathscr{V}\}.$$
+Clearly $\mathscr{V}=\mathscr{V}_0$, and $\mathscr{V}_q$ is precisely the set $\mathscr{V}$ translated by $q$.
+Now, let us record some facts about $\mathscr{V}_q$.
+
+\begin{lemma}
+\label{lem:non_meas_pre}
+It holds that
+\begin{enumerate}
+\item If $q_1\neq q_2$ then $\mathscr{V}_{q_1}\cap \mathscr{V}_{q_2}=\emptyset$.
+\item $\R=\bigcup_{q\in\Q} \mathscr{V}_q$.
+\item $[0,1]\sw \bigcup_{q\in\Q\cap[-1,1]} \mathscr{V}_q\sw[-1,2]$.
+\end{enumerate}
+\end{lemma}
+Before we prove this lemma, let us use it to show that $\mathscr{V}$ cannot have a Lebesgue measure.
+We will do this by contradiction: assume that $\lambda(\mathscr{V})$ is defined.
+
+Since $\mathscr{V}$ and $\mathscr{V}_q$ are translations of each other, they must have the same Lebesgue measure.
+We write $c=\lambda(\mathscr{V})=\lambda(\mathscr{V}_q)$, which does not depend on $q$.
+Let us write $\Q\cap[-1,1]=\{q_1,q_2,\ldots,\}$, which we may do because $\Q$ is countable.
+By parts (1) and (3) of Lemma \ref{lem:non_meas_pre} and property M(ii) we have 
+$$\lambda\l(\bigcup_{q\in\Q\cap[-1,1]} \mathscr{V}_q\r)=\sum\limits_{i=1}^\infty\lambda(\mathscr{V}_{q_i})=\sum\limits_{i=1}^\infty c.$$
+Using the monotonicity property of measures (see Section \ref{sec:basic_meas}) and part (3) of Lemma \ref{lem:non_meas_pre} we thus have
+$$1\leq \sum\limits_{i=1}^\infty c\leq 3.$$
+However, there is no value of $c$ which can satisfy this equation!
+So it is not possible to make sense of the Lebesgue measure of $\mathscr{V}$. 
+
+The set $\mathscr{V}$ is known as a \textit{Vitali set}. In higher dimensions even stranger things can happen with non-measurable sets; you might like to investigate the \textit{Banach-Tarski paradox}. 
+
+
+\newpage
+\begin{proof}[Of Lemma \ref{lem:non_meas_pre}.] We prove the three claims in turn.
+
+(1) Let $q_1,q_2\in\Q$ be unequal. Suppose that some $x\in \mathscr{V}_{q_1}\cap\mathscr{V}_{q_2}$ exists -- and we now look for a contradiction.
+By definition of $\mathscr{V}_q$ we have
+\begin{equation}\label{eq:xqr}
+x=q_1+r(\Q_{x_1})=q_2+r(\Q_{x_2}).
+\end{equation}
+By definition of $\Q_x$ we may write $r(\Q_{x_1})=x_1+q'_1$ for some $q'_1\in\Q$, and similarly for $x_2$, so we obtain
+$x=q_1+x_1+q'_1=q_2+x_2+q'_2$
+where $q,q'\in\Q$. Hence, setting $q=q_2-q_1+q'_2-q'_1\in\Q$, we have $x_1+q=x_2$, which by \eqref{eq:Qx_def} means that $\Q_{x_1}=\Q_{x_2}$. 
+Thus $r(\Q_{x_1})=r(\Q_{x_2})$, so going back to \eqref{eq:xqr} we obtain that $q_1=q_2$. But this contradicts our assumption that $q_1\neq q_2$. Hence $x$ does not exist and $\mathscr{V}_{q_1}\cap\mathscr{V}_{q_2}=\emptyset$.
+
+(2) We will show $\supseteq$ and $\subseteq$. The first is easy: since $\mathscr{V}_q\sw\R$ it is immediate that $\R\supseteq \bigcup_{q\in\Q} \mathscr{V}_q$.
+
+Now take some $x\in\R$. Since we may take $q=0$ in \eqref{eq:Qx_def} we have $x\in\Q_x$. By definition of $r(\Q_x)$ we have
+$r(\Q_x)=x+q'$ for some $q'\in\Q$. By definition of $\mathscr{V}$ we have $r(\Q_x)\in\mathscr{V}$ and since
+$x=r(\Q_x)-q'$ we have $x\in \mathscr{V}_{-q'}$. Hence $x\in\bigcup_{q\in\Q} \mathscr{V}_q$. 
+
+(3) 
+Since $\mathscr{V}\sw[0,1]$, we have $\mathscr{V}_q\cap[0,1]=\emptyset$ whenever $q\notin [-1,1]$. 
+Hence,
+from part (2) and set algebra we have
+$$\R\cap[0,1]\;=\;\l(\bigcup_{q\in\Q}\mathscr{V}_q\r)\cap[0,1]\;=\;\bigcup_{q\in\Q}\mathscr{V}_q\cap[0,1]
+\;=\; \bigcup_{q\in\Q\cap[-1,1]}\mathscr{V}_q\cap[0,1]\;\sw\; \bigcup_{q\in\Q\cap[-1,1]}\mathscr{V}_q.$$
+This proves the first $\subseteq$ of (3). For the second simply note that $\mathscr{V}\sw[0,1]$ so $\mathscr{V}_q\sw[-1,2]$ whenever $q\in[-1,1]$.
+\end{proof}
+
+\begin{remark}
+We used the axiom of choice to define the function $r(\cdot)$. 
+\end{remark}
+
+
+
+\newpage
+\section{Two Useful Theorems About Measure}
+\label{sec:two_useful_thms}
+
+OMITTED
+
+\newpage
+\section{Product Measures}
+\label{sec:prod_meas_350}
+OMITTED
+
+\newpage
+\section[Exercises 1]{Exercises}
+
+%\subsection*{On ***}
+
+\begin{pslist}
+
+\item 
+\label{ps:boolean_union}
+Give a careful proof by induction of the fact that if ${\bf B}$ is a Boolean algebra and $A_{1}, A_{2}, \ldots, A_{n} \in {\bf B}$, then $A_{1} \cup A_{2} \cup \cdots \cup A_{n} \in {\bf B}$.
+
+\item 
+\label{ps:size_Pn}
+Show that if $S$ is a set containing $n$ elements, then the power set ${\cal P}(S)$ contains $2^{n}$ elements.
+
+\textit{Hint: How many subsets are there of size $r$, for a fixed $1 \leq r \leq n$? The binomial theorem may also be of some use.}
+
+\item OMITTED
+
+\end{pslist}
+
+
+
+
+\chapter{Measurable Functions}
+\label{chap:measurable_funcs}
+
+OMITTED
+
+
+\chapter{Probability and Measure}
+\label{chap:prob_with_meas}
+
+OMITTED
+
+
+
+\chapter{Product Measures and Fubini's Theorem ($\Delta$)}
+\label{chap:product_meas}
+
+OMITTED
+
+
+
+\appendix
+
+
+\chapter{Solutions to exercises}
+
+
+OMITTED
+
+
+
+
+\begin{warpprint}   % For print output ...
+\cleardoublepage    % ... a common method to place index entry into TOC.
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\end{warpprint}
+\ForceHTMLPage      % HTML index will be on its own page.
+\ForceHTMLTOC       % HTML index will have its own toc entry.
+\printindex
+
+\end{document}

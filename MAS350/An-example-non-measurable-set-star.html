@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Nic Freeman" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="MAS350 Probability with Measure, Sheffield University, Sept 2020." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>MAS350 — An example of a non-measurable set </title>
+<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+     subequations: "0",
+     section: "",
+     loader: {
+         load: ['[tex]/tagFormat'],
+     },
+     startup: {
+         ready() {
+             //       These would be replaced by import commands if you wanted to make
+             //       a proper extension.
+             const Configuration = MathJax._.input.tex.Configuration.Configuration;
+             const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+             const Macro = MathJax._.input.tex.Symbol.Macro;
+             const TexError = MathJax._.input.tex.TexError.default;
+             const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+             const expandable = MathJax._.util.Options.expandable;
+
+
+             //       Insert the replacement string into the TeX string, and check
+             //       that there haven't been too many maxro substitutions (prevents
+             //       infinite loops).
+             const useArgument = (parser, text) => {
+                  parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+                  parser.i = 0;
+                  if (++parser.macroCount > parser.configuration.options.maxMacros) {
+                      throw new TexError('MaxMacroSub1',
+                      'MathJax maximum macro substitution count exceeded; ' +
+                      'is there a recursive macro call?');
+                  }
+             }
+
+
+             //       Create the command map for \ifstar, \ifnextchar, \seteqnumber
+             new CommandMap('ifstar-ifnextchar-setequnumber', {
+                  ifstar: 'IfstarFunction',
+                  ifnextchar: 'IfnextcharFunction',
+                  seteqnumber: 'SeteqnumberFunction'
+             }, {
+                  //      This function implements an ifstar macro.
+                  IfstarFunction(parser, name) {
+                      const resultstar = parser.GetArgument(name);
+                      const resultnostar = parser.GetArgument(name);
+                      const star = parser.GetStar();                        // true if there is a *
+                      useArgument(parser, star ? resultstar : resultnostar);
+                  },
+
+
+                  //      This function implements an ifnextchar macro.
+                  IfnextcharFunction(parser, name) {
+                      let whichchar = parser.GetArgument(name);
+                      if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+                          // $ syntax highlighting
+                          whichchar = String.fromCodePoint(parseInt(whichchar));
+                      }
+                      const resultnextchar = parser.GetArgument(name);
+                      const resultnotnextchar = parser.GetArgument(name);
+                      const gotchar = (parser.GetNext() === whichchar);
+                      useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+                  },
+
+
+                  //      This function modifies the equation numbers.
+                  SeteqnumberFunction(parser, name) {
+                          //   Get the macro parameters
+                          const star = parser.GetStar();                       // true if there is a *
+                          const optBrackets = parser.GetBrackets(name);        // contents of optional brackets
+                          const newsubequations = parser.GetArgument(name);       // the subequations argument
+                          const neweqsection = parser.GetArgument(name);       // the eq section argument
+                          const neweqnumber = parser.GetArgument(name);        // the eq number argument
+                          MathJax.config.subequations=newsubequations ;        // a string with boolean meaning
+                          MathJax.config.section=neweqsection ;                // a string with numeric meaning
+                          parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+                  }
+             });
+
+
+             //       Create the ifstar-ifnextchar-setequnumber package
+             Configuration.create('ifstar-ifnextchar-setequnumber', {
+                  handler: {macro: ['ifstar-ifnextchar-setequnumber']}
+             });
+
+
+             MathJax.startup.defaultReady();
+
+
+             // For forward references:
+             MathJax.startup.input[0].preFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          MathJax.config.subequations = math.inputData.recompile.subequations;
+                          MathJax.config.section = math.inputData.recompile.section;
+                  }
+             });
+             MathJax.startup.input[0].postFilters.add(({math}) => {
+                  if (math.inputData.recompile){
+                          math.inputData.recompile.subequations = MathJax.config.subequations;
+                          math.inputData.recompile.section = MathJax.config.section;
+                  }
+             });
+         }       // ready
+     },           // startup
+
+
+     tex: {
+         packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
+         tags: "ams",
+                  tagFormat: {
+                          number: function (n) {
+                               if(MathJax.config.subequations==0)
+                                      return(MathJax.config.section + n);
+                               else
+                                      return(MathJax.config.section + String.fromCharCode(96+n));
+                          },
+                  },
+     }
+}
+</script>
+
+
+<script
+         id="MathJax-script"
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+
+</head>
+<body>
+
+
+
+<a id="MAS350-converted-autopage-29"></a>
+<nav class="topnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+
+
+<div class="bodyandsidetoc" >
+<div class="sidetoccontainer" >
+
+
+
+<nav class="sidetoc" >
+
+
+
+<div class="sidetoctitle" >
+
+<p>
+<span class="sidetocthetitle" >Probability with Measure</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+
+<div class="sidetoccontents" >
+
+<p>
+<a href="MAS350-converted.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Introduction.html#autosec-5" class="tocchapter" >
+<span class="sectionnumber" >0</span>&#x2003;Introduction</a>
+</p>
+
+
+
+<p>
+<a href="Introduction.html#autosec-6" class="tocsection" >
+<span class="sectionnumber" >0.1</span>&#x2003;Preliminaries</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-8" class="tocchapter" >
+<span class="sectionnumber" >1</span>&#x2003;Measure Spaces and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Measure-Spaces-Measure.html#autosec-9" class="tocsection" >
+<span class="sectionnumber" >1.1</span>&#x2003;What is Measure?</a>
+</p>
+
+
+
+<p>
+<a href="Sigma-Fields.html#autosec-12" class="tocsection" >
+<span class="sectionnumber" >1.2</span>&#x2003;Sigma Fields</a>
+</p>
+
+
+
+<p>
+<a href="Measure.html#autosec-19" class="tocsection" >
+<span class="sectionnumber" >1.3</span>&#x2003;Measure</a>
+</p>
+
+
+
+<p>
+<a href="The-Borel-sigma-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
+<span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
+</p>
+
+
+
+<p>
+<a href="An-example-non-measurable-set-star.html#autosec-30" class="tocsection" >
+<span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
+</p>
+
+
+
+<p>
+<a href="Two-Useful-Theorems-About-Measure.html#autosec-34" class="tocsection" >
+<span class="sectionnumber" >1.6</span>&#x2003;Two Useful Theorems About Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures.html#autosec-38" class="tocsection" >
+<span class="sectionnumber" >1.7</span>&#x2003;Product Measures</a>
+</p>
+
+
+
+<p>
+<a href="Exercises-1.html#autosec-43" class="tocsection" >
+<span class="sectionnumber" >1.8</span>&#x2003;Exercises 1</a>
+</p>
+
+
+
+<p>
+<a href="Measurable-Functions.html#autosec-46" class="tocchapter" >
+<span class="sectionnumber" >2</span>&#x2003;Measurable Functions</a>
+</p>
+
+
+
+<p>
+<a href="Probability-Measure.html#autosec-48" class="tocchapter" >
+<span class="sectionnumber" >3</span>&#x2003;Probability and Measure</a>
+</p>
+
+
+
+<p>
+<a href="Product-Measures-Fubini-Theorem-Delta.html#autosec-50" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem (\(\Delta \))</a>
+</p>
+
+
+
+<p>
+<a href="Solutions-exercises.html#autosec-52" class="tocchapter" >
+<span class="sectionnumber" >A</span>&#x2003;Solutions to exercises</a>
+</p>
+
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+
+<div class="bodycontainer" >
+
+
+
+<section class="textbody" >
+
+<h1>Probability with Measure</h1>
+
+<!--MathJax customizations:-->
+
+
+
+<div class="hidden" >
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\nN }{n \in \mathbb {N}}\)
+
+\(\newcommand {\Br }{{\cal B}(\R )}\)
+
+\(\newcommand {\F }{{\cal F}}\)
+
+\(\newcommand {\ds }{\displaystyle }\)
+
+\(\newcommand {\st }{\stackrel {d}{=}}\)
+
+\(\newcommand {\uc }{\stackrel {uc}{\rightarrow }}\)
+
+\(\newcommand {\la }{\langle }\)
+
+\(\newcommand {\ra }{\rangle }\)
+
+\(\newcommand {\li }{\liminf _{n \rightarrow \infty }}\)
+
+\(\newcommand {\ls }{\limsup _{n \rightarrow \infty }}\)
+
+\(\newcommand {\limn }{\lim _{n \rightarrow \infty }}\)
+
+\(\def \to {\rightarrow }\)
+
+\(\def \iff {\Leftrightarrow }\)
+
+\(\def \sw {\subseteq }\)
+
+\(\def \mc {\mathcal }\)
+
+\(\def \mb {\mathbb }\)
+
+\(\def \sc {\setminus }\)
+
+\(\def \v {\textbf }\)
+
+\(\def \E {\mb {E}}\)
+
+\(\def \P {\mb {P}}\)
+
+\(\def \R {\mb {R}}\)
+
+\(\def \C {\mb {C}}\)
+
+\(\def \N {\mb {N}}\)
+
+\(\def \Q {\mb {Q}}\)
+
+\(\def \Z {\mb {Z}}\)
+
+\(\def \B {\mb {B}}\)
+
+\(\def \~{\sim }\)
+
+\(\def \-{\,;\,}\)
+
+\(\def \qed {$\blacksquare $}\)
+
+\(\def \1{\unicode {x1D7D9}}\)
+
+\(\def \cadlag {c\‘{a}dl\‘{a}g}\)
+
+\(\def \p {\partial }\)
+
+\(\def \l {\left }\)
+
+\(\def \r {\right }\)
+
+\(\def \Om {\Omega }\)
+
+\(\def \om {\omega }\)
+
+</div>
+
+<p>
+<h4 id="autosec-30"><span class="sectionnumber" >1.5&#x2003;</span>An example of a non-measurable set \((\star )\)</h4>
+<a id="MAS350-converted-autopage-30"></a>
+<a id="MAS350-converted-autofile-6"></a> <a id="sec:non_meas_set"></a>
+
+<p>
+Note that this section has a \((\star )\), meaning that it is off-syllabus. It is included for interest.
+</p>
+
+<p>
+We might wonder, why go to all the trouble of defining the Borel \(\sigma \)-field? In other words, why can’t we measure (the ‘size’ of) every possible subset of \(\R \)? We will answer
+these questions by constructing a strange looking set \(\mathscr {V}\sw \R \); we will then show that it is not possible to define the Lebesgue measure of \(\mathscr {V}\).
+</p>
+
+<p>
+As usual, let \(\Q \) denote the rational numbers. For any \(x\in \R \) we define
+</p>
+
+<span class="hidden" > \(\seteqnumber{0}{1.}{4}\)</span>
+
+<!--
+
+
+
+                                                                                       Qx = {x + q ; q ∈ Q}.                                            (1.5)--><a id="eq:Qx_def"></a><!--
+
+
+
+-->
+
+<p>
+
+
+\begin{equation}
+\label {eq:Qx_def} \Q _x=\{x+q\-q\in \Q \}.
+\end{equation}
+
+
+</p>
+
+<p>
+Note that different \(x\) values may give the same \(\Q _x\). For example, an exercise for you is to prove that \(\Q _{\sqrt {2}}=\Q _{1+\sqrt {2}}\). You can think of \(\Q _x\) as the
+set \(\Q \) translated by \(x\).
+</p>
+
+<p>
+It is easily seen that \(\Q _x\cap [0,1]\) is non-empty; just pick some rational \(q\) that is slightly less than \(x\) and note that \(x+(-q)\in \Q _x\cap [0,1]\). Now, for each set \(\Q
+_x\), we pick precisely one element \(r\in \Q _x\cap [0,1]\) (it does not matter which element we pick). We write this number \(r\) as \(r(\Q _x)\). Define
+</p>
+
+<p>
+\[\mathscr {V}=\{r(\Q _x)\-x\in \mathbb {R}\},\]
+</p>
+
+<p>
+which is a subset of \([0,1]\). For each \(q\in \Q \) define
+</p>
+
+<p>
+\[\mathscr {V}_q=\{q+m\-m\in \mathscr {V}\}.\]
+</p>
+
+<p>
+Clearly \(\mathscr {V}=\mathscr {V}_0\), and \(\mathscr {V}_q\) is precisely the set \(\mathscr {V}\) translated by \(q\). Now, let us record some facts about \(\mathscr {V}_q\).
+</p>
+<div class="theorembodylemma" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-17"></a>
+
+<li>
+
+<p>
+<span class="theoremheaderplain" >Lemma 1.5.1</span> <a id="autoid-18" ></a ><a id="lem:non_meas_pre"></a> It holds that
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. If \(q_1\neq q_2\) then \(\mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}=\emptyset \).
+</p>
+
+
+</li>
+<li>
+<p>
+2. \(\R =\bigcup _{q\in \Q } \mathscr {V}_q\).
+</p>
+
+
+</li>
+<li>
+<p>
+3. \([0,1]\sw \bigcup _{q\in \Q \cap [-1,1]} \mathscr {V}_q\sw [-1,2]\).
+</p>
+</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Before we prove this lemma, let us use it to show that \(\mathscr {V}\) cannot have a Lebesgue measure. We will do this by contradiction: assume that \(\lambda (\mathscr {V})\) is
+defined.
+</p>
+
+<p>
+Since \(\mathscr {V}\) and \(\mathscr {V}_q\) are translations of each other, they must have the same Lebesgue measure. We write \(c=\lambda (\mathscr {V})=\lambda (\mathscr
+{V}_q)\), which does not depend on \(q\). Let us write \(\Q \cap [-1,1]=\{q_1,q_2,\ldots ,\}\), which we may do because \(\Q \) is countable. By parts (1) and (3) of Lemma <a
+href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a> and property M(ii) we have
+</p>
+
+<p>
+\[\lambda \l (\bigcup _{q\in \Q \cap [-1,1]} \mathscr {V}_q\r )=\sum \limits _{i=1}^\infty \lambda (\mathscr {V}_{q_i})=\sum \limits _{i=1}^\infty c.\]
+</p>
+
+<p>
+Using the monotonicity property of measures (see Section <a href="Measure.html#sec:basic_meas">1.3</a>) and part (3) of Lemma <a
+href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a> we thus have
+</p>
+
+<p>
+\[1\leq \sum \limits _{i=1}^\infty c\leq 3.\]
+</p>
+
+<p>
+However, there is no value of \(c\) which can satisfy this equation! So it is not possible to make sense of the Lebesgue measure of \(\mathscr {V}\).
+</p>
+
+<p>
+The set \(\mathscr {V}\) is known as a <i>Vitali set</i>. In higher dimensions even stranger things can happen with non-measurable sets; you might like to investigate the
+<i>Banach-Tarski paradox</i>.
+</p>
+
+<p>
+<span class="textsc" >Proof:</span><span style="width:6.1875pt; display:inline-block"><!----></span>[Of Lemma <a
+href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a>.] We prove the three claims in turn.
+</p>
+
+<p>
+(1) Let \(q_1,q_2\in \Q \) be unequal. Suppose that some \(x\in \mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}\) exists – and we now look for a contradiction. By definition of \(\mathscr
+{V}_q\) we have
+</p>
+
+<span class="hidden" > \(\seteqnumber{0}{1.}{5}\)</span>
+
+<!--
+
+
+
+                                                                               x = q1 + r(Qx1 ) = q2 + r(Qx2 ).                                         (1.6)--><a id="eq:xqr"></a><!--
+
+
+
+-->
+
+<p>
+
+
+\begin{equation}
+\label {eq:xqr} x=q_1+r(\Q _{x_1})=q_2+r(\Q _{x_2}).
+\end{equation}
+
+
+</p>
+
+<p>
+By definition of \(\Q _x\) we may write \(r(\Q _{x_1})=x_1+q’_1\) for some \(q’_1\in \Q \), and similarly for \(x_2\), so we obtain \(x=q_1+x_1+q’_1=q_2+x_2+q’_2\) where \(q,q’\in \Q
+\). Hence, setting \(q=q_2-q_1+q’_2-q’_1\in \Q \), we have \(x_1+q=x_2\), which by <span class="textup" >(<a
+href="An-example-non-measurable-set-star.html#eq:Qx_def">1.5</a>)</span> means that \(\Q _{x_1}=\Q _{x_2}\). Thus \(r(\Q _{x_1})=r(\Q _{x_2})\), so going back to <span
+class="textup" >(<a href="An-example-non-measurable-set-star.html#eq:xqr">1.6</a>)</span> we obtain that \(q_1=q_2\). But this contradicts our assumption that \(q_1\neq q_2\).
+Hence \(x\) does not exist and \(\mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}=\emptyset \).
+</p>
+
+<p>
+(2) We will show \(\supseteq \) and \(\subseteq \). The first is easy: since \(\mathscr {V}_q\sw \R \) it is immediate that \(\R \supseteq \bigcup _{q\in \Q } \mathscr {V}_q\).
+</p>
+
+<p>
+Now take some \(x\in \R \). Since we may take \(q=0\) in <span class="textup" >(<a href="An-example-non-measurable-set-star.html#eq:Qx_def">1.5</a>)</span> we have \(x\in \Q _x\).
+By definition of \(r(\Q _x)\) we have \(r(\Q _x)=x+q’\) for some \(q’\in \Q \). By definition of \(\mathscr {V}\) we have \(r(\Q _x)\in \mathscr {V}\) and since \(x=r(\Q _x)-q’\) we
+have \(x\in \mathscr {V}_{-q’}\). Hence \(x\in \bigcup _{q\in \Q } \mathscr {V}_q\).
+</p>
+
+<p>
+(3) Since \(\mathscr {V}\sw [0,1]\), we have \(\mathscr {V}_q\cap [0,1]=\emptyset \) whenever \(q\notin [-1,1]\). Hence, from part (2) and set algebra we have
+</p>
+
+<p>
+\[\R \cap [0,1]\;=\;\l (\bigcup _{q\in \Q }\mathscr {V}_q\r )\cap [0,1]\;=\;\bigcup _{q\in \Q }\mathscr {V}_q\cap [0,1] \;=\; \bigcup _{q\in \Q \cap [-1,1]}\mathscr {V}_q\cap
+[0,1]\;\sw \; \bigcup _{q\in \Q \cap [-1,1]}\mathscr {V}_q.\]
+</p>
+
+<p>
+This proves the first \(\subseteq \) of (3). For the second simply note that \(\mathscr {V}\sw [0,1]\) so \(\mathscr {V}_q\sw [-1,2]\) whenever \(q\in [-1,1]\).
+&#x2003;&#x2003;&#x220E;
+</p>
+<div class="theorembodyremark" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-19"></a>
+
+<li>
+
+<p>
+<span class="theoremheaderplain" >Remark 1.5.2</span> <a id="autoid-20" ></a >We used the axiom of choice to define the function \(r(\cdot )\).
+</p>
+
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk
+</p>
+
+</footer>
+
+
+
+<nav class="botnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>

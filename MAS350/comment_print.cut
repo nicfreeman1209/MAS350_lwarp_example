@@ -1,0 +1,3 @@
+\cleardoublepage    % ... a common method to place index entry into TOC.
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}

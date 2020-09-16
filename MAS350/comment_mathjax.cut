@@ -1,0 +1,1 @@
+\CustomizeMathJax{\newcommand{\intertext}[1]{\text{#1}\notag \\}}
