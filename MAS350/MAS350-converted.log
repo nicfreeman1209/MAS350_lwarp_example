@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  16 SEP 2020 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  17 SEP 2020 06:15
 entering extended mode
 **./MAS350-converted.tex
 (MAS350-converted.tex
@@ -82,23 +82,11 @@ Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/ifptex\ifptex.sty
 Package: ifptex 2019/11/01 v2.0 pTeX checker
 )
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
+Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count177
-
-
-Package etoolbox Warning: Patching '\begin' failed!
-(etoolbox)                '\AtBeginEnvironment' will not work.
-
-
-Package etoolbox Warning: Patching '\end' failed!
-(etoolbox)                '\AtEndEnvironment' will not work.
-
-
-Package etoolbox Warning: Patching '\end' failed!
-(etoolbox)                '\AfterEndEnvironment' will not work.
-
-) (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xpatch\xpatch.sty
+)
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xpatch\xpatch.sty
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
 Package: expl3 2020-09-03 L3 programming layer (loader) 
 
@@ -257,21 +245,13 @@ Excluding 'warpHTML' comment. Including 'warpall' comment.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xstring\xstring.sty
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/xstring\xstring.tex
-\@xs@message=\write4
+("C:\Program Files\MiKTeX 2.9\tex/latex/xstring\xstring.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/xstring\xstring.tex"
 \integerpart=\count188
 \decimalpart=\count189
 )
-Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-
-LaTeX Warning: You have requested, on input line 2, version
-               `2019/02/01' of package xstring,
-               but only version
-               `2013/10/13  v1.7c  String manipulations (C Tellechea)'
-               is available.
-
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
@@ -300,7 +280,7 @@ Including 'warpall' comment.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-\LWR@quickfile=\write5
+\LWR@quickfile=\write4
 )
 Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
 Excluding 'warpHTML' comment. Including 'warpall' comment.
@@ -327,7 +307,7 @@ Including 'LWRwriteconf' comment.
 
  Straight input of comment_writeconf.cut.
 (comment_writeconf.cut
-\openout5 = `MAS350-converted_html.tex'.
+\openout4 = `MAS350-converted_html.tex'.
 
 ) Including 'LWRwriteconf' comment.
 \openout3 = `comment_writeconf.cut'.
@@ -414,7 +394,7 @@ LaTeX Warning: Writing or overwriting file `./lwarp.xdy'.
 
  Straight input of comment_writeconf.cut.
 (comment_writeconf.cut
-\openout5 = `lwarp_one_limage.txt'.
+\openout4 = `lwarp_one_limage.txt'.
 
 ) Including 'LWRwriteconf' comment.
 \openout3 = `comment_writeconf.cut'.
@@ -722,8 +702,8 @@ Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
-\@indexfile=\write6
-\openout6 = `MAS350-converted.idx'.
+\@indexfile=\write5
+\openout5 = `MAS350-converted.idx'.
 
 
 Writing index file MAS350-converted.idx
@@ -1062,9 +1042,9 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
 LaTeX Font Info:    ... okay on input line 200.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
 LaTeX Font Info:    ... okay on input line 200.
-\openout5 = `lwarpmk.conf'.
+\openout4 = `lwarpmk.conf'.
 
-\openout5 = `MAS350-converted.lwarpmkconf'.
+\openout4 = `MAS350-converted.lwarpmkconf'.
 
 \LWR@colorminipagebox=\box51
 
@@ -1106,8 +1086,8 @@ LaTeX Info: Redefining \ref on input line 200.
 LaTeX Info: Redefining \pageref on input line 200.
 LaTeX Info: Redefining \nameref on input line 200.
  (MAS350-converted.out) (MAS350-converted.out)
-\@outlinefile=\write7
-\openout7 = `MAS350-converted.out'.
+\@outlinefile=\write6
+\openout6 = `MAS350-converted.out'.
 
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/stringenc\se-pdfdoc.def
@@ -1179,8 +1159,8 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 2.
 
 )
-\tf@toc=\write8
-\openout8 = `MAS350-converted.toc'.
+\tf@toc=\write7
+\openout7 = `MAS350-converted.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -1318,8 +1298,8 @@ Including 'warpprint' comment.
 
 ])
 No file MAS350-converted.ind.
-\tf@thm=\write9
-\openout9 = `MAS350-converted.thm'.
+\tf@thm=\write8
+\openout8 = `MAS350-converted.thm'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 859.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 859.
@@ -1338,10 +1318,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 13314 strings out of 481165
- 223849 string characters out of 2912075
- 495386 words of memory out of 3000000
- 28323 multiletter control sequences out of 15000+200000
+ 13339 strings out of 481165
+ 223907 string characters out of 2912075
+ 495369 words of memory out of 3000000
+ 28348 multiletter control sequences out of 15000+200000
  664550 words of font info for 129 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,13n,41p,861b,552s stack positions out of 5000i,500n,10000p,200000b,50000s
