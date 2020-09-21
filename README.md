@@ -5,7 +5,7 @@ This repository contains a working example of mathematics lecture notes, which c
 
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/4.png" width="190" height="128" /> 
 
-* The HTML version is compatible with the accessibility features of modern browsers: 
+* The HTML version uses MathJax/MathML. It is compatible with the accessibility features of modern browsers: 
 
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/1.png" width="190" height="128" /><img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/2.png" width="190" height="128" />
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/3.png" width="190" height="128" />
