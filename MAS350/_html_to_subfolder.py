@@ -9,8 +9,8 @@ import os
 import shutil
 
 out_path = "out_html"
-if os.path.exists("./"+out_path+"/"):
-	shutil.rmtree("./"+out_path)
+if os.path.exists(os.path.join("./", out_path, "/")):
+	shutil.rmtree(os.path.join("./", out_path))
 os.makedirs(out_path)
 	
 os.system("lwarpmk html1")
@@ -23,10 +23,10 @@ copy_extensions = ["png", "jpg", "txt", "css"]
 for ext in move_extensions:
 	files = glob("./*." + ext)
 	for file in files:
-		shutil.move(file, os.path.join("./"+out_path, file))
+		shutil.move(file, os.path.join("./", out_path, file))
 		
 for ext in copy_extensions:
 	files = glob("./*." + ext)
 	for file in files:
-		shutil.copy(file, os.path.join("./"+out_path, file))
+		shutil.copy(file, os.path.join("./", out_path, file))
 		
