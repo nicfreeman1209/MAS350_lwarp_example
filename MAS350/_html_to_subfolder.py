@@ -13,8 +13,9 @@ if os.path.exists("./"+out_path+"/"):
 	shutil.rmtree("./"+out_path)
 os.makedirs(out_path)
 	
-os.system("lwarpmk html1 -p notes_1")
-os.system("lwarpmk html1 -p notes_2")
+os.system("lwarpmk html1")
+#os.system("lwarpmk html1 -p notes_1")
+#os.system("lwarpmk html1 -p notes_2")
 
 move_extensions = ["html"]
 copy_extensions = ["png", "jpg", "txt", "css"]
