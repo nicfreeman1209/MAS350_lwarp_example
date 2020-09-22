@@ -1,6 +1,8 @@
+# CC-BY-SA
+
 # runs lwarpmk, moves some files and copies others
 # end result: 
-#   complete website ends up in ./out_html/, whilst keeping original tex working dir moderately clean
+#   the complete html version ends up in ./out_html/, whilst keeping original tex working dir moderately clean
 
 from glob import glob
 import os
