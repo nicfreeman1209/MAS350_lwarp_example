@@ -17,7 +17,7 @@ os.system("lwarpmk html1")
 #os.system("lwarpmk html1 -p notes_2")
 
 move_extensions = ["html"]
-copy_extensions = ["png", "jpg", "txt", "css"]
+copy_extensions = ["png", "jpg", "svg", "txt", "css"]
 
 for ext in move_extensions:
 	files = glob("./*." + ext)
