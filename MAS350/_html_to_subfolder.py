@@ -12,6 +12,10 @@ os.makedirs("out_html")
 	
 os.system("lwarpmk html1")
 
+# for multiple linked files use e.g.
+#os.system("lwarpmk html1 -p notes_1")
+#os.system("lwarpmk html1 -p notes_2")
+
 move_extensions = ["html"]
 copy_extensions = ["png", "jpg", "txt", "css"]
 
