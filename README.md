@@ -12,4 +12,4 @@ This repository contains a working example of mathematics lecture notes, which c
 
 It was made using [Miktex](https://miktex.org/), [TexMaker](https://www.xm1math.net/texmaker/) and crucially the [lwarp package](http://bdtechconcepts.com/LaTeX-HTML-Converter-lwarp-package.html#autosec-155). Most importantly, only _minimal changes to the original tex_ are needed. 
 
-See [the wiki](https://github.com/nicfreeman1209/MAS350_lwarp_example/wiki) for a related tutorial on how to do this.
+See [the repository wiki](https://github.com/nicfreeman1209/MAS350_lwarp_example/wiki) for a related tutorial on how to do this.
