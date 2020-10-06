@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  22 SEP 2020 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  6 OCT 2020 14:30
 entering extended mode
 **./MAS350-converted.tex
 (MAS350-converted.tex
@@ -1026,22 +1026,22 @@ Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 (MAS350-converted.aux)
 \openout1 = `MAS350-converted.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 \openout4 = `lwarpmk.conf'.
 
 \openout4 = `MAS350-converted.lwarpmkconf'.
@@ -1069,7 +1069,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 200.
+Package hyperref Info: Link coloring OFF on input line 203.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1082,9 +1082,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 200.
-LaTeX Info: Redefining \pageref on input line 200.
-LaTeX Info: Redefining \nameref on input line 200.
+LaTeX Info: Redefining \ref on input line 203.
+LaTeX Info: Redefining \pageref on input line 203.
+LaTeX Info: Redefining \nameref on input line 203.
  (MAS350-converted.out) (MAS350-converted.out)
 \@outlinefile=\write6
 \openout6 = `MAS350-converted.out'.
@@ -1096,49 +1096,49 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-02.
+05.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-02.
+05.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-202.
+205.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-202.
+205.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 202.
+(Font)              <12> on input line 205.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 202.
+(Font)              <8> on input line 205.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 202.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 202
+(Font)              <6> on input line 205.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 205
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 202
+LaTeX Font Info:    Trying to load font information for U+msb on input line 205
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 20
-2.
+5.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1166,10 +1166,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.216 \chapter
+l.219 \chapter
               {Introduction}
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-16.
+19.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1182,77 +1182,69 @@ Chapter 0.
 ] [3] [4] [5]
 Chapter 1.
 
-Overfull \hbox (24.7403pt too wide) in paragraph at lines 349--350
+Overfull \hbox (24.7403pt too wide) in paragraph at lines 352--353
 \T1/lmr/m/n/11 the real world. This in-cludes mea-sure-ment of length, area and
  vol-ume, mass but also chance/probability.
  []
 
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 372.
+t line 375.
 [6
 
 ] [7]
 Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
-ine 393.
+ine 396.
  [8] [9]
 
 LaTeX Warning: Reference `ps:measure_basic' on page 10 undefined on input line 
-525.
+528.
 
 
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 10 undefined on i
-nput line 530.
+nput line 533.
 
 [10] [11]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 590.
+(amsmath)                 on input line 593.
 
 [12]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 605.
+(Font)              <14.4> on input line 608.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 605.
+(Font)              <10> on input line 608.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 605.
+(Font)              <7> on input line 608.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 605.
+(hyperref)                removing `math shift' on input line 608.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 605.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 605.
+(hyperref)                removing `\sigma' on input line 608.
 
 
 LaTeX Warning: Reference `ps:borel_closed' on page 13 undefined on input line 6
-18.
+21.
 
 [13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 706.
+(hyperref)                removing `math shift' on input line 709.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\star' on input line 706.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 706.
+(hyperref)                removing `\star' on input line 709.
 
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 737.
+line 740.
 [15]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 790.
+ line 793.
  [16]
-Overfull \hbox (5.2417pt too wide) in paragraph at lines 804--805
+Overfull \hbox (5.2417pt too wide) in paragraph at lines 807--808
 []\T1/lmr/m/n/11 Give a care-ful proof by in-duc-tion of the fact that if $\OT1
 /lmr/bx/n/11 B$ \T1/lmr/m/n/11 is a Boolean al-ge-bra and $\OML/lmm/m/it/11 A[]
 ; A[]; [] ; A[] \OMS/lmsy/m/n/11 2
@@ -1270,22 +1262,18 @@ Chapter 3.
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 832.
+(hyperref)                removing `math shift' on input line 835.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Delta' on input line 832.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 832.
+(hyperref)                removing `\Delta' on input line 835.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 832.
+(Font)              <24.88> on input line 835.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 832.
+(Font)              <20.74> on input line 835.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 832.
+(Font)              <17.28> on input line 835.
 [20
 
 ]
@@ -1301,11 +1289,11 @@ No file MAS350-converted.ind.
 \tf@thm=\write8
 \openout8 = `MAS350-converted.thm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 859.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 859.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 862.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 862.
 (MAS350-converted.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 859.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 859.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 862.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 862.
 Package rerunfilecheck Info: File `MAS350-converted.out' has not changed.
 (rerunfilecheck)             Checksum: 4D3771234316A8E756C948305296F9B2;817.
 
@@ -1345,7 +1333,7 @@ ublic/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on MAS350-converted.pdf (22 pages, 346800 bytes).
+Output written on MAS350-converted.pdf (22 pages, 347323 bytes).
 PDF statistics:
  345 PDF objects out of 1000 (max. 8388607)
  87 named destinations out of 1000 (max. 500000)

@@ -9,8 +9,8 @@
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<title>MAS350 — An example of a non-measurable set </title>
-<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+<title>MAS350 — The Borel -field and Lebesgue Measure</title>
+<link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
 
 
 <script>
@@ -156,7 +156,7 @@ MathJax = {
 
 
 
-<a id="MAS350-converted-autopage-29"></a>
+<a id="MAS350-converted-autopage-25"></a>
 <nav class="topnavigation" ><a href="MAS350-converted.html" class="linkhome" >
 Home</a></nav>
 
@@ -234,14 +234,14 @@ Home</a>
 
 
 <p>
-<a href="The-Borel-sigma-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
+<a href="The-Borel-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
 <span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
 </p>
 
 
 
 <p>
-<a href="An-example-non-measurable-set-star.html#autosec-30" class="tocsection" >
+<a href="An-example-non-measurable-set.html#autosec-30" class="tocsection" >
 <span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
 </p>
 
@@ -269,8 +269,8 @@ Home</a>
 
 
 <p>
-<a href="Product-Measures-Fubini-Theorem-Delta.html#autosec-40" class="tocchapter" >
-<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem (\(\Delta \))</a>
+<a href="Product-Measures-Fubini-Theorem.html#autosec-40" class="tocchapter" >
+<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem \((\Delta )\)</a>
 </p>
 
 
@@ -350,6 +350,10 @@ Home</a>
 
 \(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
 
+\(\DeclareMathOperator {\var }{var}\)
+
+\(\DeclareMathOperator {\cov }{cov}\)
+
 \(\newcommand {\nN }{n \in \mathbb {N}}\)
 
 \(\newcommand {\Br }{{\cal B}(\R )}\)
@@ -425,106 +429,29 @@ Home</a>
 </div>
 
 <p>
-<h4 id="autosec-30"><span class="sectionnumber" >1.5&#x2003;</span>An example of a non-measurable set \((\star )\)</h4>
-<a id="MAS350-converted-autopage-30"></a>
-<a id="MAS350-converted-autofile-6"></a> <a id="sec:non_meas_set"></a>
+<h4 id="autosec-26"><span class="sectionnumber" >1.4&#x2003;</span>The Borel \(\sigma \)-field and Lebesgue Measure</h4>
+<a id="MAS350-converted-autopage-26"></a>
+<a id="MAS350-converted-autofile-5"></a> <a id="sec:borel_field_leb_meas"></a>
 
 <p>
-Note that this section has a \((\star )\), meaning that it is off-syllabus. It is included for interest.
+In this section we take \(S\) to be the real number line \(\R \). We want to describe a measure \(\lambda \) that captures the notion of length as we discussed at the beginning of this
+chapter. So we should have \(\lambda ((a,b)) = b-a\). The first question is - which \(\sigma \)-field should we use? We have already argued that the power set \({\cal P}(\R )\) is too
+big. Our \(\sigma \)-field should contain open intervals, and also unions, intersections and complements of these.
 </p>
-
-<p>
-We might wonder, why go to all the trouble of defining the Borel \(\sigma \)-field? In other words, why can’t we measure (the ‘size’ of) every possible subset of \(\R \)? We will answer
-these questions by constructing a strange looking set \(\mathscr {V}\sw \R \); we will then show that it is not possible to define the Lebesgue measure of \(\mathscr {V}\).
-</p>
-
-<p>
-As usual, let \(\Q \) denote the rational numbers. For any \(x\in \R \) we define
-</p>
-
-<span class="hidden" > \(\seteqnumber{0}{1.}{4}\)</span>
-
-<!--
-
-
-
-                                                                                       Qx = {x + q ; q ∈ Q}.                                            (1.5)--><a id="eq:Qx_def"></a><!--
-
-
-
--->
-
-<p>
-
-
-\begin{equation}
-\label {eq:Qx_def} \Q _x=\{x+q\-q\in \Q \}.
-\end{equation}
-
-
-</p>
-
-<p>
-Note that different \(x\) values may give the same \(\Q _x\). For example, an exercise for you is to prove that \(\Q _{\sqrt {2}}=\Q _{1+\sqrt {2}}\). You can think of \(\Q _x\) as the
-set \(\Q \) translated by \(x\).
-</p>
-
-<p>
-It is easily seen that \(\Q _x\cap [0,1]\) is non-empty; just pick some rational \(q\) that is slightly less than \(x\) and note that \(x+(-q)\in \Q _x\cap [0,1]\). Now, for each set \(\Q
-_x\), we pick precisely one element \(r\in \Q _x\cap [0,1]\) (it does not matter which element we pick). We write this number \(r\) as \(r(\Q _x)\). Define
-</p>
-
-<p>
-\[\mathscr {V}=\{r(\Q _x)\-x\in \mathbb {R}\},\]
-</p>
-
-<p>
-which is a subset of \([0,1]\). For each \(q\in \Q \) define
-</p>
-
-<p>
-\[\mathscr {V}_q=\{q+m\-m\in \mathscr {V}\}.\]
-</p>
-
-<p>
-Clearly \(\mathscr {V}=\mathscr {V}_0\), and \(\mathscr {V}_q\) is precisely the set \(\mathscr {V}\) translated by \(q\). Now, let us record some facts about \(\mathscr {V}_q\).
-</p>
-<div class="theorembodylemma" >
+<div class="theorembodydefn" >
 
 <ul style="list-style-type:none">
 
 
 
-<a id="autoid-17"></a>
+<a id="autoid-13"></a>
 
 <li>
 
 <p>
-<span class="theoremheaderplain" >Lemma 1.5.1</span> <a id="autoid-18" ></a ><a id="lem:non_meas_pre"></a> It holds that
+<span class="theoremheaderplain" >Definition 1.4.1</span> <a id="autoid-14" ></a >The Borel \(\sigma \)-field of \(\R \) to be denoted \({\cal B}(\R )\) is the smallest \(\sigma \)-field
+that contains all open intervals \((a, b)\) where \(-\infty \leq a &lt; b \leq \infty \). Sets in \({\cal B}(\R )\) are called Borel sets.
 </p>
-<ul style="list-style-type:none">
-
-
-<li>
-<p>
-1. If \(q_1\neq q_2\) then \(\mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}=\emptyset \).
-</p>
-
-
-</li>
-<li>
-<p>
-2. \(\R =\bigcup _{q\in \Q } \mathscr {V}_q\).
-</p>
-
-
-</li>
-<li>
-<p>
-3. \([0,1]\sw \bigcup _{q\in \Q \cap [-1,1]} \mathscr {V}_q\sw [-1,2]\).
-</p>
-</li>
-</ul>
 
 
 </li>
@@ -534,55 +461,73 @@ Clearly \(\mathscr {V}=\mathscr {V}_0\), and \(\mathscr {V}_q\) is precisely the
 </div>
 
 <p>
-Before we prove this lemma, let us use it to show that \(\mathscr {V}\) cannot have a Lebesgue measure. We will do this by contradiction: assume that \(\lambda (\mathscr {V})\) is
-defined.
+Note that \({\cal B}(\R )\) also contains isolated points \(\{a\}\) where \(a \in \R \). To see this first observe that \((a, \infty ) \in {\cal B}(\R )\) and also \((-\infty , a) \in
+{\cal B}(\R )\). Now by S(iii),\((-\infty , a] = (a, \infty )^{c} \in {\cal B}(\R )\) and \([a, \infty ) = (-\infty , a)^{c} \in {\cal B}(\R )\). Finally as \(\sigma \)-fields are
+closed under intersections, \(\{a\} = [a, \infty ) \cap (-\infty , a] \in {\cal B}(\R )\). You can show that \({\cal B}(\R )\) also contains all closed intervals (see Problem <a
+href="MAS350-converted.html#??">??</a>).
 </p>
 
 <p>
-Since \(\mathscr {V}\) and \(\mathscr {V}_q\) are translations of each other, they must have the same Lebesgue measure. We write \(c=\lambda (\mathscr {V})=\lambda (\mathscr
-{V}_q)\), which does not depend on \(q\). Let us write \(\Q \cap [-1,1]=\{q_1,q_2,\ldots ,\}\), which we may do because \(\Q \) is countable. By parts (1) and (3) of Lemma <a
-href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a> and property M(ii) we have
+We make two observations:
+</p>
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. \({\cal B}(\R )\) is defined quite indirectly and there is no “formula” that can be used to give the most general element in it. However it is very hard to find a subset of \(\R \) that
+isn’t in \({\cal B}(\R )\) – we will give an example of one in Section <a href="An-example-non-measurable-set.html#sec:non_meas_set">1.5</a>.
+</p>
+</li>
+<li>
+<p>
+2. \({\cal B}(S)\) makes sense on any set \(S\) for which there are subsets that can be called “open” in a sensible way. In particular this works for metric spaces. The most general type
+of \(S\) for which you can form \({\cal B}(S)\) is a topological space.
+</p>
+<p>
+
+
+</p>
+</li>
+</ul>
+
+<p>
+The measure that precisely captures the notion of length is called Lebesgue measure in honour of the French mathematician Henri Lebesgue (1875-1941), who founded the modern theory of
+integration. We will denote it by \(\lambda \). First we need a definition.
 </p>
 
 <p>
-\[\lambda \l (\bigcup _{q\in \Q \cap [-1,1]} \mathscr {V}_q\r )=\sum \limits _{i=1}^\infty \lambda (\mathscr {V}_{q_i})=\sum \limits _{i=1}^\infty c.\]
+Let \(A \in {\cal B}(\R )\) be arbitrary. A covering of A is a finite or countable collection of open intervals \(\{(a_{n}, b_{n}), \nN \}\) so that
 </p>
 
 <p>
-Using the monotonicity property of measures (see Section <a href="Measure.html#sec:basic_meas">1.3</a>) and part (3) of Lemma <a
-href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a> we thus have
+\[ A \subseteq \bigcup _{n=1}^{\infty }(a_{n}, b_{n}).\]
 </p>
+<div class="theorembodydefn" >
+
+<ul style="list-style-type:none">
+
+
+
+<a id="autoid-15"></a>
+
+<li>
 
 <p>
-\[1\leq \sum \limits _{i=1}^\infty c\leq 3.\]
+<span class="theoremheaderplain" >Definition 1.4.2</span> <a id="autoid-16" ></a >Let \({\cal C}_{A}\) be the set of all coverings of the set \(A\in \mc {B}(\R )\). The Lebesgue
+measure \(\lambda \) on \((\R , {\cal B}(\R ))\) is defined by the formula:
 </p>
 
-<p>
-However, there is no value of \(c\) which can satisfy this equation! So it is not possible to make sense of the Lebesgue measure of \(\mathscr {V}\).
-</p>
-
-<p>
-The set \(\mathscr {V}\) is known as a <i>Vitali set</i>. In higher dimensions even stranger things can happen with non-measurable sets; you might like to investigate the
-<i>Banach-Tarski paradox</i>.
-</p>
-
-<p>
-<span class="textsc" >Proof:</span><span style="width:6.1875pt; display:inline-block"><!----></span>[Of Lemma <a
-href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a>.] We prove the three claims in turn.
-</p>
-
-<p>
-(1) Let \(q_1,q_2\in \Q \) be unequal. Suppose that some \(x\in \mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}\) exists – and we now look for a contradiction. By definition of \(\mathscr
-{V}_q\) we have
-</p>
-
-<span class="hidden" > \(\seteqnumber{0}{1.}{5}\)</span>
+<span class="hidden" > \(\seteqnumber{0}{1.}{3}\)</span>
 
 <!--
 
 
-
-                                                                               x = q1 + r(Qx1 ) = q2 + r(Qx2 ).                                         (1.6)--><a id="eq:xqr"></a><!--
+                                                                                                   ∞
+                                                                                                   X
+                                                                                      λ(A) = inf         (bn − an ),                                            (1.4)--><a id="eq:leb"></a><!--
+                                                                                             CA
+                                                                                                   n=1
 
 
 
@@ -592,55 +537,14 @@ href="An-example-non-measurable-set-star.html#lem:non_meas_pre">1.5.1</a>.] We p
 
 
 \begin{equation}
-\label {eq:xqr} x=q_1+r(\Q _{x_1})=q_2+r(\Q _{x_2}).
+\label {eq:leb} \lambda (A) = \inf _{{\cal C}_{A}}\sum _{n=1}^{\infty }(b_{n} - a_{n}),
 \end{equation}
 
 
 </p>
 
 <p>
-By definition of \(\Q _x\) we may write \(r(\Q _{x_1})=x_1+q’_1\) for some \(q’_1\in \Q \), and similarly for \(x_2\), so we obtain \(x=q_1+x_1+q’_1=q_2+x_2+q’_2\) where \(q,q’\in \Q
-\). Hence, setting \(q=q_2-q_1+q’_2-q’_1\in \Q \), we have \(x_1+q=x_2\), which by <span class="textup" >(<a
-href="An-example-non-measurable-set-star.html#eq:Qx_def">1.5</a>)</span> means that \(\Q _{x_1}=\Q _{x_2}\). Thus \(r(\Q _{x_1})=r(\Q _{x_2})\), so going back to <span
-class="textup" >(<a href="An-example-non-measurable-set-star.html#eq:xqr">1.6</a>)</span> we obtain that \(q_1=q_2\). But this contradicts our assumption that \(q_1\neq q_2\).
-Hence \(x\) does not exist and \(\mathscr {V}_{q_1}\cap \mathscr {V}_{q_2}=\emptyset \).
-</p>
-
-<p>
-(2) We will show \(\supseteq \) and \(\subseteq \). The first is easy: since \(\mathscr {V}_q\sw \R \) it is immediate that \(\R \supseteq \bigcup _{q\in \Q } \mathscr {V}_q\).
-</p>
-
-<p>
-Now take some \(x\in \R \). Since we may take \(q=0\) in <span class="textup" >(<a href="An-example-non-measurable-set-star.html#eq:Qx_def">1.5</a>)</span> we have \(x\in \Q _x\).
-By definition of \(r(\Q _x)\) we have \(r(\Q _x)=x+q’\) for some \(q’\in \Q \). By definition of \(\mathscr {V}\) we have \(r(\Q _x)\in \mathscr {V}\) and since \(x=r(\Q _x)-q’\) we
-have \(x\in \mathscr {V}_{-q’}\). Hence \(x\in \bigcup _{q\in \Q } \mathscr {V}_q\).
-</p>
-
-<p>
-(3) Since \(\mathscr {V}\sw [0,1]\), we have \(\mathscr {V}_q\cap [0,1]=\emptyset \) whenever \(q\notin [-1,1]\). Hence, from part (2) and set algebra we have
-</p>
-
-<p>
-\[\R \cap [0,1]\;=\;\l (\bigcup _{q\in \Q }\mathscr {V}_q\r )\cap [0,1]\;=\;\bigcup _{q\in \Q }\mathscr {V}_q\cap [0,1] \;=\; \bigcup _{q\in \Q \cap [-1,1]}\mathscr {V}_q\cap
-[0,1]\;\sw \; \bigcup _{q\in \Q \cap [-1,1]}\mathscr {V}_q.\]
-</p>
-
-<p>
-This proves the first \(\subseteq \) of (3). For the second simply note that \(\mathscr {V}\sw [0,1]\) so \(\mathscr {V}_q\sw [-1,2]\) whenever \(q\in [-1,1]\).
-&#x2003;&#x2003;&#x220E;
-</p>
-<div class="theorembodyremark" >
-
-<ul style="list-style-type:none">
-
-
-
-<a id="autoid-19"></a>
-
-<li>
-
-<p>
-<span class="theoremheaderplain" >Remark 1.5.2</span> <a id="autoid-20" ></a >We used the axiom of choice to define the function \(r(\cdot )\).
+where the \(\inf \) is taken over all possible coverings of \(A\).
 </p>
 
 
@@ -649,6 +553,126 @@ This proves the first \(\subseteq \) of (3). For the second simply note that \(\
 </ul>
 
 </div>
+
+<p>
+It would take a long time to prove that \(\lambda \) really is a measure, and it wouldn’t help us understand \(\lambda \) any better if we did it, so we’ll omit that from the course. For
+the proof, see the standard text books e.g.&nbsp;Cohn, Schilling or Tao.
+</p>
+
+<p>
+Let’s check that the definition (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>) agrees with our intuitive ideas about length.
+</p>
+
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. If \(A = (a,b)\) then \(\lambda ((a,b)) = b-a\) as expected, since \((a,b)\) is a covering of itself and any other cover will have greater length.
+</p>
+</li>
+<li>
+<p>
+2. If \(A = \{a\}\) then choose any \(\epsilon &gt; 0\). Then \((a - \epsilon /2, a + \epsilon /2)\) is a cover of \(a\) and so \(\lambda (\{a\}) \leq (a + \epsilon /2) - (a -
+\epsilon /2) = \epsilon \). But \(\epsilon \) is arbitrary and so we conclude that \(\lambda (\{a\}) = 0\).
+</p>
+<p>
+From (1) and (2), and using M(ii), we deduce that for \(a &lt; b,\)
+</p>
+<p>
+\[\lambda ([a, b)) = \lambda (\{a\} \cup (a, b)) = \lambda (\{a\}) + \lambda ((a, b)) = b-a.\]
+</p>
+</li>
+<li>
+<p>
+3. If \(A = [0, \infty )\) write \(A = \bigcup _{n=1}^{\infty }[n-1, n)\). Then by M(ii), \(\lambda ([0, \infty )) = \infty \). By a similar argument, \(\lambda ((-\infty , 0)) =
+\infty \) and so \(\lambda (\R ) = \lambda ((-\infty , 0)) + \lambda ([0, \infty )) = \infty \).
+</p>
+</li>
+<li>
+<p>
+4. If \(A\in \mc {B}(\R )\), and for some \(x\in \R \) we define \(A_x=\{x+a\-a\in A\}\), then \(\lambda (A)=\lambda (A_x)\).
+</p>
+<p>
+In words, if we take a set \(A\) and translate it (by \(x\)), we do not change its measure. This is easily seen from <span class="textup" >(<a
+href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>)</span>, because any cover of \(A\) can be translated by \(x\) to be a cover of \(A_x\).
+</p>
+</li>
+</ul>
+
+<p>
+In simple practical examples on Lebesgue measure, it is generally best not to try to use (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>), but to just apply the
+properties (1) to (4) above:
+</p>
+
+<p>
+e.g. to find \(\lambda ((-3, 10) - (-1, 4))\), use (<a href="Measure.html#mdiff">1.2</a>) to obtain
+</p>
+
+<p>
+\[\begin {aligned} \lambda ((-3, 10) - (-1, 4)) &amp; = \lambda ((-3, 10)) - \lambda ((-1, 4)))\\ &amp; = (10 - (-3)) - (4 - (-1)) = 13 - 5 = 8.                 \end {aligned}\]
+</p>
+
+<p>
+If \(I\) is a closed interval (or in fact any Borel set) in \(\R \) we can similarly define \({\cal B}(I)\), the Borel \(\sigma \)-field of \(I\), to be the smallest \(\sigma \)-field containing
+all open intervals in \(I\). Then Lebesgue measure on \((I, {\cal B}(I))\) is obtained by restricting the sets \(A\) in (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>)
+to be in \({\cal B}(I)\).
+</p>
+
+<p>
+Sets of measure zero play an important role in measure theory. Here are some interesting examples of quite “large” sets that have Lebesgue measure zero
+</p>
+
+<ul style="list-style-type:none">
+
+
+<li>
+<p>
+1. Countable Subsets of \(\R \) have Lebesgue Measure Zero
+</p>
+<p>
+Let \(A \subset \R \) be countable. Write \(A = \{a_{1}, a_{2}, \ldots \} = \bigcup _{n=1}^{\infty }\{a_{n}\}\). Since \(A\) is an infinite union of point sets, it is in \({\cal B}(\R
+)\). Then
+</p>
+<p>
+\[\lambda (A) = \lambda \left (\bigcup _{n=1}^{\infty }\{a_{n}\}\right ) = \sum _{n=1}^{\infty }\lambda (\{a_{n}\}) = 0.\]
+</p>
+<p>
+It follows that
+</p>
+<p>
+\[ \lambda (\mathbb {N}) = \lambda (\mathbb {Z}) = \lambda (\mathbb {Q}) = 0.\]
+</p>
+<p>
+The last of these is particularly intriguing as it tells us that the only contribution to length of sets of real numbers comes from the irrationals.
+</p>
+</li>
+<li>
+<p>
+2. The Cantor Set has Lebesgue Measure Zero
+</p>
+<p>
+Recall the construction of the Cantor set \(C = \bigcap _{n=1}^{\infty }C_{n}\) given earlier in this chapter. Recall also that the \(C_n\) are decreasing, that is \(C_{n+1}\sw C_n\), and
+hence also \(C\sw C_n\) for all \(n\).
+</p>
+<p>
+Since \(C_{n}\) is a union of intervals, \(C_{n} \in {\cal B}(\R )\) for all \(\nN \). Hence \(C \in {\cal B}(\R )\). We easily see that \(\lambda (C_{1}) = 1 - \frac {1}{3}\) and
+\(\lambda (C_{2}) = 1 - \frac {1}{3} - \frac {2}{9}\). Iterating, we deduce that \(\lambda (C_{n}) = 1 - \sum _{r=1}^{n}\frac {2^{r-1}}{3^{r}}\) and since \(\lambda (C)\leq
+\lambda (C_n)\) we thus have
+</p>
+<p>
+\[\lambda (C)\leq \lambda (C_n)=1 - \ds \sum _{r=1}^{n}\frac {2^{r-1}}{3^{r}}.\]
+</p>
+<p>
+Letting \(n\to \infty \), and using that limits preserve weak inequalities, we obtain \(\lambda (C)\leq 0\). But by definition of a measure we have \(\lambda (C)\geq 0\). Hence
+\(\lambda (C)=0\).
+</p>
+<p>
+
+
+</p>
+</li>
+</ul>
 
 </section>
 
@@ -659,7 +683,7 @@ This proves the first \(\subseteq \) of (3). For the second simply note that \(\
 <footer>
 
 <p>
-Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk
+Copyright Nic Freeman, Sheffield University, n.p.freeman [at] sheffield.ac.uk
 </p>
 
 </footer>

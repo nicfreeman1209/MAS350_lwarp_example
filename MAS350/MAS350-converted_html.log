@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  22 SEP 2020 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  6 OCT 2020 14:31
 entering extended mode
 **./MAS350-converted_html.tex
 (MAS350-converted_html.tex
@@ -1393,21 +1393,21 @@ Package: lwarp-hyperxmp 2018/11/27
 (MAS350-converted_html.aux)
 \openout1 = `MAS350-converted_html.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Info: Redefining \microtypecontext on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Info: Redefining \microtypecontext on input line 203.
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
 Package microtype Info: No font expansion.
@@ -1488,13 +1488,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 \openout5 = `MAS350-converted-images.txt'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-00.
+03.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: "lwarp_mathjax.txt"  (verbatim)
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-200.
+203.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd"
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1520,7 +1520,7 @@ Done.
 File: "lwarp_mathjax.txt"  (verbatim)
  [4] (MAS350-converted_html.sidetoc) [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-63.
+66.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1528,38 +1528,38 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: "lwarp_mathjax.txt"  (verbatim)
  [7]
 (MAS350-converted_html.sidetoc) [8]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 356.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 359.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-56.
+59.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-56.
+59.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-356.
+359.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-356.
+359.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 356.
+(Font)              <11> on input line 359.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 356.
+(Font)              <7.69997> on input line 359.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 356.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 356
+(Font)              <5.5> on input line 359.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 359
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -1568,7 +1568,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 356
+LaTeX Font Info:    Trying to load font information for U+msb on input line 359
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
@@ -1578,14 +1578,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 35
-6.
+9.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 356.
+(Font)              size <5> substituted on input line 359.
 
 [9] [10]
 File: "lwarp_mathjax.txt"  (verbatim)
@@ -1595,69 +1595,31 @@ File: "lwarp_mathjax.txt"  (verbatim)
 [18] (MAS350-converted_html.sidetoc) [19] [20]
 
 LaTeX Warning: Reference `ps:measure_basic' on page 21 undefined on input line 
-525.
+528.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 525.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 528.
 
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 21 undefined on i
-nput line 530.
+nput line 533.
 
 [21] [22] [23] [24]
-
-Package lwarp Warning: This section name:
-(lwarp)                  ``The Borel $\sigma $-field and Lebesgue Measure''
-(lwarp)                at the line number listed below,
-(lwarp)                is using $dollar-delimited math$, which generates
-(lwarp)                complicated file names. It is better to use
-(lwarp)                  \section{Name with \(parenthesis math\)}
-(lwarp)                The math then will be removed from the file name.
-(lwarp)                
-(lwarp)                To avoid duplicate filenames, use the optional
-(lwarp)                short Table of Contents entry:
-(lwarp)                  \section[Unique name, no math]{Name with math}
-(lwarp)                or use \texorpdfstring, from the hyperref package:
-(lwarp)                  \section{
-(lwarp)                    \texorpdfstring
-(lwarp)                      {Name with math}{Unique name, no math}
-(lwarp)                  } 
-(lwarp)                This section is found before or on input line 605.
-
 File: "lwarp_mathjax.txt"  (verbatim)
-[25] (MAS350-converted_html.sidetoc) [26]
+ [25] (MAS350-converted_html.sidetoc) [26]
 
 LaTeX Warning: Reference `ps:borel_closed' on page 27 undefined on input line 6
-18.
+21.
 
 [27] [28]
-
-Package lwarp Warning: This section name:
-(lwarp)                  ``An example of a non-measurable set $(\star )$''
-(lwarp)                at the line number listed below,
-(lwarp)                is using $dollar-delimited math$, which generates
-(lwarp)                complicated file names. It is better to use
-(lwarp)                  \section{Name with \(parenthesis math\)}
-(lwarp)                The math then will be removed from the file name.
-(lwarp)                
-(lwarp)                To avoid duplicate filenames, use the optional
-(lwarp)                short Table of Contents entry:
-(lwarp)                  \section[Unique name, no math]{Name with math}
-(lwarp)                or use \texorpdfstring, from the hyperref package:
-(lwarp)                  \section{
-(lwarp)                    \texorpdfstring
-(lwarp)                      {Name with math}{Unique name, no math}
-(lwarp)                  } 
-(lwarp)                This section is found before or on input line 706.
-
 File: "lwarp_mathjax.txt"  (verbatim)
-[29] (MAS350-converted_html.sidetoc) [30]
+ [29] (MAS350-converted_html.sidetoc) [30]
 
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 740.
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 743.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
-(Font)              using `T1/lmr/bx/n' instead on input line 762.
+(Font)              using `T1/lmr/bx/n' instead on input line 765.
 
 [31] [32]
 File: "lwarp_mathjax.txt"  (verbatim)
@@ -1668,30 +1630,11 @@ File: "lwarp_mathjax.txt"  (verbatim)
 File: "lwarp_mathjax.txt"  (verbatim)
  [37] (MAS350-converted_html.sidetoc)
 [38]
-
-Package lwarp Warning: This section name:
-(lwarp)                  ``Product Measures and Fubini's Theorem ($\Delta $)''
-(lwarp)                at the line number listed below,
-(lwarp)                is using $dollar-delimited math$, which generates
-(lwarp)                complicated file names. It is better to use
-(lwarp)                  \section{Name with \(parenthesis math\)}
-(lwarp)                The math then will be removed from the file name.
-(lwarp)                
-(lwarp)                To avoid duplicate filenames, use the optional
-(lwarp)                short Table of Contents entry:
-(lwarp)                  \section[Unique name, no math]{Name with math}
-(lwarp)                or use \texorpdfstring, from the hyperref package:
-(lwarp)                  \section{
-(lwarp)                    \texorpdfstring
-(lwarp)                      {Name with math}{Unique name, no math}
-(lwarp)                  } 
-(lwarp)                This section is found before or on input line 832.
-
 File: "lwarp_mathjax.txt"  (verbatim)
-[39] (MAS350-converted_html.sidetoc) [40]
+ [39] (MAS350-converted_html.sidetoc) [40]
 File: "lwarp_mathjax.txt"  (verbatim)
- [41] (MAS350-converted_html.sidetoc)
-Excluding 'warpprint' comment. [42]
+ [41]
+(MAS350-converted_html.sidetoc) Excluding 'warpprint' comment. [42]
 No file MAS350-converted_html.ind.
 [43]
 \tf@thm=\write9
@@ -1712,7 +1655,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  14374 strings out of 481165
  257285 string characters out of 2912075
- 601958 words of memory out of 3000000
+ 602958 words of memory out of 3000000
  29329 multiletter control sequences out of 15000+200000
  582925 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1737,7 +1680,7 @@ pe1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmt
 t8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAS350-converted_html.pdf (43 pages, 486644 bytes).
+Output written on MAS350-converted_html.pdf (43 pages, 486593 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

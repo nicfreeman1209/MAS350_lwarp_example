@@ -97,6 +97,9 @@
 \DeclareMathOperator{\var}{var} 
 \DeclareMathOperator{\cov}{cov} 
 
+\CustomizeMathJax{\DeclareMathOperator{\var}{var}}
+\CustomizeMathJax{\DeclareMathOperator{\cov}{cov}}
+
 \newcommand{\nN}{n \in \mathbb{N}}
 \newcommand{\Br}{{\cal B}(\R)}
 \newcommand{\F}{{\cal F}}
@@ -194,8 +197,8 @@
 \HTMLDescription{MAS350 Probability with Measure, Sheffield University, Sept 2020.}% Sets the HTML meta description.
 \HTMLFirstPageTop{MAS350}
 \HTMLPageTop{}
-\HTMLPageBottom{Copyright Nic Freeman, Sheffield University, n.p.freeman@sheffield.ac.uk}
-\CSSFilename{lwarp_sagebrush.css}
+\HTMLPageBottom{Copyright Nic Freeman, Sheffield University, n.p.freeman [at] sheffield.ac.uk}
+\CSSFilename{sans-serif-lwarp-sagebrush.css}
 
 \begin{document}
 \maketitle
@@ -427,7 +430,7 @@ Given a $\sigma$-field $\Sigma$ on $S$, we say that a set $A \subset S$ is {\it 
 
 
 \newpage
-\subsection*{Facts about $\sigma$-fields}
+\subsection*{Facts about \(\sigma\)-fields}
 
 \begin{itemize}
 
@@ -452,7 +455,7 @@ since (by definition) $A-B = A \cap B^{c}$.
 
 
 
-\subsection*{Examples of $\sigma$-fields}
+\subsection*{Examples of \(\sigma\)-fields}
 
 \begin{enumerate}
 \item  ${\cal P}(S)$ is a $\sigma$-field. If $S$ is
@@ -602,7 +605,7 @@ $$ I_{f}(A) = \int_{A}f(x)m(dx),$$ for all $A \in \Sigma$.
 
 
 \newpage
-\section{The Borel $\sigma$-field and Lebesgue Measure}
+\section{The Borel \(\sigma\)-field and Lebesgue Measure}
 \label{sec:borel_field_leb_meas}
 
 In this section we take $S$ to be the real number line $\R$. We want to describe a measure $\lambda$ that captures the notion of length as we discussed at the beginning of this chapter. So we should have $\lambda((a,b)) = b-a$. The first question is - which $\sigma$-field should we use? We have already argued that the power set ${\cal P}(\R)$ is too big. Our $\sigma$-field should contain open intervals, and also unions, intersections and complements of these.
@@ -703,7 +706,7 @@ Letting $n\to\infty$, and using that limits preserve weak inequalities, we obtai
 \end{enumerate}
 
 \newpage
-\section{An example of a non-measurable set $(\star)$}
+\section{An example of a non-measurable set \((\star)\)}
 \label{sec:non_meas_set}
 
 Note that this section has a $(\star)$, meaning that it is off-syllabus. 
@@ -829,7 +832,7 @@ OMITTED
 
 
 
-\chapter{Product Measures and Fubini's Theorem ($\Delta$)}
+\chapter{Product Measures and Fubini's Theorem \((\Delta)\)}
 \label{chap:product_meas}
 
 OMITTED
