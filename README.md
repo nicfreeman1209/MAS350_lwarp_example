@@ -1,6 +1,6 @@
 # MAS350_lwarp_example
 
-This repository contains a working example of mathematics lecture notes, which compile to both [HTML](https://nicfreeman1209.github.io/MAS350_lwarp_example/html/Measure-Spaces-Measure.html) and [PDF](https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/pdf/MAS350-converted.pdf).
+This repository contains a working example of mathematics lecture notes, which compile to both [HTML](https://nicfreeman1209.github.io/MAS350_lwarp_example/MAS350/out_html/Measure-Spaces-Measure.html#autosec-8) and [PDF](https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/MAS350/MAS350-converted.pdf).
 * The PDF version is as it normally would be.
 
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/4.png" width="190" height="128" /> 
