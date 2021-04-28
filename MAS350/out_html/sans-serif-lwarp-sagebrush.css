@@ -42,10 +42,9 @@ body {
     margin:0em ;
     padding:0em ;
     font-size: 100% ;
-    line-height: 1.5 ;
 }
 
-p {margin: 1.5ex 0em 1.5ex 0em ;}
+p {margin: 1.5ex 0em 1.5ex 0em ; line-height: 1.5 ;}
 table p {margin: .5ex 0em .5ex 0em ;}
 
 /* Holds a section number */
@@ -467,7 +466,7 @@ div.marginparblock br
 
 div.bodycontainer {
     float: left ;
-    width: 80% ;
+    width: 85% ;
 }
 
 div.bodywithoutsidetoc div.bodycontainer {
@@ -1261,7 +1260,7 @@ div.sidetoccontainer {
     font-family: "DejaVu Serif", "Bitstream Vera Serif",
         "Lucida Bright", Georgia, serif;
     float: left ;
-    width: 20%;
+    width: 15%;
     margin: 0pt -1px 3ex 0pt ;
     border-right: 1px solid silver;
     border-bottom: 1px solid silver;
