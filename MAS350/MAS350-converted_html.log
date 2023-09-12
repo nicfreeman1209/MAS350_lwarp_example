@@ -1,32 +1,34 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.9.14)  28 APR 2021 10:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.23)  12 SEP 2023 21:49
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **./MAS350-converted_html.tex
 (MAS350-converted_html.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-09-03> (MAS350-converted.tex
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\report.cls"
-Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-05-15> (MAS350-converted.tex
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\report.cls
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count168
-\c@chapter=\count169
-\c@section=\count170
-\c@subsection=\count171
-\c@subsubsection=\count172
-\c@paragraph=\count173
-\c@subparagraph=\count174
-\c@figure=\count175
-\c@table=\count176
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\lmodern.sty"
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -60,59 +62,53 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp.sty"
-Package: lwarp 2020/09/03 v0.89 Allows LaTeX to directly produce HTML5 output.
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp.sty
+Package: lwarp 2023/02/28 v0.911 Allows LaTeX to directly produce HTML5 output.
+
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/ifptex\ifptex.sty
-Package: ifptex 2019/11/01 v2.0 pTeX checker
+Package: ifptex 2023/04/08 v2.2c pTeX checker
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
-Package: etoolbox 2020/08/24 v2.5j e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count177
+(C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count194
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xpatch\xpatch.sty
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
-Package: expl3 2020-09-03 L3 programming layer (loader) 
+Package: expl3 2023-05-15 L3 programming layer (loader) 
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-pdftex
 .def
-File: l3backend-pdftex.def 2020-09-01 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count178
-\l__pdf_internal_box=\box45
+File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count195
+\l__pdf_internal_box=\box51
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xparse.s
 ty
-Package: xparse 2020-05-15 L3 Experimental document command parser
-
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xparse-g
-eneric.tex
-\l__xparse_current_arg_int=\count179
-\g__xparse_grabber_int=\count180
-\l__xparse_m_args_int=\count181
-\l__xparse_v_nesting_int=\count182
-)))
+Package: xparse 2023-02-02 L3 Experimental document command parser
+))
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/ifplatform\ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\shellesc.sty"
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
@@ -124,7 +120,7 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 ) (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
@@ -147,67 +143,68 @@ Package ifplatform Warning:
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/letltxmacro\letltxmacro.st
 y
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+) (C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/newunicodechar\newunicodec
 har.sty
 Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
 )
 
-Package newunicodechar Warning: Redefining Unicode character on input line 717.
+Package newunicodechar Warning: Redefining Unicode character on input line 859.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 718.
+Package newunicodechar Warning: Redefining Unicode character on input line 860.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 719.
+Package newunicodechar Warning: Redefining Unicode character on input line 861.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 720.
+Package newunicodechar Warning: Redefining Unicode character on input line 862.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 721.
+Package newunicodechar Warning: Redefining Unicode character on input line 863.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 722.
+Package newunicodechar Warning: Redefining Unicode character on input line 864.
 
 
 
-Package newunicodechar Warning: Redefining Unicode character on input line 723.
+Package newunicodechar Warning: Redefining Unicode character on input line 865.
 
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
-\LWR@templengthone=\skip49
-\LWR@templengthtwo=\skip50
-\LWR@templengththree=\skip51
-\c@LWR@tempcountone=\count183
-\c@LWR@texboxdepth=\count184
+\LWR@templengthone=\skip50
+\LWR@templengthtwo=\skip51
+\LWR@templengththree=\skip52
+\c@LWR@tempcountone=\count196
+\c@LWR@texboxdepth=\count197
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
 )
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/kvsetkeys\kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-Package lwarp Info: Using option 'warpHTML' on input line 1006.
-Package lwarp Info: Using option 'mathjax' on input line 1006.
- (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/comment\comment.sty
+Package lwarp Info: Using option 'warpHTML' on input line 1186.
+Package lwarp Info: Using option 'mathjax' on input line 1186.
+
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/comment\comment.sty
 \CommentStream=\write3
 
 Excluding comment 'comment') Lwarp: Including comment 'warpall'
@@ -217,73 +214,84 @@ Excluding 'warpprint' comment. Including 'warpHTML' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-Lwarp: Including comment 'warpMathJax')
+Lwarp: Including comment 'warpMathJax') Excluding 'warpprint' comment.
+Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
+
+ Straight input of comment_html.cut.
+(comment_html.cut Lwarp: Excluding comment 'warpsvg')
 Lwarp: Excluding comment 'LWRcreatelwarpmk' Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
 Straight input of comment_html.cut. (comment_html.cut
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype.sty
-Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
-\MT@toks=\toks18
-\MT@count=\count185
-LaTeX Info: Redefining \textls on input line 793.
-\MT@outer@kern=\dimen135
-LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
-\MT@listname@count=\count186
+Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
+\MT@toks=\toks19
+\MT@tempbox=\box52
+\MT@count=\count198
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
+LaTeX Info: Redefining \leftprotrusion on input line 1060.
+\MT@prot@toks=\toks20
+LaTeX Info: Redefining \rightprotrusion on input line 1078.
+LaTeX Info: Redefining \textls on input line 1368.
+\MT@outer@kern=\dimen141
+LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+\MT@listname@count=\count199
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype-pdftex
 .def
-File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
+File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 913.
-LaTeX Info: Redefining \lslig on input line 913.
-\MT@outer@space=\skip52
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip53
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\microtype.cfg
-File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
 ))) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty
-"
+(comment_html.cut (C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifvtex.sty
+
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count187
-\Gm@cntv=\count188
-\c@Gm@tempcnt=\count189
-\Gm@bindingoffset=\dimen136
-\Gm@wd@mp=\dimen137
-\Gm@odd@mp=\dimen138
-\Gm@even@mp=\dimen139
-\Gm@layoutwidth=\dimen140
-\Gm@layoutheight=\dimen141
-\Gm@layouthoffset=\dimen142
-\Gm@layoutvoffset=\dimen143
-\Gm@dimlist=\toks19
+\Gm@cnth=\count266
+\Gm@cntv=\count267
+\c@Gm@tempcnt=\count268
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks21
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg")))
+(C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg)))
 Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
  Straight input of comment_all.cut.
-(comment_all.cut ("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+(comment_all.cut
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count190
-\calc@Bcount=\count191
-\calc@Adimen=\dimen144
-\calc@Bdimen=\dimen145
-\calc@Askip=\skip53
-\calc@Bskip=\skip54
+\calc@Acount=\count269
+\calc@Bcount=\count270
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count192
-\calc@Cskip=\skip55
+\calc@Ccount=\count271
+\calc@Cskip=\skip56
 ))
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
@@ -293,21 +301,7 @@ Including 'warpHTML' comment.
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/gettitlestring\gettitles
 tring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-))
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/everyhook\everyhook.sty
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/svn-prov\svn-prov.sty
-Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
-)
-Package: everyhook 2014/11/26 v1.2 (SVN Rev: 12)\ Hooks for low level TeX every
-X primitives.
-\everypar=\toks20
-\frozen@everymath=\toks21
-\frozen@everydisplay=\toks22
-\everyhbox=\toks23
-\everyvbox=\toks24
-\everycr=\toks25
-)
-Including 'warpall' comment.
+)) Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
  Straight input of comment_all.cut.
@@ -319,42 +313,52 @@ Straight input of comment_html.cut. (comment_html.cut
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xifthen\xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/ifmtarg\ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\verbatim.sty"
-Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks26
-\verbatim@line=\toks27
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks22
+\verbatim@line=\toks23
 \verbatim@in@stream=\read2
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\newfloat.sty
-Package: newfloat 2018/03/04 v1.1a Defining new floating environments (AR)
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/newfloat\newfloat.sty
+Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
+Package newfloat Info: Document class `report' detected.
 ))
 Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
  Straight input of comment_all.cut.
-(comment_all.cut ("C:\Program Files\MiKTeX 2.9\tex/latex/xstring\xstring.sty"
-("C:\Program Files\MiKTeX 2.9\tex/generic/xstring\xstring.tex"
-\integerpart=\count193
-\decimalpart=\count194
+(comment_all.cut
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xstring__\xstring.sty
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/generic/xstring__\xstring.tex
+\@xs@message=\write4
+\integerpart=\count272
+\decimalpart=\count273
 )
-Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
+
+LaTeX Warning: You have requested, on input line 2, version
+               `2019/02/01' of package xstring,
+               but only version
+               `2013/10/13  v1.7c  String manipulations (C Tellechea)'
+               is available.
+
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/environ\environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/trimspaces\trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks28
+\@envbody=\toks24
 )) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -363,41 +367,45 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/printlen\printlen.sty
 Package: printlen 2009/09/03 v1.1a print lengths with units
 ))
-Excluding 'warpprint' comment. Including 'warpall' comment.
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
-
-Straight input of comment_all.cut. (comment_all.cut)
-Including 'warpHTML' comment.
+ Straight input of comment_all.cut.
+(comment_all.cut) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
- Straight input of comment_html.cut.
-(comment_html.cut) Including 'warpall' comment.
+
+Straight input of comment_html.cut. (comment_html.cut)
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
+ Straight input of comment_all.cut.
+(comment_all.cut
+\LWR@quickfile=\write5
+) Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
 
-Straight input of comment_all.cut. (comment_all.cut
-\LWR@quickfile=\write4
+
+Straight input of comment_html.cut. (comment_html.cut
+\LWR@lateximagesfile=\write6
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut
-\LWR@lateximagesfile=\write5
-) Including 'warpHTML' comment.
+(comment_html.cut) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
-Straight input of comment_html.cut. (comment_html.cut)
-Including 'warpHTML' comment.
-\openout3 = `comment_html.cut'.
-
- Straight input of comment_html.cut.
-(comment_html.cut
-\LWR@copyoutfile=\write6
+Straight input of comment_html.cut. (comment_html.cut
+\LWR@copyoutfile=\write7
 \LWR@copyinfile=\read3
-) Including 'warpall' comment.
+)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(comment_all.cut) Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
 
@@ -445,52 +453,56 @@ Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
  Straight input of comment_all.cut.
-(comment_all.cut) Including 'warpall' comment.
-\openout3 = `comment_all.cut'.
-
-
-Straight input of comment_all.cut. (comment_all.cut)
-Including 'warpHTML' comment.
+(comment_all.cut) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
- Straight input of comment_html.cut.
-(comment_html.cut) Including 'warpall' comment.
+
+Straight input of comment_html.cut. (comment_html.cut)
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
-
-Straight input of comment_all.cut. (comment_all.cut)
-Including 'warpHTML' comment.
+ Straight input of comment_all.cut.
+(comment_all.cut) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
- Straight input of comment_html.cut.
-(comment_html.cut
-\c@LWR@HTMLpagenum=\count195
-\c@LWR@htmlseqfilenumber=\count196
-\c@LWR@htmlfilenumber=\count197
-) Including 'warpall' comment.
+
+Straight input of comment_html.cut. (comment_html.cut)
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
-
-Straight input of comment_all.cut. (comment_all.cut)
-Including 'warpHTML' comment.
+ Straight input of comment_all.cut.
+(comment_all.cut) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
- Straight input of comment_html.cut.
-(comment_html.cut) Excluding 'warpprint' comment.
-Including 'warpHTML' comment.
-\openout3 = `comment_html.cut'.
 
- Straight input of comment_html.cut.
-(comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (comment_html.cut
+\c@LWR@HTMLpagenum=\count274
+\c@LWR@htmlseqfilenumber=\count275
+\c@LWR@htmlfilenumber=\count276
+)
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
+ Straight input of comment_all.cut.
+(comment_all.cut) Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
 
-Straight input of comment_all.cut. (comment_all.cut)
+
+Straight input of comment_html.cut. (comment_html.cut)
 Excluding 'warpprint' comment. Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
 Straight input of comment_html.cut. (comment_html.cut)
+Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+ Straight input of comment_all.cut.
+(comment_all.cut) Excluding 'warpprint' comment. Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
+
+
+Straight input of comment_html.cut. (comment_html.cut)
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -509,7 +521,11 @@ Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut) Excluding 'warpprint' comment.
+(comment_html.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (comment_all.cut)
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -523,12 +539,20 @@ Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut) Excluding 'warpprint' comment.
+(comment_html.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (comment_all.cut)
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut) Excluding 'warpprint' comment.
+(comment_html.cut) Including 'warpall' comment.
+\openout3 = `comment_all.cut'.
+
+
+Straight input of comment_all.cut. (comment_all.cut)
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -543,7 +567,7 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@LWR@spandepth=\count198
+\c@LWR@spandepth=\count277
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -582,34 +606,36 @@ Including 'warpall' comment.
 
  Straight input of comment_all.cut.
 (comment_all.cut
-\c@FootnoteDepth=\count199
-\c@footnoteReset=\count266
+\c@FootnoteDepth=\count278
+\c@footnoteReset=\count279
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-\LWR@footnotebox=\box46
-\LWR@mpfootnotes=\box47
+\LWR@footnotebox=\box53
+\LWR@mpfootnotes=\box54
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut) Excluding 'warpprint' comment. Including 'warpall' comment.
+(comment_html.cut) Excluding 'warpprint' comment.
+\c@LWR@currentautosecpage=\count280
+\c@LWR@currentautosecfloatpage=\count281
+\c@LWR@previousautopagelabel=\count282
+ Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-\c@FileDepth=\count267
+\c@FileDepth=\count283
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut
-\c@LWR@previousautopagelabel=\count268
-) Including 'warpMathJax' comment.
+(comment_html.cut) Including 'warpMathJax' comment.
 \openout3 = `comment_mathjax.cut'.
 
 
@@ -638,8 +664,7 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@LWR@prevFileDepth=\count269
-\c@LWR@currentautosec=\count270
+\c@LWR@prevFileDepth=\count284
 ) Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
@@ -718,15 +743,15 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-\HTMLvleftskip=\skip56
-\HTMLleftmargini=\skip57
+\HTMLvleftskip=\skip57
+\HTMLleftmargini=\skip58
 )
 Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
  Straight input of comment_all.cut.
 (comment_all.cut
-\VerbatimHTMLWidth=\skip58
+\VerbatimHTMLWidth=\skip59
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -746,40 +771,42 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@LWR@hlines=\count271
-\c@LWR@hdashedlines=\count272
-\c@LWR@tabulardepth=\count273
-\c@LWR@tabularpardepth=\count274
-\c@LWR@tablecolspecwidth=\count275
-\c@LWR@tablecolspecindex=\count276
-\c@LWR@tableLaTeXcolindex=\count277
-\c@LWR@tabletotalLaTeXcols=\count278
-\c@LWR@tabletotalLaTeXcolsnext=\count279
-\c@LWR@cellcolordepth=\count280
-\c@LWR@tablemulticolswidth=\count281
-\c@LWR@tablemulticolspos=\count282
-\c@LWR@mcolvertbarsl=\count283
-\c@LWR@mcolvertbarsr=\count284
-\c@LWR@mcolvertbarsldash=\count285
-\c@LWR@mcolvertbarsrdash=\count286
-\c@LWR@midrulecounter=\count287
+\c@LWR@hlines=\count285
+\c@LWR@hdashedlines=\count286
+\c@LWR@tabulardepth=\count287
+\c@LWR@tabularpardepth=\count288
+\c@LWR@tablecolspecwidth=\count289
+\c@LWR@tablecolspecindex=\count290
+\c@LWR@tableLaTeXcolindex=\count291
+\c@LWR@tabletotalLaTeXcols=\count292
+\c@LWR@tabletotalLaTeXcolsnext=\count293
+\c@LWR@cellcolordepth=\count294
+\c@LWR@tablemulticolswidth=\count295
+\c@LWR@tablemulticolspos=\count296
+\c@LWR@mcolvertbarsl=\count297
+\c@LWR@mcolvertbarsr=\count298
+\c@LWR@mcolvertbarsldash=\count299
+\c@LWR@mcolvertbarsrdash=\count300
+\c@LWR@midrulecounter=\count301
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
+Straight input of comment_html.cut. (comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
+
+
 Straight input of comment_html.cut. (comment_html.cut
-\LWR@starcount=\count288
-\c@LWR@splitstarindex=\count289
-\c@LWR@splitstarcopies=\count290
-\rownum=\count291
-\LWR@heavyrulewidth=\skip59
-\LWR@lightrulewidth=\skip60
-\LWR@cmidrulewidth=\skip61
-\LWR@thiscmidrulewidth=\skip62
-\c@LWR@lastmulticolumn=\count292
-\c@LWR@tabhtmlcolindex=\count293
-\c@LWR@tabhtmlcolend=\count294
-\c@LWR@tabhtmlcoltotal=\count295
+\rownum=\count302
+\LWR@heavyrulewidth=\skip60
+\LWR@lightrulewidth=\skip61
+\LWR@cmidrulewidth=\skip62
+\LWR@thiscmidrulewidth=\skip63
+\c@LWR@lastmulticolumn=\count303
+\c@LWR@tabhtmlcolindex=\count304
+\c@LWR@tabhtmlcolend=\count305
+\c@LWR@tabhtmlcoltotal=\count306
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
@@ -831,11 +858,10 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-\c@LWR@thisautoid=\count296
-\c@LWR@thisautoidWP=\count297
-\c@LWR@nextautoid=\count298
-\c@LWR@nextautopage=\count299
-\c@LWR@latestautopage=\count300
+\c@LWR@thisautoid=\count307
+\c@LWR@thisautoidWP=\count308
+\c@LWR@nextautoid=\count309
+\c@LWR@nextautopage=\count310
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/capt-of\capt-of.sty
 Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
@@ -849,22 +875,22 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-\c@SideTOCDepth=\count301
+\c@SideTOCDepth=\count311
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@lofdepth=\count302
-\c@lotdepth=\count303
+\c@lofdepth=\count312
+\c@lotdepth=\count313
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-\c@LWR@autoindex=\count304
-\c@LWR@autoglossary=\count305
+\c@LWR@autoindex=\count314
+\c@LWR@autoglossary=\count315
 )
 Excluding 'warpprint' comment. Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
@@ -894,12 +920,12 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@LWR@externalfilecnt=\count306
-\LWR@singledollarwidth=\skip63
-\LWR@singledollarheight=\skip64
-\LWR@singledollardepth=\skip65
-\LWR@singledollarbox=\box48
-\c@LWR@nextequation=\count307
+\c@LWR@externalfilecnt=\count316
+\LWR@singledollarwidth=\skip64
+\LWR@singledollarheight=\skip65
+\LWR@singledollardepth=\skip66
+\LWR@singledollarbox=\box55
+\c@LWR@nextequation=\count317
 ) Excluding 'warpprint' comment.
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
@@ -910,9 +936,9 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-\c@LWR@lateximagenumber=\count308
-\c@LWR@lateximagedepth=\count309
-\c@LWR@LIpage=\count310
+\c@LWR@lateximagenumber=\count318
+\c@LWR@lateximagedepth=\count319
+\c@LWR@LIpage=\count320
 )
 Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
@@ -923,7 +949,7 @@ Including 'warpall' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut
-\c@LWR@startingequation=\count311
+\c@LWR@startingequation=\count321
 )
 Excluding 'warpprint' comment. Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
@@ -939,12 +965,12 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut)
-Excluding 'warpprint' comment. Including 'warpall' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
-
-Straight input of comment_all.cut. (comment_all.cut)
-Excluding 'warpprint' comment. Including 'warpHTML' comment.
+ Straight input of comment_all.cut.
+(comment_all.cut) Excluding 'warpprint' comment. Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
@@ -963,16 +989,18 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\LWR@minipagewidth=\skip66
-\LWR@minipageheight=\skip67
-\c@LWR@virtualpagedepth=\count312
+\LWR@minipagewidth=\skip67
+\LWR@minipageheight=\skip68
+\c@LWR@virtualpagedepth=\count322
 ) Excluding 'warpprint' comment.
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\LWR@atleastonept=\skip68
+\c@LWR@minipage@depth=\count323
+\c@LWR@mpfootnote@store=\count324
+\LWR@atleastonept=\skip69
 ) Including 'warpall' comment.
 \openout3 = `comment_all.cut'.
 
@@ -987,7 +1015,7 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_all.cut. (comment_all.cut
-\LWR@fminipagebox=\box49
+\LWR@fminipagebox=\box56
 )
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
@@ -1003,16 +1031,16 @@ Including 'warpHTML' comment.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\c@LWR@textcurrentfontdepth=\count313
+\c@LWR@textcurrentfontdepth=\count325
 ) Excluding 'warpprint' comment.
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
 (comment_html.cut
-\LWR@tempwidth=\skip69
-\LWR@tempheight=\skip70
-\LWR@tempraise=\skip71
+\LWR@tempwidth=\skip70
+\LWR@tempheight=\skip71
+\LWR@tempraise=\skip72
 ) Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
@@ -1035,16 +1063,36 @@ Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
 
-Straight input of comment_html.cut. (comment_html.cut)
+Straight input of comment_html.cut. (comment_html.cut
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-array.sty
+Package lwarp Info: Using package `array',
+(lwarp)             and adding lwarp modifications, including options,
+(lwarp)              on input line 23.
+Package: lwarp-array 2018/12/30
+
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen152
+\ar@mcellbox=\box57
+\extrarowheight=\dimen153
+\NC@list=\toks25
+\extratabsurround=\skip73
+\backup@length=\skip74
+\ar@cellbox=\box58
+)))
 Including 'warpHTML' comment.
 \openout3 = `comment_html.cut'.
 
  Straight input of comment_html.cut.
-(comment_html.cut)
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-textcomp.sty"
+(comment_html.cut) Including 'warpHTML' comment.
+\openout3 = `comment_html.cut'.
+
+
+Straight input of comment_html.cut. (comment_html.cut)
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-textcomp.sty
 Package lwarp Info: Using package `textcomp',
 (lwarp)             and adding lwarp modifications, including options,
-(lwarp)              on input line 20.
+(lwarp)              on input line 21.
 Package: lwarp-textcomp 2017/04/05
 )
 Including 'warpHTML' comment.
@@ -1079,136 +1127,143 @@ Including 'warpHTML' comment.
 
 
 Straight input of comment_html.cut. (comment_html.cut))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-makeidx.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-makeidx.sty
 Package lwarp Info: Using package `makeidx',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 18.
 Package: lwarp-makeidx 2014/09/29
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\makeidx.sty"
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+(C:\Program Files\MiKTeX 2.9\tex/latex/base\makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 ))
-\@indexfile=\write7
-\openout7 = `MAS350-converted_html.idx'.
+\@indexfile=\write8
+\openout8 = `MAS350-converted_html.idx'.
 
 
 Writing index file MAS350-converted_html.idx
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xcolor.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xcolor.sty
 Package lwarp Info: Using package `xcolor',
 (lwarp)             and adding lwarp modifications, including options,
-(lwarp)              on input line 20.
+(lwarp)              on input line 21.
 Package: lwarp-xcolor 2016/05/11
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 227.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
-File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 )
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-Including 'warpHTML' comment.
-\openout3 = `comment_html.cut'.
-
- Straight input of comment_html.cut.
-(comment_html.cut))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+))
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks29
+\@emptytoks=\toks26
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
-Package: amsopn 2016/03/08 v2.02 operator names
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks30
-\ex@=\dimen146
+\@emptytoks=\toks27
+\ex@=\dimen154
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-amsmath.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-amsmath.sty
 Package lwarp Info: Using package `amsmath',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 18.
 Package: lwarp-amsmath 2017/09/02
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip72
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip75
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
-Package: amstext 2000/06/29 v2.01 AMS text
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen147
+\pmbraise@=\dimen155
 )
-\inf@bad=\count314
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count315
-\leftroot@=\count316
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count317
-\DOTSCASE@=\count318
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen148
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count319
-\c@MaxMatrixCols=\count320
+\inf@bad=\count326
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count327
+\leftroot@=\count328
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count329
+\DOTSCASE@=\count330
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen156
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count331
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count332
 \dotsspace@=\muskip16
-\c@parentequation=\count321
-\dspbrk@lvl=\count322
-\tag@help=\toks31
-\row@=\count323
-\column@=\count324
-\maxfields@=\count325
-\andhelp@=\toks32
-\eqnshift@=\dimen149
-\alignsep@=\dimen150
-\tagshift@=\dimen151
-\tagwidth@=\dimen152
-\totwidth@=\dimen153
-\lineht@=\dimen154
-\@envbody=\toks33
-\multlinegap=\skip73
-\multlinetaggap=\skip74
-\mathdisplay@stack=\toks34
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\c@parentequation=\count333
+\dspbrk@lvl=\count334
+\tag@help=\toks28
+\row@=\count335
+\column@=\count336
+\maxfields@=\count337
+\andhelp@=\toks29
+\eqnshift@=\dimen157
+\alignsep@=\dimen158
+\tagshift@=\dimen159
+\tagwidth@=\dimen160
+\totwidth@=\dimen161
+\lineht@=\dimen162
+\@envbody=\toks30
+\multlinegap=\skip76
+\multlinetaggap=\skip77
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
-\c@LWR@amsmathdepth=\count326
+\c@LWR@amsmathdepth=\count338
+\c@LWR@maxfields@=\count339
 
 Including 'warpMathJax' comment.
 \openout3 = `comment_mathjax.cut'.
 
  Straight input of comment_mathjax.cut.
 (comment_mathjax.cut))
-("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\mathrsfs.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
@@ -1219,40 +1274,40 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-graphicx.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-graphicx.sty
 Package lwarp Info: Using package `graphicx',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 20.
-Package: lwarp-graphicx 2017/06/01
+Package: lwarp-graphicx 2020/09/09
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-graphics.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-graphics.sty
 Package lwarp Info: Using package `graphics',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 20.
-Package: lwarp-graphics 2017/06/25
+Package: lwarp-graphics 2020/08/30
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+(C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\LWR@igwidth=\skip75
-\LWR@igheight=\skip76
-\LWR@imagesizebox=\box52
+\LWR@igwidth=\skip78
+\LWR@igheight=\skip79
+\LWR@imagesizebox=\box61
 )
-\Gin@req@height=\dimen155
-\Gin@req@width=\dimen156
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-ntheorem.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-ntheorem.sty
 Package lwarp Info: Using package `ntheorem',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 50.
@@ -1261,37 +1316,37 @@ Package: lwarp-ntheorem 2011/08/15
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/ntheorem\ntheorem.sty
 Style `ntheorem', Version 1.33 <2011/08/15>
 Package: ntheorem 2011/08/15 1.33
-\theorem@style=\toks35
-\theorem@@style=\toks36
-\theorembodyfont=\toks37
-\theoremnumbering=\toks38
-\theorempreskipamount=\skip77
-\theorempostskipamount=\skip78
-\theoremframepreskipamount=\skip79
-\theoremframepostskipamount=\skip80
-\theoreminframepreskipamount=\skip81
-\theoreminframepostskipamount=\skip82
-\theorem@preskip=\toks39
-\theorem@postskip=\toks40
-\theorem@framepreskip=\toks41
-\theorem@framepostskip=\toks42
-\theorem@inframepreskip=\toks43
-\theorem@inframepostskip=\toks44
-\theoremindent=\dimen157
-\theorem@indent=\dimen158
-\theoremrightindent=\dimen159
-\theorem@rightindent=\dimen160
-\theoremheaderfont=\toks45
-\theoremseparator=\toks46
-\theoremprework=\toks47
-\theorempostwork=\toks48
-\theoremsymbol=\toks49
-\qedsymbol=\toks50
-\theoremkeyword=\toks51
-\qedsymbol=\toks52
-\thm@topsep=\skip83
-\thm@topsepadd=\skip84
-)) ("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-framed.sty"
+\theorem@style=\toks32
+\theorem@@style=\toks33
+\theorembodyfont=\toks34
+\theoremnumbering=\toks35
+\theorempreskipamount=\skip80
+\theorempostskipamount=\skip81
+\theoremframepreskipamount=\skip82
+\theoremframepostskipamount=\skip83
+\theoreminframepreskipamount=\skip84
+\theoreminframepostskipamount=\skip85
+\theorem@preskip=\toks36
+\theorem@postskip=\toks37
+\theorem@framepreskip=\toks38
+\theorem@framepostskip=\toks39
+\theorem@inframepreskip=\toks40
+\theorem@inframepostskip=\toks41
+\theoremindent=\dimen165
+\theorem@indent=\dimen166
+\theoremrightindent=\dimen167
+\theorem@rightindent=\dimen168
+\theoremheaderfont=\toks42
+\theoremseparator=\toks43
+\theoremprework=\toks44
+\theorempostwork=\toks45
+\theoremsymbol=\toks46
+\qedsymbol=\toks47
+\theoremkeyword=\toks48
+\qedsymbol=\toks49
+\thm@topsep=\skip86
+\thm@topsepadd=\skip87
+)) (C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-framed.sty
 Package lwarp Info: Using package `framed',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 19.
@@ -1299,65 +1354,54 @@ Package: lwarp-framed 2011/10/22
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip85
-\fb@frw=\dimen161
-\fb@frh=\dimen162
-\FrameRule=\dimen163
-\FrameSep=\dimen164
+\OuterFrameSep=\skip88
+\fb@frw=\dimen169
+\fb@frh=\dimen170
+\FrameRule=\dimen171
+\FrameSep=\dimen172
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-enumitem.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-enumitem.sty
 Package lwarp Info: Using package `enumitem',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 18.
 Package: lwarp-enumitem 2018/11/30
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/enumitem\enumitem.sty
-Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip86
-\enit@outerparindent=\dimen165
-\enit@toks=\toks53
-\enit@inbox=\box53
-\enitdp@description=\count327
-)
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip89
+\enit@outerparindent=\dimen173
+\enit@toks=\toks50
+\enit@inbox=\box62
+\enit@count@id=\count340
+\enitdp@description=\count341
+))
+\c@pslisti=\count342
+\c@pslistii=\count343
+\c@pslistiii=\count344
+\enitdp@pslist=\count345
 
-LaTeX Warning: You have requested, on input line 18, version
-               `2018/11/30' of package enumitem,
-               but only version
-               `2011/09/28 v3.5.2 Customized lists'
-               is available.
-
-Including 'warpHTML' comment.
-\openout3 = `comment_html.cut'.
-
- Straight input of comment_html.cut.
-(comment_html.cut))
-\c@pslisti=\count328
-\c@pslistii=\count329
-\c@pslistiii=\count330
-\enitdp@pslist=\count331
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xr-hyper.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xr-hyper.sty
 Package lwarp Info: Replacing package `xr-hyper' with the lwarp version,
-(lwarp)             and discarding options, on input line 18.
+(lwarp)             and discarding options, on input line 19.
 Package: lwarp-xr-hyper 2019/10/03
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xr.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-xr.sty
 Package lwarp Info: Using package `xr',
 (lwarp)             and adding lwarp modifications, including options,
-(lwarp)              on input line 18.
+(lwarp)              on input line 19.
 Package: lwarp-xr 2019/07/22
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\xr.sty"
-Package: xr 2019/07/22 v5.05 eXternal References (DPC)
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\xr.sty
+Package: xr 2020-05-10 v5.06 eXternal References (DPC)
 )))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-hyperref.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-hyperref.sty
 Package lwarp Info: Using the lwarp HTML version of package `hyperref',
-(lwarp)             and discarding options.
+(lwarp)             and discarding options except backref, pagebackref.
 (lwarp)             (Not using \ProvidesPackage, so that other packages
 (lwarp)             do not attempt to patch lwarp's version of `hyperref'.)
 (lwarp)              on input line 25.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-cleveref.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-cleveref.sty
 Package lwarp Info: Using package `cleveref',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 18.
@@ -1367,28 +1411,28 @@ Package: lwarp-cleveref 2018/03/27
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `ntheorem' support loaded on input line 3055.
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-atbegshi.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-atbegshi.sty
 Package lwarp Info: Replacing package `atbegshi' with the lwarp version,
 (lwarp)             and discarding options, on input line 18.
 Package: lwarp-atbegshi 2011/10/05
-\AtBeginShipoutBox=\box54
+\AtBeginShipoutBox=\box63
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/picture\picture.sty
 Package: picture 2020-04-22 v1.6 Dimens for picture macros (HO)
 Package picture Info: Calculation method: calc.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-hyperxmp.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-hyperxmp.sty
 Package lwarp Info: Replacing package `hyperxmp' with the lwarp version,
 (lwarp)             and discarding options, on input line 18.
 Package: lwarp-hyperxmp 2018/11/27
 )
-\c@thm_counter=\count332
-\c@solution=\count333
-\LWR@userspaperwidth=\skip87
-\LWR@userspaperheight=\skip88
-\LWR@usersmarginparwidth=\skip89
-\LWR@userstextwidth=\skip90
-\LWR@userstextheight=\skip91
+\c@thm_counter=\count346
+\c@solution=\count347
+\LWR@userspaperwidth=\skip90
+\LWR@userspaperheight=\skip91
+\LWR@usersmarginparwidth=\skip92
+\LWR@userstextwidth=\skip93
+\LWR@userstextheight=\skip94
 
 (MAS350-converted_html.aux)
 \openout1 = `MAS350-converted_html.aux'.
@@ -1408,13 +1452,20 @@ LaTeX Font Info:    ... okay on input line 203.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
 LaTeX Font Info:    ... okay on input line 203.
 LaTeX Info: Redefining \microtypecontext on input line 203.
+Package microtype Info: Applying patch `item' on input line 203.
+Package microtype Info: Applying patch `toc' on input line 203.
+Package microtype Info: Applying patch `eqnum' on input line 203.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 203.
+
+Package microtype Info: Applying patch `verbatim' on input line 203.
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
 Package microtype Info: No font expansion.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
@@ -1453,51 +1504,54 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-geometry.sty"
+(C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-geometry.sty
 Package lwarp Info: Replacing package `geometry' with the lwarp version,
 (lwarp)             and discarding options, on input line 20.
 Package: lwarp-geometry 2018/04/16
 )
-\LWR@colorminipagebox=\box55
+\LWR@colorminipagebox=\box64
 
-(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/context/base\supp-pdf.mkii
+(C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen166
-\scratchbox=\box56
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen167
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks55
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-epstopdf-base.sty"
+\scratchcounter=\count348
+\scratchdimen=\dimen174
+\scratchbox=\box65
+\nofMPsegments=\count349
+\nofMParguments=\count350
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count351
+\MPscratchDim=\dimen175
+\MPnumerator=\count352
+\makeMPintoPDFobject=\count353
+\everyMPtoPDFconversion=\toks52
+) (C:\Program Files\MiKTeX 2.9\tex/latex/lwarp\lwarp-epstopdf-base.sty
 Package lwarp Info: Using package `epstopdf-base',
 (lwarp)             and adding lwarp modifications, including options,
 (lwarp)              on input line 18.
-Package: lwarp-epstopdf-base 2016/05/15
+Package: lwarp-epstopdf-base 2020-01-24
 
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/epstopdf-pkg\epstopdf-base
 .sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-))
-\openout5 = `MAS350-converted-images.txt'.
+ (C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)))
+\openout6 = `MAS350-converted-images.txt'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
 03.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 File: "lwarp_mathjax.txt"  (verbatim)
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
 203.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd"
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 ---
 Package lwarp:
@@ -1508,22 +1562,24 @@ Done.
 ---
 [1
 
-{C:/Users/nicfr/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-\openout6 = `MAS350-converted_html.sidetoc'.
+{C:/Users/nicfr/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}{C:/Progra
+m Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fo
+nts/enc/dvips/lm/lm-ts1.enc}]
+\openout7 = `MAS350-converted_html.sidetoc'.
 
- [2]
-(MAS350-converted_html.toc)
-\tf@toc=\write8
-\openout8 = `MAS350-converted_html.toc'.
+ [2] (MAS350-converted_html.toc)
+\tf@toc=\write9
+\openout9 = `MAS350-converted_html.toc'.
 
  [3]
 File: "lwarp_mathjax.txt"  (verbatim)
- [4] (MAS350-converted_html.sidetoc) [5]
+ [4]
+(MAS350-converted_html.sidetoc) [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 66.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [6]
 File: "lwarp_mathjax.txt"  (verbatim)
  [7]
@@ -1532,26 +1588,26 @@ LaTeX Font Info:    Calculating math sizes for size <11> on input line 359.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
 59.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
 59.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 359.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 359.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <11> on input line 359.
@@ -1562,7 +1618,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for U+msa on input line 359
 .
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
@@ -1571,7 +1627,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 LaTeX Font Info:    Trying to load font information for U+msb on input line 359
 .
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+(C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msb.cfg
@@ -1580,25 +1636,25 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 35
 9.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd"
+(C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 359.
 
-[9] [10]
+[9{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-mathsy.enc}] [10]
 File: "lwarp_mathjax.txt"  (verbatim)
- [11] (MAS350-converted_html.sidetoc) [12] [13] [14] [15] [16] [17]
+ [11] (MAS350-converted_html.sidetoc) [12]
+[13] [14] [15] [16] [17]
 File: "lwarp_mathjax.txt"  (verbatim)
-
-[18] (MAS350-converted_html.sidetoc) [19] [20]
+ [18] (MAS350-converted_html.sidetoc) [19] [20]
 
 LaTeX Warning: Reference `ps:measure_basic' on page 21 undefined on input line 
 528.
 
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 528.
 
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 21 undefined on i
 nput line 533.
@@ -1610,35 +1666,31 @@ File: "lwarp_mathjax.txt"  (verbatim)
 LaTeX Warning: Reference `ps:borel_closed' on page 27 undefined on input line 6
 21.
 
-[27] [28]
+[27]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 683.
+ [28{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}]
 File: "lwarp_mathjax.txt"  (verbatim)
- [29] (MAS350-converted_html.sidetoc) [30]
 
-LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 743.
-
-
-LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
-(Font)              using `T1/lmr/bx/n' instead on input line 765.
-
-[31] [32]
+[29] (MAS350-converted_html.sidetoc) [30] [31] [32]
 File: "lwarp_mathjax.txt"  (verbatim)
- [33] (MAS350-converted_html.sidetoc) [34]
+ [33]
+(MAS350-converted_html.sidetoc) [34]
 File: "lwarp_mathjax.txt"  (verbatim)
- [35]
-(MAS350-converted_html.sidetoc) [36]
+ [35] (MAS350-converted_html.sidetoc)
+[36]
 File: "lwarp_mathjax.txt"  (verbatim)
- [37] (MAS350-converted_html.sidetoc)
-[38]
+ [37] (MAS350-converted_html.sidetoc) [38]
 File: "lwarp_mathjax.txt"  (verbatim)
- [39] (MAS350-converted_html.sidetoc) [40]
+ [39]
+(MAS350-converted_html.sidetoc) [40]
 File: "lwarp_mathjax.txt"  (verbatim)
- [41]
-(MAS350-converted_html.sidetoc) Excluding 'warpprint' comment. [42]
+ [41] (MAS350-converted_html.sidetoc)
+Excluding 'warpprint' comment. [42]
 No file MAS350-converted_html.ind.
 [43]
-\tf@thm=\write9
-\openout9 = `MAS350-converted_html.thm'.
+\tf@thm=\write10
+\openout10 = `MAS350-converted_html.thm'.
 
  (MAS350-converted_html.aux)
 
@@ -1646,43 +1698,34 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
 LaTeX Warning: There were undefined references.
 
  ) ) 
 Here is how much of TeX's memory you used:
- 14374 strings out of 481165
- 257285 string characters out of 2912075
- 602958 words of memory out of 3000000
- 29329 multiletter control sequences out of 15000+200000
- 582925 words of font info for 66 fonts, out of 3000000 for 9000
+ 16970 strings out of 476376
+ 328847 string characters out of 5795630
+ 1924845 words of memory out of 5000000
+ 36598 multiletter control sequences out of 15000+600000
+ 552987 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,51p,896b,870s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
-ex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Progra
-m Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr
-12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/lm/lmtko10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmt
-t8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt9.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAS350-converted_html.pdf (43 pages, 486739 bytes).
+ 93i,7n,108p,1050b,948s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MAS350-converted_html.pdf (43 pages, 455083 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
+ 245 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

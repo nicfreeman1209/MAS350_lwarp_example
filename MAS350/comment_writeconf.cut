@@ -5,6 +5,7 @@
 // Based on code by Davide P. Cervone.
 // Equation numbering: https://github.com/mathjax/MathJax/issues/2427
 // Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
 //
 // Modified by Brian Dunn to adjust equation numbering and add subequations.
 //
@@ -17,7 +18,7 @@ MathJax = {
   subequations: "0",
   section: "",
   loader: {
-    load: ['[tex]/tagFormat'],
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
   },
   startup: {
     ready() {
@@ -43,10 +44,14 @@ MathJax = {
         }
       }
 
-      //  Create the command map for \ifstar, \ifnextchar, \seteqnumber
-      new CommandMap('ifstar-ifnextchar-setequnumber', {
+      //  Create the command map for:
+      //    \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+      new CommandMap('Lwarp-macros', {
         ifstar: 'IfstarFunction',
         ifnextchar: 'IfnextcharFunction',
+        ifblank: 'IfblankFunction',
+        ifstrequal: 'IfstrequalFunction',
+        gsubstitute: 'GsubstituteFunction',
         seteqnumber: 'SeteqnumberFunction'
       }, {
         //  This function implements an ifstar macro.
@@ -70,6 +75,34 @@ MathJax = {
           useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
         },
 
+        // This function implements an ifblank macro.
+        IfblankFunction(parser, name) {
+          const blankarg = parser.GetArgument(name);
+          const resultblank = parser.GetArgument(name);
+          const resultnotblank = parser.GetArgument(name);
+          const isblank = (blankarg.trim() == "");
+          useArgument(parser, isblank ? resultblank : resultnotblank);
+        },
+
+        // This function implements an ifstrequal macro.
+        IfstrequalFunction(parser, name) {
+          const strequalfirst = parser.GetArgument(name);
+          const strequalsecond = parser.GetArgument(name);
+          const resultequal = parser.GetArgument(name);
+          const resultnotequal = parser.GetArgument(name);
+          const isequal = (strequalfirst == strequalsecond);
+          useArgument(parser, isequal ? resultequal : resultnotequal);
+        },
+
+        // This function implements a gsub macro.
+        GsubstituteFunction(parser, name) {
+          const gsubfirst = parser.GetArgument(name);
+          const gsubsecond = parser.GetArgument(name);
+          const gsubthird = parser.GetArgument(name);
+          let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+          useArgument(parser, gsubresult);
+        },
+
         //  This function modifies the equation numbers.
         SeteqnumberFunction(parser, name) {
             //  Get the macro parameters
@@ -82,11 +115,12 @@ MathJax = {
             MathJax.config.section=neweqsection ;           // a string with numeric meaning
             parser.tags.counter = parser.tags.allCounter = neweqnumber ;
         }
+
       });
 
-      //  Create the ifstar-ifnextchar-setequnumber package
-      Configuration.create('ifstar-ifnextchar-setequnumber', {
-        handler: {macro: ['ifstar-ifnextchar-setequnumber']}
+      //  Create the Lwarp-macros package
+      Configuration.create('Lwarp-macros', {
+        handler: {macro: ['Lwarp-macros']}
       });
 
       MathJax.startup.defaultReady();
@@ -104,13 +138,58 @@ MathJax = {
             math.inputData.recompile.section = MathJax.config.section;
         }
       });
+
+        // For \left, \right with unicode-math:
+        const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+        const {Symbol} = MathJax._.input.tex.Symbol;
+        const {MapHandler} = MathJax._.input.tex.MapHandler;
+        const delimiter = MapHandler.getMap('delimiter');
+        delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+        delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+        delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+        delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+        delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+        delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+        delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+        delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+        delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+        delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+        delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+        delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+        delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+        delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+        delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+        delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+        delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+        delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+        delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+        delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+        delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+        delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+        delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+        delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+        delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+        delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+        delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+        delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+        delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+        delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+        delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+        delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+        delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+        delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+        delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+        delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+        delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+        delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+        delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
     }   // ready
   },    // startup
 
   tex: {
-    packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
+    packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
     tags: "ams",
-        tagFormat: {
+        tagformat: {
             number: function (n) {
                 if(MathJax.config.subequations==0)
                     return(MathJax.config.section + n);
@@ -124,6 +203,6 @@ MathJax = {
 
 <script
     id="MathJax-script"
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 ></script>
 \end{filecontents*}

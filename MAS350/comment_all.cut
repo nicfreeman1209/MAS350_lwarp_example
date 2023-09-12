@@ -8,8 +8,8 @@
     }
 
 \AtBeginDocument{
-    \@ifpackageloaded{graphics}{
-        \@ifpackageloaded{metalogo}{}{
+    \IfPackageLoadedTF{graphics}{
+        \IfPackageLoadedTF{metalogo}{}{
             \renewrobustcmd*{\Xe}
                 {X\hspace{-.1667em}\raisebox{-.5ex}{\reflectbox{E}}}
         }
@@ -18,7 +18,7 @@
 
 \AtEndDocument{
     \ifbool{LWR@warnXe}{
-        \PackageWarningNoLine{lwarp}{Load graphicx or graphics
+        \PackageNoteNoLine{lwarp}{Load graphicx or graphics
             for improved XeTeX logo}
     }{}
 }

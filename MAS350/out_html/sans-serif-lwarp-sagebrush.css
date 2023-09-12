@@ -42,9 +42,10 @@ body {
     margin:0em ;
     padding:0em ;
     font-size: 100% ;
+    line-height: 1.5 ;
 }
 
-p {margin: 1.5ex 0em 1.5ex 0em ; line-height: 1.5 ;}
+p {margin: 1.5ex 0em 1.5ex 0em ;}
 table p {margin: .5ex 0em .5ex 0em ;}
 
 /* Holds a section number */

@@ -11,14 +11,13 @@
 <![endif]-->
 <title>MAS350 — The Borel -field and Lebesgue Measure</title>
 <link rel="stylesheet" type="text/css" href="sans-serif-lwarp-sagebrush.css" />
-
-
 <script>
 // Lwarp MathJax emulation code
 //
 // Based on code by Davide P. Cervone.
 // Equation numbering: https://github.com/mathjax/MathJax/issues/2427
 // Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
 //
 // Modified by Brian Dunn to adjust equation numbering and add subequations.
 //
@@ -28,126 +27,195 @@
 // number is auto-incremented by MathJax between equations.
 //
 MathJax = {
-     subequations: "0",
-     section: "",
-     loader: {
-         load: ['[tex]/tagFormat'],
-     },
-     startup: {
-         ready() {
-             //       These would be replaced by import commands if you wanted to make
-             //       a proper extension.
-             const Configuration = MathJax._.input.tex.Configuration.Configuration;
-             const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
-             const Macro = MathJax._.input.tex.Symbol.Macro;
-             const TexError = MathJax._.input.tex.TexError.default;
-             const ParseUtil = MathJax._.input.tex.ParseUtil.default;
-             const expandable = MathJax._.util.Options.expandable;
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
 
+        // Insert the replacement string into the TeX string, and check
+        // that there haven't been too many maxro substitutions (prevents
+        // infinite loops).
+        const useArgument = (parser, text) => {
+          parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+          parser.i = 0;
+          if (++parser.macroCount > parser.configuration.options.maxMacros) {
+            throw new TexError('MaxMacroSub1',
+            'MathJax maximum macro substitution count exceeded; ' +
+            'is there a recursive macro call?');
+          }
+        }
 
-             //       Insert the replacement string into the TeX string, and check
-             //       that there haven't been too many maxro substitutions (prevents
-             //       infinite loops).
-             const useArgument = (parser, text) => {
-                  parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
-                  parser.i = 0;
-                  if (++parser.macroCount > parser.configuration.options.maxMacros) {
-                      throw new TexError('MaxMacroSub1',
-                      'MathJax maximum macro substitution count exceeded; ' +
-                      'is there a recursive macro call?');
-                  }
-             }
+        // Create the command map for:
+        //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+        new CommandMap('Lwarp-macros', {
+          ifstar: 'IfstarFunction',
+          ifnextchar: 'IfnextcharFunction',
+          ifblank: 'IfblankFunction',
+          ifstrequal: 'IfstrequalFunction',
+          gsubstitute: 'GsubstituteFunction',
+          seteqnumber: 'SeteqnumberFunction'
+        }, {
+          // This function implements an ifstar macro.
+          IfstarFunction(parser, name) {
+             const resultstar = parser.GetArgument(name);
+             const resultnostar = parser.GetArgument(name);
+             const star = parser.GetStar();                 // true if there is a *
+             useArgument(parser, star ? resultstar : resultnostar);
+          },
 
+          // This function implements an ifnextchar macro.
+          IfnextcharFunction(parser, name) {
+            let whichchar = parser.GetArgument(name);
+            if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+              // $ syntax highlighting
+              whichchar = String.fromCodePoint(parseInt(whichchar));
+            }
+            const resultnextchar = parser.GetArgument(name);
+            const resultnotnextchar = parser.GetArgument(name);
+            const gotchar = (parser.GetNext() === whichchar);
+            useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+          },
 
-             //       Create the command map for \ifstar, \ifnextchar, \seteqnumber
-             new CommandMap('ifstar-ifnextchar-setequnumber', {
-                  ifstar: 'IfstarFunction',
-                  ifnextchar: 'IfnextcharFunction',
-                  seteqnumber: 'SeteqnumberFunction'
-             }, {
-                  //      This function implements an ifstar macro.
-                  IfstarFunction(parser, name) {
-                      const resultstar = parser.GetArgument(name);
-                      const resultnostar = parser.GetArgument(name);
-                      const star = parser.GetStar();                        // true if there is a *
-                      useArgument(parser, star ? resultstar : resultnostar);
-                  },
+          // This function implements an ifblank macro.
+          IfblankFunction(parser, name) {
+            const blankarg = parser.GetArgument(name);
+            const resultblank = parser.GetArgument(name);
+            const resultnotblank = parser.GetArgument(name);
+            const isblank = (blankarg.trim() == "");
+            useArgument(parser, isblank ? resultblank : resultnotblank);
+          },
 
+          // This function implements an ifstrequal macro.
+          IfstrequalFunction(parser, name) {
+            const strequalfirst = parser.GetArgument(name);
+            const strequalsecond = parser.GetArgument(name);
+            const resultequal = parser.GetArgument(name);
+            const resultnotequal = parser.GetArgument(name);
+            const isequal = (strequalfirst == strequalsecond);
+            useArgument(parser, isequal ? resultequal : resultnotequal);
+          },
 
-                  //      This function implements an ifnextchar macro.
-                  IfnextcharFunction(parser, name) {
-                      let whichchar = parser.GetArgument(name);
-                      if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
-                          // $ syntax highlighting
-                          whichchar = String.fromCodePoint(parseInt(whichchar));
-                      }
-                      const resultnextchar = parser.GetArgument(name);
-                      const resultnotnextchar = parser.GetArgument(name);
-                      const gotchar = (parser.GetNext() === whichchar);
-                      useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
-                  },
+          // This function implements a gsub macro.
+          GsubstituteFunction(parser, name) {
+            const gsubfirst = parser.GetArgument(name);
+            const gsubsecond = parser.GetArgument(name);
+            const gsubthird = parser.GetArgument(name);
+            let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+            useArgument(parser, gsubresult);
+          },
 
+          // This function modifies the equation numbers.
+          SeteqnumberFunction(parser, name) {
+              // Get the macro parameters
+              const star = parser.GetStar();                  // true if there is a *
+              const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+              const newsubequations = parser.GetArgument(name); // the subequations argument
+              const neweqsection = parser.GetArgument(name); // the eq section argument
+              const neweqnumber = parser.GetArgument(name);   // the eq number argument
+              MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+              MathJax.config.section=neweqsection ;           // a string with numeric meaning
+              parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+          }
 
-                  //      This function modifies the equation numbers.
-                  SeteqnumberFunction(parser, name) {
-                          //   Get the macro parameters
-                          const star = parser.GetStar();                       // true if there is a *
-                          const optBrackets = parser.GetBrackets(name);        // contents of optional brackets
-                          const newsubequations = parser.GetArgument(name);       // the subequations argument
-                          const neweqsection = parser.GetArgument(name);       // the eq section argument
-                          const neweqnumber = parser.GetArgument(name);        // the eq number argument
-                          MathJax.config.subequations=newsubequations ;        // a string with boolean meaning
-                          MathJax.config.section=neweqsection ;                // a string with numeric meaning
-                          parser.tags.counter = parser.tags.allCounter = neweqnumber ;
-                  }
-             });
+        });
 
+        // Create the Lwarp-macros package
+        Configuration.create('Lwarp-macros', {
+          handler: {macro: ['Lwarp-macros']}
+        });
 
-             //       Create the ifstar-ifnextchar-setequnumber package
-             Configuration.create('ifstar-ifnextchar-setequnumber', {
-                  handler: {macro: ['ifstar-ifnextchar-setequnumber']}
-             });
+        MathJax.startup.defaultReady();
 
+        // For forward references:
+        MathJax.startup.input[0].preFilters.add(({math}) => {
+          if (math.inputData.recompile){
+              MathJax.config.subequations = math.inputData.recompile.subequations;
+              MathJax.config.section = math.inputData.recompile.section;
+          }
+        });
+        MathJax.startup.input[0].postFilters.add(({math}) => {
+          if (math.inputData.recompile){
+              math.inputData.recompile.subequations = MathJax.config.subequations;
+              math.inputData.recompile.section = MathJax.config.section;
+          }
+        });
 
-             MathJax.startup.defaultReady();
+          // For \left, \right with unicode-math:
+          const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+          const {Symbol} = MathJax._.input.tex.Symbol;
+          const {MapHandler} = MathJax._.input.tex.MapHandler;
+          const delimiter = MapHandler.getMap('delimiter');
+          delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+          delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+          delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+          delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+          delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+          delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+          delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+          delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+          delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+          delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+          delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+          delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+          delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+          delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+          delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+          delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+          delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+          delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+          delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+          delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+          delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+          delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+          delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+          delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+          delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+          delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+          delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+          delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+          delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+          delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+          delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+          delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+          delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+          delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+          delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+          delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+          delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+          delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+          delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+    }     // ready
+  },      // startup
 
-
-             // For forward references:
-             MathJax.startup.input[0].preFilters.add(({math}) => {
-                  if (math.inputData.recompile){
-                          MathJax.config.subequations = math.inputData.recompile.subequations;
-                          MathJax.config.section = math.inputData.recompile.section;
-                  }
-             });
-             MathJax.startup.input[0].postFilters.add(({math}) => {
-                  if (math.inputData.recompile){
-                          math.inputData.recompile.subequations = MathJax.config.subequations;
-                          math.inputData.recompile.section = MathJax.config.section;
-                  }
-             });
-         }       // ready
-     },           // startup
-
-
-     tex: {
-         packages: {'[+]': ['tagFormat', 'ifstar-ifnextchar-setequnumber']},
-         tags: "ams",
-                  tagFormat: {
-                          number: function (n) {
-                               if(MathJax.config.subequations==0)
-                                      return(MathJax.config.section + n);
-                               else
-                                      return(MathJax.config.section + String.fromCharCode(96+n));
-                          },
-                  },
-     }
+  tex: {
+    packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+    tags: "ams",
+         tagformat: {
+             number: function (n) {
+                 if(MathJax.config.subequations==0)
+                     return(MathJax.config.section + n);
+                 else
+                     return(MathJax.config.section + String.fromCharCode(96+n));
+             },
+         },
+  }
 }
 </script>
 
-
 <script
-         id="MathJax-script"
-         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 ></script>
 
 
@@ -157,24 +225,24 @@ MathJax = {
 
 
 <a id="MAS350-converted-autopage-25"></a>
-<nav class="topnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+<nav class="topnavigation"><a href="MAS350-converted.html" class="linkhome" >
 Home</a></nav>
 
 
 
-<div class="bodyandsidetoc" >
-<div class="sidetoccontainer" >
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
 
 
 
-<nav class="sidetoc" >
+<nav class="sidetoc">
 
 
 
-<div class="sidetoctitle" >
+<div class="sidetoctitle">
 
 <p>
-<span class="sidetocthetitle" >Probability with Measure</span>
+<span class="sidetocthetitle">Probability with Measure</span>
 </p>
 
 <p>
@@ -184,7 +252,7 @@ Contents
 
 
 
-<div class="sidetoccontents" >
+<div class="sidetoccontents">
 
 <p>
 <a href="MAS350-converted.html" class="linkhome" >
@@ -193,91 +261,91 @@ Home</a>
 
 <p>
 <a href="Introduction.html#autosec-5" class="tocchapter" >
-<span class="sectionnumber" >0</span>&#x2003;Introduction</a>
+<span class="sectionnumber">0</span>&#x2003;Introduction</a>
 </p>
 
 
 
 <p>
 <a href="Introduction.html#autosec-6" class="tocsection" >
-<span class="sectionnumber" >0.1</span>&#x2003;Preliminaries</a>
+<span class="sectionnumber">0.1</span>&#x2003;Preliminaries</a>
 </p>
 
 
 
 <p>
 <a href="Measure-Spaces-Measure.html#autosec-8" class="tocchapter" >
-<span class="sectionnumber" >1</span>&#x2003;Measure Spaces and Measure</a>
+<span class="sectionnumber">1</span>&#x2003;Measure Spaces and Measure</a>
 </p>
 
 
 
 <p>
 <a href="Measure-Spaces-Measure.html#autosec-9" class="tocsection" >
-<span class="sectionnumber" >1.1</span>&#x2003;What is Measure?</a>
+<span class="sectionnumber">1.1</span>&#x2003;What is Measure?</a>
 </p>
 
 
 
 <p>
 <a href="Sigma-Fields.html#autosec-12" class="tocsection" >
-<span class="sectionnumber" >1.2</span>&#x2003;Sigma Fields</a>
+<span class="sectionnumber">1.2</span>&#x2003;Sigma Fields</a>
 </p>
 
 
 
 <p>
 <a href="Measure.html#autosec-19" class="tocsection" >
-<span class="sectionnumber" >1.3</span>&#x2003;Measure</a>
+<span class="sectionnumber">1.3</span>&#x2003;Measure</a>
 </p>
 
 
 
 <p>
 <a href="The-Borel-field-Lebesgue-Measure.html#autosec-26" class="tocsection" >
-<span class="sectionnumber" >1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
+<span class="sectionnumber">1.4</span>&#x2003;The Borel \(\sigma \)-field and Lebesgue Measure</a>
 </p>
 
 
 
 <p>
 <a href="An-example-non-measurable-set.html#autosec-30" class="tocsection" >
-<span class="sectionnumber" >1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
+<span class="sectionnumber">1.5</span>&#x2003;An example of a non-measurable set \((\star )\)</a>
 </p>
 
 
 
 <p>
 <a href="Exercises-1.html#autosec-34" class="tocsection" >
-<span class="sectionnumber" >1.6</span>&#x2003;Exercises 1</a>
+<span class="sectionnumber">1.6</span>&#x2003;Exercises 1</a>
 </p>
 
 
 
 <p>
 <a href="Measurable-Functions.html#autosec-36" class="tocchapter" >
-<span class="sectionnumber" >2</span>&#x2003;Measurable Functions</a>
+<span class="sectionnumber">2</span>&#x2003;Measurable Functions</a>
 </p>
 
 
 
 <p>
 <a href="Probability-Measure.html#autosec-38" class="tocchapter" >
-<span class="sectionnumber" >3</span>&#x2003;Probability and Measure</a>
+<span class="sectionnumber">3</span>&#x2003;Probability and Measure</a>
 </p>
 
 
 
 <p>
 <a href="Product-Measures-Fubini-Theorem.html#autosec-40" class="tocchapter" >
-<span class="sectionnumber" >4</span>&#x2003;Product Measures and Fubini’s Theorem \((\Delta )\)</a>
+<span class="sectionnumber">4</span>&#x2003;Product Measures and Fubini’s Theorem \((\Delta )\)</a>
 </p>
 
 
 
 <p>
 <a href="Solutions-exercises.html#autosec-42" class="tocchapter" >
-<span class="sectionnumber" >A</span>&#x2003;Solutions to exercises</a>
+<span class="sectionnumber">A</span>&#x2003;Solutions to exercises</a>
 </p>
 
 
@@ -290,11 +358,11 @@ Home</a>
 
 
 
-<div class="bodycontainer" >
+<main class="bodycontainer">
 
 
 
-<section class="textbody" >
+<section class="textbody">
 
 <h1>Probability with Measure</h1>
 
@@ -302,7 +370,7 @@ Home</a>
 
 
 
-<div class="hidden" >
+<div class="hidden">
 
 \(\newcommand{\footnotename}{footnote}\)
 
@@ -311,6 +379,12 @@ Home</a>
 \(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
 
 \(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
 
 \(\newcommand \ensuremath [1]{#1}\)
 
@@ -324,6 +398,12 @@ Home</a>
 
 \(\newcommand {\addtocounter }[2]{}\)
 
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
 \(\newcommand {\cline }[1]{}\)
 
 \(\newcommand {\directlua }[1]{\text {(directlua)}}\)
@@ -336,6 +416,10 @@ Home</a>
 
 \(\def \LWRabsorbquotenumber &quot;#1 {}\)
 
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
 \(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
 
 \(\def \mathcode #1={\mathchar }\)
@@ -344,11 +428,69 @@ Home</a>
 
 \(\let \delimiter \mathchar \)
 
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
 \(\let \LWRref \ref \)
 
 \(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
 
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
 \(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
 
 \(\DeclareMathOperator {\var }{var}\)
 
@@ -414,7 +556,7 @@ Home</a>
 
 \(\def \1{\unicode {x1D7D9}}\)
 
-\(\def \cadlag {c\‘{a}dl\‘{a}g}\)
+\(\def \cadlag {c\&grave;{a}dl\&grave;{a}g}\)
 
 \(\def \p {\partial }\)
 
@@ -429,28 +571,29 @@ Home</a>
 </div>
 
 <p>
-<h4 id="autosec-26"><span class="sectionnumber" >1.4&#x2003;</span>The Borel \(\sigma \)-field and Lebesgue Measure</h4>
+<!--
+......     section The Borel -field and Lebesgue Measure ......
+-->
+<h4 id="autosec-26"><span class="sectionnumber">1.4&#x2003;</span>The Borel \(\sigma \)-field and Lebesgue Measure</h4>
 <a id="MAS350-converted-autopage-26"></a>
 <a id="MAS350-converted-autofile-5"></a> <a id="sec:borel_field_leb_meas"></a>
 
 <p>
-In this section we take \(S\) to be the real number line \(\R \). We want to describe a measure \(\lambda \) that captures the notion of length as we discussed at the beginning of this
-chapter. So we should have \(\lambda ((a,b)) = b-a\). The first question is - which \(\sigma \)-field should we use? We have already argued that the power set \({\cal P}(\R )\) is too
-big. Our \(\sigma \)-field should contain open intervals, and also unions, intersections and complements of these.
+In this section we take \(S\) to be the real number line \(\R \). We want to describe a measure \(\lambda \) that captures the notion of length as we discussed at the beginning of this chapter. So we should have
+\(\lambda ((a,b)) = b-a\). The first question is - which \(\sigma \)-field should we use? We have already argued that the power set \({\cal P}(\R )\) is too big. Our \(\sigma \)-field should contain open
+intervals, and also unions, intersections and complements of these.
 </p>
-<div class="theorembodydefn" >
+<div class="theorembodydefn">
 
 <ul style="list-style-type:none">
 
 
 
 <a id="autoid-13"></a>
-
 <li>
-
 <p>
-<span class="theoremheaderplain" >Definition 1.4.1</span> <a id="autoid-14" ></a >The Borel \(\sigma \)-field of \(\R \) to be denoted \({\cal B}(\R )\) is the smallest \(\sigma \)-field
-that contains all open intervals \((a, b)\) where \(-\infty \leq a &lt; b \leq \infty \). Sets in \({\cal B}(\R )\) are called Borel sets.
+<span class="theoremheaderplain">Definition 1.4.1</span> <a id="autoid-14" ></a >The Borel \(\sigma \)-field of \(\R \) to be denoted \({\cal B}(\R )\) is the smallest \(\sigma \)-field that contains
+all open intervals \((a, b)\) where \(-\infty \leq a &lt; b \leq \infty \). Sets in \({\cal B}(\R )\) are called Borel sets.
 </p>
 
 
@@ -461,10 +604,9 @@ that contains all open intervals \((a, b)\) where \(-\infty \leq a &lt; b \leq \
 </div>
 
 <p>
-Note that \({\cal B}(\R )\) also contains isolated points \(\{a\}\) where \(a \in \R \). To see this first observe that \((a, \infty ) \in {\cal B}(\R )\) and also \((-\infty , a) \in
-{\cal B}(\R )\). Now by S(iii),\((-\infty , a] = (a, \infty )^{c} \in {\cal B}(\R )\) and \([a, \infty ) = (-\infty , a)^{c} \in {\cal B}(\R )\). Finally as \(\sigma \)-fields are
-closed under intersections, \(\{a\} = [a, \infty ) \cap (-\infty , a] \in {\cal B}(\R )\). You can show that \({\cal B}(\R )\) also contains all closed intervals (see Problem <a
-href="MAS350-converted.html#??">??</a>).
+Note that \({\cal B}(\R )\) also contains isolated points \(\{a\}\) where \(a \in \R \). To see this first observe that \((a, \infty ) \in {\cal B}(\R )\) and also \((-\infty , a) \in {\cal B}(\R )\).
+Now by S(iii),\((-\infty , a] = (a, \infty )^{c} \in {\cal B}(\R )\) and \([a, \infty ) = (-\infty , a)^{c} \in {\cal B}(\R )\). Finally as \(\sigma \)-fields are closed under intersections,
+\(\{a\} = [a, \infty ) \cap (-\infty , a] \in {\cal B}(\R )\). You can show that \({\cal B}(\R )\) also contains all closed intervals (see Problem <a href="MAS350-converted.html#??">??</a>).
 </p>
 
 <p>
@@ -475,14 +617,16 @@ We make two observations:
 
 <li>
 <p>
-1. \({\cal B}(\R )\) is defined quite indirectly and there is no “formula” that can be used to give the most general element in it. However it is very hard to find a subset of \(\R \) that
-isn’t in \({\cal B}(\R )\) – we will give an example of one in Section <a href="An-example-non-measurable-set.html#sec:non_meas_set">1.5</a>.
+1. \({\cal B}(\R )\) is defined quite indirectly and there is no “formula” that can be used to give the most general element in it. However it is very hard to find a subset of \(\R \) that isn’t in \({\cal B}(\R
+)\) – we will give an example of one in Section <a href="An-example-non-measurable-set.html#sec:non_meas_set">1.5</a>.
 </p>
 </li>
 <li>
+
+
 <p>
-2. \({\cal B}(S)\) makes sense on any set \(S\) for which there are subsets that can be called “open” in a sensible way. In particular this works for metric spaces. The most general type
-of \(S\) for which you can form \({\cal B}(S)\) is a topological space.
+2. \({\cal B}(S)\) makes sense on any set \(S\) for which there are subsets that can be called “open” in a sensible way. In particular this works for metric spaces. The most general type of \(S\) for which you can
+form \({\cal B}(S)\) is a topological space.
 </p>
 <p>
 
@@ -492,8 +636,8 @@ of \(S\) for which you can form \({\cal B}(S)\) is a topological space.
 </ul>
 
 <p>
-The measure that precisely captures the notion of length is called Lebesgue measure in honour of the French mathematician Henri Lebesgue (1875-1941), who founded the modern theory of
-integration. We will denote it by \(\lambda \). First we need a definition.
+The measure that precisely captures the notion of length is called Lebesgue measure in honour of the French mathematician Henri Lebesgue (1875-1941), who founded the modern theory of integration. We will
+denote it by \(\lambda \). First we need a definition.
 </p>
 
 <p>
@@ -503,33 +647,29 @@ Let \(A \in {\cal B}(\R )\) be arbitrary. A covering of A is a finite or countab
 <p>
 \[ A \subseteq \bigcup _{n=1}^{\infty }(a_{n}, b_{n}).\]
 </p>
-<div class="theorembodydefn" >
+<div class="theorembodydefn">
 
 <ul style="list-style-type:none">
 
 
 
 <a id="autoid-15"></a>
-
 <li>
-
 <p>
-<span class="theoremheaderplain" >Definition 1.4.2</span> <a id="autoid-16" ></a >Let \({\cal C}_{A}\) be the set of all coverings of the set \(A\in \mc {B}(\R )\). The Lebesgue
-measure \(\lambda \) on \((\R , {\cal B}(\R ))\) is defined by the formula:
+<span class="theoremheaderplain">Definition 1.4.2</span> <a id="autoid-16" ></a >Let \({\cal C}_{A}\) be the set of all coverings of the set \(A\in \mc {B}(\R )\). The Lebesgue measure \(\lambda
+\) on \((\R , {\cal B}(\R ))\) is defined by the formula:
 </p>
 
-<span class="hidden" > \(\seteqnumber{0}{1.}{3}\)</span>
+<span class="hidden"> \(\seteqnumber{0}{1.}{3}\)</span>
 
 <!--
 
 
-                                                                                                   ∞
-                                                                                                   X
-                                                                                      λ(A) = inf         (bn − an ),                                            (1.4)--><a id="eq:leb"></a><!--
-                                                                                             CA
-                                                                                                   n=1
-
-
+                                                                                                                ∞
+                                                                                                                X
+                                                                                                   λ(A) = inf         (bn − an ),                                                     (1.4)--><a id="eq:leb"></a><!--
+                                                                                                           CA
+                                                                                                                n=1
 
 -->
 
@@ -555,8 +695,8 @@ where the \(\inf \) is taken over all possible coverings of \(A\).
 </div>
 
 <p>
-It would take a long time to prove that \(\lambda \) really is a measure, and it wouldn’t help us understand \(\lambda \) any better if we did it, so we’ll omit that from the course. For
-the proof, see the standard text books e.g.&nbsp;Cohn, Schilling or Tao.
+It would take a long time to prove that \(\lambda \) really is a measure, and it wouldn’t help us understand \(\lambda \) any better if we did it, so we’ll omit that from the course. For the proof, see the standard
+text books e.g.&nbsp;Cohn, Schilling or Tao.
 </p>
 
 <p>
@@ -572,9 +712,11 @@ Let’s check that the definition (<a href="The-Borel-field-Lebesgue-Measure.htm
 </p>
 </li>
 <li>
+
+
 <p>
-2. If \(A = \{a\}\) then choose any \(\epsilon &gt; 0\). Then \((a - \epsilon /2, a + \epsilon /2)\) is a cover of \(a\) and so \(\lambda (\{a\}) \leq (a + \epsilon /2) - (a -
-\epsilon /2) = \epsilon \). But \(\epsilon \) is arbitrary and so we conclude that \(\lambda (\{a\}) = 0\).
+2. If \(A = \{a\}\) then choose any \(\epsilon &gt; 0\). Then \((a - \epsilon /2, a + \epsilon /2)\) is a cover of \(a\) and so \(\lambda (\{a\}) \leq (a + \epsilon /2) - (a - \epsilon /2) =
+\epsilon \). But \(\epsilon \) is arbitrary and so we conclude that \(\lambda (\{a\}) = 0\).
 </p>
 <p>
 From (1) and (2), and using M(ii), we deduce that for \(a &lt; b,\)
@@ -584,25 +726,28 @@ From (1) and (2), and using M(ii), we deduce that for \(a &lt; b,\)
 </p>
 </li>
 <li>
+
+
 <p>
-3. If \(A = [0, \infty )\) write \(A = \bigcup _{n=1}^{\infty }[n-1, n)\). Then by M(ii), \(\lambda ([0, \infty )) = \infty \). By a similar argument, \(\lambda ((-\infty , 0)) =
-\infty \) and so \(\lambda (\R ) = \lambda ((-\infty , 0)) + \lambda ([0, \infty )) = \infty \).
+3. If \(A = [0, \infty )\) write \(A = \bigcup _{n=1}^{\infty }[n-1, n)\). Then by M(ii), \(\lambda ([0, \infty )) = \infty \). By a similar argument, \(\lambda ((-\infty , 0)) = \infty \)
+and so \(\lambda (\R ) = \lambda ((-\infty , 0)) + \lambda ([0, \infty )) = \infty \).
 </p>
 </li>
 <li>
+
+
 <p>
 4. If \(A\in \mc {B}(\R )\), and for some \(x\in \R \) we define \(A_x=\{x+a\-a\in A\}\), then \(\lambda (A)=\lambda (A_x)\).
 </p>
 <p>
-In words, if we take a set \(A\) and translate it (by \(x\)), we do not change its measure. This is easily seen from <span class="textup" >(<a
+In words, if we take a set \(A\) and translate it (by \(x\)), we do not change its measure. This is easily seen from <span class="textup">(<a
 href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>)</span>, because any cover of \(A\) can be translated by \(x\) to be a cover of \(A_x\).
 </p>
 </li>
 </ul>
 
 <p>
-In simple practical examples on Lebesgue measure, it is generally best not to try to use (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>), but to just apply the
-properties (1) to (4) above:
+In simple practical examples on Lebesgue measure, it is generally best not to try to use (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>), but to just apply the properties (1) to (4) above:
 </p>
 
 <p>
@@ -610,13 +755,12 @@ e.g. to find \(\lambda ((-3, 10) - (-1, 4))\), use (<a href="Measure.html#mdiff"
 </p>
 
 <p>
-\[\begin {aligned} \lambda ((-3, 10) - (-1, 4)) &amp; = \lambda ((-3, 10)) - \lambda ((-1, 4)))\\ &amp; = (10 - (-3)) - (4 - (-1)) = 13 - 5 = 8.                 \end {aligned}\]
+\[\begin {aligned} \lambda ((-3, 10) - (-1, 4)) &amp; = \lambda ((-3, 10)) - \lambda ((-1, 4)))\\ &amp; = (10 - (-3)) - (4 - (-1)) = 13 - 5 = 8.                                  \end {aligned}\]
 </p>
 
 <p>
-If \(I\) is a closed interval (or in fact any Borel set) in \(\R \) we can similarly define \({\cal B}(I)\), the Borel \(\sigma \)-field of \(I\), to be the smallest \(\sigma \)-field containing
-all open intervals in \(I\). Then Lebesgue measure on \((I, {\cal B}(I))\) is obtained by restricting the sets \(A\) in (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>)
-to be in \({\cal B}(I)\).
+If \(I\) is a closed interval (or in fact any Borel set) in \(\R \) we can similarly define \({\cal B}(I)\), the Borel \(\sigma \)-field of \(I\), to be the smallest \(\sigma \)-field containing all open intervals in
+\(I\). Then Lebesgue measure on \((I, {\cal B}(I))\) is obtained by restricting the sets \(A\) in (<a href="The-Borel-field-Lebesgue-Measure.html#eq:leb">1.4</a>) to be in \({\cal B}(I)\).
 </p>
 
 <p>
@@ -631,8 +775,7 @@ Sets of measure zero play an important role in measure theory. Here are some int
 1. Countable Subsets of \(\R \) have Lebesgue Measure Zero
 </p>
 <p>
-Let \(A \subset \R \) be countable. Write \(A = \{a_{1}, a_{2}, \ldots \} = \bigcup _{n=1}^{\infty }\{a_{n}\}\). Since \(A\) is an infinite union of point sets, it is in \({\cal B}(\R
-)\). Then
+Let \(A \subset \R \) be countable. Write \(A = \{a_{1}, a_{2}, \ldots \} = \bigcup _{n=1}^{\infty }\{a_{n}\}\). Since \(A\) is an infinite union of point sets, it is in \({\cal B}(\R )\). Then
 </p>
 <p>
 \[\lambda (A) = \lambda \left (\bigcup _{n=1}^{\infty }\{a_{n}\}\right ) = \sum _{n=1}^{\infty }\lambda (\{a_{n}\}) = 0.\]
@@ -648,24 +791,24 @@ The last of these is particularly intriguing as it tells us that the only contri
 </p>
 </li>
 <li>
+
+
 <p>
 2. The Cantor Set has Lebesgue Measure Zero
 </p>
 <p>
-Recall the construction of the Cantor set \(C = \bigcap _{n=1}^{\infty }C_{n}\) given earlier in this chapter. Recall also that the \(C_n\) are decreasing, that is \(C_{n+1}\sw C_n\), and
-hence also \(C\sw C_n\) for all \(n\).
+Recall the construction of the Cantor set \(C = \bigcap _{n=1}^{\infty }C_{n}\) given earlier in this chapter. Recall also that the \(C_n\) are decreasing, that is \(C_{n+1}\sw C_n\), and hence also \(C\sw
+C_n\) for all \(n\).
 </p>
 <p>
-Since \(C_{n}\) is a union of intervals, \(C_{n} \in {\cal B}(\R )\) for all \(\nN \). Hence \(C \in {\cal B}(\R )\). We easily see that \(\lambda (C_{1}) = 1 - \frac {1}{3}\) and
-\(\lambda (C_{2}) = 1 - \frac {1}{3} - \frac {2}{9}\). Iterating, we deduce that \(\lambda (C_{n}) = 1 - \sum _{r=1}^{n}\frac {2^{r-1}}{3^{r}}\) and since \(\lambda (C)\leq
-\lambda (C_n)\) we thus have
+Since \(C_{n}\) is a union of intervals, \(C_{n} \in {\cal B}(\R )\) for all \(\nN \). Hence \(C \in {\cal B}(\R )\). We easily see that \(\lambda (C_{1}) = 1 - \frac {1}{3}\) and \(\lambda (C_{2})
+= 1 - \frac {1}{3} - \frac {2}{9}\). Iterating, we deduce that \(\lambda (C_{n}) = 1 - \sum _{r=1}^{n}\frac {2^{r-1}}{3^{r}}\) and since \(\lambda (C)\leq \lambda (C_n)\) we thus have
 </p>
 <p>
 \[\lambda (C)\leq \lambda (C_n)=1 - \ds \sum _{r=1}^{n}\frac {2^{r-1}}{3^{r}}.\]
 </p>
 <p>
-Letting \(n\to \infty \), and using that limits preserve weak inequalities, we obtain \(\lambda (C)\leq 0\). But by definition of a measure we have \(\lambda (C)\geq 0\). Hence
-\(\lambda (C)=0\).
+Letting \(n\to \infty \), and using that limits preserve weak inequalities, we obtain \(\lambda (C)\leq 0\). But by definition of a measure we have \(\lambda (C)\geq 0\). Hence \(\lambda (C)=0\).
 </p>
 <p>
 
@@ -676,7 +819,7 @@ Letting \(n\to \infty \), and using that limits preserve weak inequalities, we o
 
 </section>
 
-</div>
+</main>
 
 </div>
 
@@ -690,7 +833,7 @@ Copyright Nic Freeman, Sheffield University, n.p.freeman [at] sheffield.ac.uk
 
 
 
-<nav class="botnavigation" ><a href="MAS350-converted.html" class="linkhome" >
+<nav class="botnavigation"><a href="MAS350-converted.html" class="linkhome" >
 Home</a></nav>
 
 </body>

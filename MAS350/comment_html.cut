@@ -1,11 +1,27 @@
+\AtBeginDocument{
 
-\let\LWR@enumitem@orignewlist\newlist
-
-\renewcommand*{\newlist}[3]{%
-\LWR@enumitem@orignewlist{#1}{#2}{#3}%
-\AtBeginEnvironment{#1}{\@nameuse{LWR@#2start}}%
-\AtEndEnvironment{#1}{\@nameuse{LWR@#2end}}%
+\IfPackageLoadedTF{polyglossia}{
+    \PackageNoteNoLine{lwarp}
+    {%
+        Polyglossia has been loaded.  Lwarp also uses cleveref.\MessageBreak
+        See the cleveref documentation regarding\MessageBreak
+        polyglossia support.  Some languages are not supported.\MessageBreak
+        --- \MessageBreak
+        If the error\MessageBreak
+        \space\space Undefined control sequence ...
+        \protect\__hook begindocument\MessageBreak
+        occurs here, use the polyglossia macro:\MessageBreak
+        \space\space\protect\setmainlanguage\protect{...\protect}
+    }
+}{
+    \IfPackageLoadedTF{babel}{
+        \PackageNoteNoLine{lwarp}
+        {%
+            Babel has been loaded.  Lwarp also uses cleveref.\MessageBreak
+            See the cleveref documentation regarding\MessageBreak
+            babel support.  Some languages are not supported%
+        }
+    }{}
 }
 
-\def\DrawEnumitemLabel{}
-
+}

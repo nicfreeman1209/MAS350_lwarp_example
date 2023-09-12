@@ -1,5 +1,5 @@
 pdfseparate -f %1 -l %1 %4_html.pdf MAS350-converted-images\lateximagetemp-%%d.pdf
-pdfcrop --hires MAS350-converted-images\lateximagetemp-%1.pdf MAS350-converted-images\%3.pdf
+pdfcrop --hires --margins "0 1 0 0" MAS350-converted-images\lateximagetemp-%1.pdf MAS350-converted-images\%3.pdf
 pdftocairo -svg -noshrink MAS350-converted-images\%3.pdf MAS350-converted-images\%3.svg
 del MAS350-converted-images\%3.pdf
 del MAS350-converted-images\lateximagetemp-%1.pdf
