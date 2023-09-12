@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.23)  12 SEP 2023 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.23)  12 SEP 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1082,24 +1082,24 @@ Package: everyshi 2020/11/18 v4.00 EveryShipout Package
 (MAS350-converted.aux)
 \openout1 = `MAS350-converted.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
 \openout5 = `lwarpmk.conf'.
 
 \openout5 = `MAS350-converted.lwarpmkconf'.
@@ -1128,56 +1128,56 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
  (C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 203.
+Package hyperref Info: Link coloring OFF on input line 205.
 
 (MAS350-converted.out) (MAS350-converted.out)
 \@outlinefile=\write7
 \openout7 = `MAS350-converted.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-05.
+07.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-05.
+07.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-205.
+207.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-205.
+207.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 205.
+(Font)              <12> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 205.
+(Font)              <8> on input line 207.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 205.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 205
+(Font)              <6> on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 207
 .
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 205
+LaTeX Font Info:    Trying to load font information for U+msb on input line 207
 .
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 20
-5.
+7.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1206,10 +1206,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.219 \chapter
+l.221 \chapter
               {Introduction}
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-19.
+21.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1224,69 +1224,69 @@ Chapter 0.
  Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}] [4.5] [5.6]
 Chapter 1.
 
-Overfull \hbox (24.7403pt too wide) in paragraph at lines 352--353
+Overfull \hbox (24.7403pt too wide) in paragraph at lines 354--355
 \T1/lmr/m/n/11 the real world. This in-cludes mea-sure-ment of length, area and
  vol-ume, mass but also chance/probability.
  []
 
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
-t line 375.
+t line 377.
 [6.7
 
 ] [7.8]
 Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
-ine 396.
+ine 398.
  [8.9] [9.10]
 
 LaTeX Warning: Reference `ps:measure_basic' on page 10 undefined on input line 
-528.
+530.
 
 
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 10 undefined on i
-nput line 533.
+nput line 535.
 
 [10.11] [11.12]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 593.
+(amsmath)                 on input line 595.
 
 [12.13]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 608.
+(Font)              <14.4> on input line 610.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 608.
+(Font)              <10> on input line 610.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 608.
+(Font)              <7> on input line 610.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 608.
+(hyperref)                removing `math shift' on input line 610.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 608.
+(hyperref)                removing `\sigma' on input line 610.
 
 
 LaTeX Warning: Reference `ps:borel_closed' on page 13 undefined on input line 6
-21.
+23.
 
 [13.14] [14.15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 709.
+(hyperref)                removing `math shift' on input line 711.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\star' on input line 709.
+(hyperref)                removing `\star' on input line 711.
 
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 740.
+line 742.
 [15.16]
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 793.
+ line 795.
  [16.17]
-Overfull \hbox (5.2417pt too wide) in paragraph at lines 807--808
+Overfull \hbox (5.2417pt too wide) in paragraph at lines 809--810
 []\T1/lmr/m/n/11 Give a care-ful proof by in-duc-tion of the fact that if $\OT1
 /lmr/bx/n/11 B$ \T1/lmr/m/n/11 is a Boolean al-ge-bra and $\OML/lmm/m/it/11 A[]
 ; A[]; [] ; A[] \OMS/lmsy/m/n/11 2
@@ -1304,18 +1304,18 @@ Chapter 3.
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 835.
+(hyperref)                removing `math shift' on input line 837.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Delta' on input line 835.
+(hyperref)                removing `\Delta' on input line 837.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 835.
+(Font)              <24.88> on input line 837.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 835.
+(Font)              <20.74> on input line 837.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 835.
+(Font)              <17.28> on input line 837.
 [20.21
 
 ]
@@ -1371,7 +1371,7 @@ ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2
 fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/rsfs/rsfs10.pfb>
-Output written on MAS350-converted.pdf (22 pages, 381402 bytes).
+Output written on MAS350-converted.pdf (22 pages, 381409 bytes).
 PDF statistics:
  369 PDF objects out of 1000 (max. 8388607)
  87 named destinations out of 1000 (max. 500000)

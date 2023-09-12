@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.23)  12 SEP 2023 21:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.23)  12 SEP 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1437,29 +1437,29 @@ Package: lwarp-hyperxmp 2018/11/27
 (MAS350-converted_html.aux)
 \openout1 = `MAS350-converted_html.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
-LaTeX Font Info:    ... okay on input line 203.
-LaTeX Info: Redefining \microtypecontext on input line 203.
-Package microtype Info: Applying patch `item' on input line 203.
-Package microtype Info: Applying patch `toc' on input line 203.
-Package microtype Info: Applying patch `eqnum' on input line 203.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 205.
+LaTeX Font Info:    ... okay on input line 205.
+LaTeX Info: Redefining \microtypecontext on input line 205.
+Package microtype Info: Applying patch `item' on input line 205.
+Package microtype Info: Applying patch `toc' on input line 205.
+Package microtype Info: Applying patch `eqnum' on input line 205.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 203.
+Package microtype Warning: Unable to apply patch `footnote' on input line 205.
 
-Package microtype Info: Applying patch `verbatim' on input line 203.
+Package microtype Info: Applying patch `verbatim' on input line 205.
 Package microtype Info: Generating PDF output.
 Package microtype Info: No character protrusion.
 Package microtype Info: No font expansion.
@@ -1541,14 +1541,14 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 \openout6 = `MAS350-converted-images.txt'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-03.
+05.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 File: "lwarp_mathjax.txt"  (verbatim)
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-203.
+205.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1576,7 +1576,7 @@ File: "lwarp_mathjax.txt"  (verbatim)
  [4]
 (MAS350-converted_html.sidetoc) [5]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-66.
+68.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1584,38 +1584,38 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: "lwarp_mathjax.txt"  (verbatim)
  [7]
 (MAS350-converted_html.sidetoc) [8]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 359.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 361.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-59.
+61.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-59.
+61.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-359.
+361.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-359.
+361.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <11> on input line 359.
+(Font)              <11> on input line 361.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.69997> on input line 359.
+(Font)              <7.69997> on input line 361.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.5> on input line 359.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 359
+(Font)              <5.5> on input line 361.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 361
 .
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
@@ -1624,7 +1624,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 359
+LaTeX Font Info:    Trying to load font information for U+msb on input line 361
 .
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
@@ -1633,15 +1633,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\nicfr\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 35
-9.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 36
+1.
 
 (C:\Program Files\MiKTeX 2.9\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 359.
+(Font)              size <5> substituted on input line 361.
 
 [9{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
@@ -1653,22 +1653,22 @@ File: "lwarp_mathjax.txt"  (verbatim)
  [18] (MAS350-converted_html.sidetoc) [19] [20]
 
 LaTeX Warning: Reference `ps:measure_basic' on page 21 undefined on input line 
-528.
+530.
 
 
 LaTeX Warning: Reference `chap:lebesbgue_integration' on page 21 undefined on i
-nput line 533.
+nput line 535.
 
 [21] [22] [23] [24]
 File: "lwarp_mathjax.txt"  (verbatim)
  [25] (MAS350-converted_html.sidetoc) [26]
 
 LaTeX Warning: Reference `ps:borel_closed' on page 27 undefined on input line 6
-21.
+23.
 
 [27]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <11> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 683.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 685.
  [28{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc}]
 File: "lwarp_mathjax.txt"  (verbatim)
 
@@ -1723,7 +1723,7 @@ m/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MAS350-converted_html.pdf (43 pages, 455083 bytes).
+Output written on MAS350-converted_html.pdf (43 pages, 454600 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
