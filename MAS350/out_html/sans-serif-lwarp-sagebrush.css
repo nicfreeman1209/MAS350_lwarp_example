@@ -5,6 +5,10 @@ A:visited {color:#705030 ; text-shadow:1px 1px 2px #a0a0a0;}
 A:hover {color:#006000 ; text-decoration: underline ; text-shadow:0px 0px 2px #a0a0a0;}
 A:active {color:#00C000 ; text-shadow:1px 1px 2px #a0a0a0;}
 
+body {
+	font-family: "Calibri", sans-serif;
+}
+
 div.book, h1, h2, h3, h4, h5, h6, span.paragraph, span.subparagraph
 {
     font-family: "Calibri";
