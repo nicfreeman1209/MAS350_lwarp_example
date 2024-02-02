@@ -10,6 +10,6 @@ This repository contains a working example of mathematics lecture notes, which c
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/1.png" width="190" height="128" /><img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/2.png" width="190" height="128" />
 <img src="https://raw.githubusercontent.com/nicfreeman1209/MAS350_lwarp_example/master/screenshots/3.png" width="190" height="128" />
 
-It was made using [Miktex](https://miktex.org/), [TexMaker](https://www.xm1math.net/texmaker/) and crucially the [lwarp package](http://bdtechconcepts.com/LaTeX-HTML-Converter-lwarp-package.html#autosec-155). Most importantly, only _minimal changes to the original tex_ are needed. 
+It was made using [Miktex](https://miktex.org/), [TexMaker](https://www.xm1math.net/texmaker/) and crucially the [lwarp package](https://github.com/bdtc/lwarp). Most importantly, only _minimal changes to the original tex_ are needed. 
 
 See [the repository wiki](https://github.com/nicfreeman1209/MAS350_lwarp_example/wiki) for a related tutorial on how to do this.
